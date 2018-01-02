@@ -4,6 +4,9 @@ body {
   font-family: sans-serif;
   height: 100%
 }
+html {
+  height: 100vh;
+}
 
 section {
   height: 100vh;
@@ -49,4 +52,8 @@ section {
 
 .filler {
   background-color: lightblue;
+}
+
+.lesson-zone {
+  background-color: grey;
 }

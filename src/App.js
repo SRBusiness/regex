@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Welcome from './components/welcome';
+import LessonContainer from './components/lessonContainer';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
         <div className='left-half'>
           <Welcome />
           <div className='filler'> Game zone</div>
+          <LessonContainer />
         </div>
 
         <div className='right-half'>
