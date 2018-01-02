@@ -21,10 +21,11 @@
     - Each of these sites had a very bland color scheme and UI.
     - differentiation: I would like to create a regex game that slowly introduces new concepts, that has lots of hint
 
-1. __User Personas__: A summary of your main target user group(s). What are their key characteristics? How do those characteristics factor into project/app/idea?
+1. __User Personas__:
+  - Someone that is the beginning arc of their computer science education with a basic set of tools and skills but maybe still lacking the literacy needed to go and learn regex from the resources on the internet. 
 
-1. __Trello Board__:
-    - Flesh out the feature set that you created in the conceptual delivery to get started with your Trello board
+1. __[Trello Board](https://trello.com/b/HM7RqCKf/regex-capstone)__:
+    -
 
 1. __Technology selections__:
     - Front-end
@@ -39,6 +40,3 @@
 
 1. __Wireframes__:
     - Any format you may like - photos of paper, online tool and/or paper to show your instructors
-
-## Format
-Since the Product Plan is part of your final deliverable and should be included in your repository, it would be easiest to do this initial draft in a markdown format for easy transferability to GitHub.
