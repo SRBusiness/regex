@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // html parser for react so that I can have the facts be strings that include the html of what should be highlighted
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import ReactHtmlParser from 'react-html-parser';
 // import {regexHighlight } from './highlight';
 
 const puzzles = {
@@ -14,20 +14,55 @@ const puzzles = {
     text: `There are 13 species of Otters, and just about all of them are decreasing.`,
     prompt: 'Build a Regex that matches the number "13"',
     answer: '13',
+  },
+  2:{
+    text: 'file_record_transcript.pdf',
+    prompt: 'prompt',
+    answer: 'answer'
   }
 }
 
-const text = 'Wild otters on the run from others';
-const userInput = 'otter'
-let regex = new RegExp(userInput)
-let f = new RegExp(/ddd/);
+// TODO: figure out how react handles white space - the puzzle text "a    bc" renders as "a bc"
+// const text = 'Wild otters on the run from others';
+// const userInput = 'otter'
+// let regex = new RegExp(userInput)
+// let f = new RegExp(/ddd/);
 
-export function regexHighlight(text, input) {
+// function regexHighlight(text, input) {
+//   if (input === ''){
+//     return text
+//   }
+//   const regex = new RegExp(input);
+//   // run exec method with new regex based on user input
+//   const result = regex.exec(text)
+//   // if result is NOT null that means there is a match
+//   if (result !== null) {
+//     return (
+//       text.split(result[0]).reduce( (prev, curr, i) => {
+//           return prev + `<span class='highlight-two'>` + result[0] + `</span>`+ curr
+//       })
+//     )
+//   } else {
+//     return text
+//   }
+// }
+// TODO: think about how I want to this run, do I want it to show all matches? Or just the first one, do I want to to be able to do both with toggle?
+
+function regexHighlight(text, input) {
   if (input === ''){
     return text
   }
-  const regex = new RegExp(input);
+
+  let a = /input/
   // run exec method with new regex based on user input
+  let regex;
+  try {
+    regex = new RegExp(input)
+  }
+  catch(err) {
+    console.log(`users regex: '${input} was invalid `);
+    return text
+  }
   const result = regex.exec(text)
   // if result is NOT null that means there is a match
   if (result !== null) {
@@ -41,21 +76,12 @@ export function regexHighlight(text, input) {
   }
 }
 
-// class HtmlComponent extends React.Component {
-//   render() {
-//     const html = '<div>Example HTML string</div>';
-//     return <div>{ ReactHtmlParser(html) }</div>;
-//   }
-// }
-
-
-
 class Puzzle extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      userRegex: null,
+      userRegex: '',
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -72,7 +98,7 @@ class Puzzle extends React.Component {
 
 
   render () {
-    const { text, answer, prompt } = this.props.lesson
+    const { text, answer, prompt } = this.props.puzzle
     const { userRegex } = this.state;
 
     return (
@@ -106,7 +132,7 @@ class Puzzle extends React.Component {
 
 Puzzle.propTypes = {
   puzzle: PropTypes.shape({
-    fact: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
     prompt: PropTypes.string.isRequired,
     solution: PropTypes.isRequired,
   }).isRequired,
@@ -116,7 +142,7 @@ class PuzzleContainer extends React.Component {
   render() {
     return(
       <div className='puzzle-container'>
-        <Puzzle lesson={puzzles[0]} />
+        <Puzzle puzzle={puzzles[2]} />
       </div>
     )
   }
