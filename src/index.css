@@ -61,3 +61,14 @@ section {
 .puzzle {
   background-color: blue;
 }
+/* .highlight {
+  text-decoration: underline yellow;
+} */
+
+.highlight-one {
+  text-decoration: underline yellow;
+}
+
+.highlight-two {
+  color: orange;
+}

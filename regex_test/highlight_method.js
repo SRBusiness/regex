@@ -1,3 +1,15 @@
+// let arr = [0, 1, 2, 3, 4];
+let c = 'otter'
+let b = [ 'Wild ', 's on the run ' , ' are so fast']
+let text = 'Wild otters are on the run, otters are a very fast species!'
+let j = text.split('otter').reduce( (prev, curr, i) => {
+  // console.log(`prev: ${prev}`);
+  // console.log(`current: ${curr}`);
+  // console.log(`i: ${i}`);
+  return prev + `<b class='regex-match'>` + c + `</b>`+ curr;
+});
+console.log(j);
+
 // // https://github.com/facebook/react/issues/3386
 // // https://stackoverflow.com/questions/29652862/highlight-text-using-reactjs
 // // https://www.vladopandzic.com/react/creating-react-highlighter-component/
@@ -65,25 +77,3 @@
 //
 // formatLabel('Lorem ipsum dolor sit amet', 'dolor');
 // // <span>Lorem ipsum <b>dolor</b> sit amet</span>
-
-const text = 'Wild otters on the run from others';
-const userInput = 'otter'
-let regex = new RegExp(userInput)
-let f = new RegExp(/ddd/);
-
-
-const regexHighlighting = (text, input) => {
-  const regex = new RegExp(input);
-  // run exec method with new regex based on user input
-  let result = regex.exec(text)
-  // if result is NOT null that means there is a match
-  if (result !== null) {
-    return (
-      text.split(result[0]).reduce( (prev, curr, i) => {
-          return prev + `<b class='regex-match'>` + result[0] + `</b>`+ curr
-      })
-    )
-  }
-}
-
-console.log(regexHighlighting(text, userInput));
