@@ -47,15 +47,23 @@ const puzzles = {
 //   }
 // }
 // TODO: think about how I want to this run, do I want it to show all matches? Or just the first one, do I want to to be able to do both with toggle?
+// TODO: refactor this to return proper jsx
+// TODO: rewrite this so it only styles the first match
+function regexHighlightGlobal(text, input, value) {
+  console.log(`value: ${value}`);
+  let passInClassName;
+  if ( !value ) {
+    passInClassName = 'highlight-one'
+  } else {
+    passInClassName = 'highlight-two'
+  }
 
-function regexHighlight(text, input) {
+  // don't do anything if there is no input
   if (input === ''){
     return text
   }
-
-  let a = /input/
-  // run exec method with new regex based on user input
   let regex;
+  // try and catch statement because bad RegExp's throw and expection
   try {
     regex = new RegExp(input)
   }
@@ -64,11 +72,40 @@ function regexHighlight(text, input) {
     return text
   }
   const result = regex.exec(text)
-  // if result is NOT null that means there is a match
+  // when there is a match
   if (result !== null) {
     return (
       text.split(result[0]).reduce( (prev, curr, i) => {
-          return prev + `<span class='highlight-two'>` + result[0] + `</span>`+ curr
+        console.log(`checking that inside of this function you get the value: ${value}`);
+        console.log(`passInClassName = ${passInClassName}`);
+        return prev + `<span class='${passInClassName}'>` + result[0] + `</span>`+ curr
+      })
+    )
+  } else {
+    return text
+  }
+}
+
+function regexHighlightStrict(text, input, user) {
+  // don't do anything if there is no input
+  if (input === ''){
+    return text
+  }
+  let regex;
+  // try and catch statement because bad RegExp's throw and expection
+  try {
+    regex = new RegExp(input)
+  }
+  catch(err) {
+    console.log(`users regex: '${input} was invalid `);
+    return text
+  }
+  const result = regex.exec(text)
+  // when there is a match
+  if (result !== null) {
+    return (
+      text.split(result[0]).reduce( (prev, curr, i) => {
+        return prev + `<span class='highlight-two'>` + result[0] + `</span>`+ curr
       })
     )
   } else {
@@ -105,8 +142,8 @@ class Puzzle extends React.Component {
       <div className='puzzle'>
         <div className='puzzle-display-container'>
           <div className='puzzle-display'>
-            <p className='top'>{ ReactHtmlParser(regexHighlight(text, answer))}</p>
-            <p className='bottom'>{ ReactHtmlParser(regexHighlight(text, this.state.userRegex))}</p>
+            <p className='top'>{ ReactHtmlParser(regexHighlightGlobal(text, answer, false))}</p>
+            <p className='bottom'>{ ReactHtmlParser(regexHighlightGlobal(text, this.state.userRegex, true))}</p>
           </div>
         </div>
 
@@ -142,7 +179,7 @@ class PuzzleContainer extends React.Component {
   render() {
     return(
       <div className='puzzle-container'>
-        <Puzzle puzzle={puzzles[2]} />
+        <Puzzle puzzle={puzzles[1]} />
       </div>
     )
   }
