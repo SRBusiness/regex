@@ -59,14 +59,8 @@ section {
 }
 
 .puzzle {
-  background-color: blue;
+  background-color: #bd6680;
 }
-/* .highlight {
-  text-decoration: underline yellow;
-} */
-
-
-
 
 div.puzzle-display {
   position: relative;
@@ -88,4 +82,8 @@ div.puzzle-display {
 
 .highlight-two {
   color: red;
+}
+
+.puzzle-display-container {
+  overflow: -webkit-paged-x;
 }

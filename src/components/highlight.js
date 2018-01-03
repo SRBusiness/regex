@@ -11,7 +11,7 @@ export function regexHighlight(text, input) {
   if (result !== null) {
     return (
       text.split(result[0]).reduce( (prev, curr, i) => {
-          return prev + `<b class='regex-match'>` + result[0] + `</b>`+ curr
+          return prev + `<span class='highlight-two'>` + result[0] + `</span>`+ curr
       })
     )
   } else {
@@ -19,6 +19,12 @@ export function regexHighlight(text, input) {
   }
 }
 
-console.log(regexHighlight(text, userInput));
+// console.log(regexHighlight(text, userInput));
+//
+// console.log(regexHighlight(text, 'sddd'));
 
-console.log(regexHighlight(text, 'sddd'));
+// 'The <b>Otter</b> are cool animals!'
+// 'The otterman wanted to be an otter'
+// split(/<\/?b>/) => [ 'The ', 'Otter', 's are cool animals!' ]
+// is there a way to do this that isnt inline styling? something do with absolute position by text?
+// two overlapping strings one is underlined one is highlighted
