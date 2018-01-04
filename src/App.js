@@ -4,6 +4,7 @@ import './App.css';
 import Welcome from './components/welcome';
 import LessonContainer from './components/lessonContainer';
 import PuzzleContainer from './components/puzzleContainer';
+import Game from './components/game';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
 
         <div className='right-half'>
           <PuzzleContainer />
+          <Game />
         </div>
       </section>
     );
