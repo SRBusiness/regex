@@ -23,7 +23,7 @@ class Instructions extends React.Component {
 
 // TODO: updates proptypes
 Instructions.propTypes = {
-  lesson: PropTypes.shape({
+  instructions: PropTypes.shape({
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     example: PropTypes.string.isRequired,

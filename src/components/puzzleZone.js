@@ -3,30 +3,13 @@ import PropTypes from 'prop-types';
 // html parser for react so that I can have the facts be strings that include the html of what should be highlighted
 import ReactHtmlParser from 'react-html-parser';
 
-const puzzles = {
-  0:{
-    text: `Otters love to eat shelled animals, like clams, but otters aren’t equipped with the strength to open their food without some help. Otters are big on tools, and will often use rocks to help crack into dinner. While they hunt for food underwater, they’ll often store a rock in the skin under their arms for later use.`,
-    prompt: 'Build a Regex that matches the word "rock"',
-    answer: 'rock',
-  },
-  1: {
-    text: `There are 13 species of Otters, and just about all of them are decreasing.`,
-    prompt: 'Build a Regex that matches the number "13"',
-    answer: '13',
-  },
-  2:{
-    text: 'file_record_transcript.pdf',
-    prompt: 'prompt',
-    answer: 'answer'
-  }
-}
 
 // TODO: figure out how react handles white space - the puzzle text "a    bc" renders as "a bc" Charles said look into using a pre-tag
 // TODO: refactor this so that it shows all matches, the split function wont should all things for /[of]/, look into seeing if you can use the exec method to loop through all of the matches. Also could check and see if there is a method in any regexp lang that returns all the matches with an index of where they are in the string
 // TODO: add a toggle function for the global variable
 
 function regexHighlightGlobal(text, input, value) {
-  console.log(`value: ${value}`);
+  // console.log(`value: ${value}`);
   let passInClassName;
   if ( !value ) {
     passInClassName = 'highlight-one'
@@ -62,7 +45,7 @@ function regexHighlightGlobal(text, input, value) {
   }
 }
 
-class Puzzle extends React.Component {
+class PuzzleZone extends React.Component {
   constructor(props) {
     super(props);
 
@@ -74,14 +57,12 @@ class Puzzle extends React.Component {
 
   handleChange(event) {
     const userInput = event.target.value;
-
     this.setState( () => {
       return{
         userRegex: userInput,
       }
     })
   }
-
 
   render () {
     const { text, answer, prompt } = this.props.puzzle
@@ -110,12 +91,13 @@ class Puzzle extends React.Component {
             onChange={this.handleChange}
           />/
         </div>
+        <button onClick={this.props.triggerLevelChange}>Next Level</button>
       </div>
     )
   }
 }
 
-Puzzle.propTypes = {
+PuzzleZone.propTypes = {
   puzzle: PropTypes.shape({
     text: PropTypes.string.isRequired,
     prompt: PropTypes.string.isRequired,
@@ -123,14 +105,14 @@ Puzzle.propTypes = {
   }).isRequired,
 }
 
-class PuzzleContainer extends React.Component {
-  render() {
-    return(
-      <div className='puzzle-container'>
-        <Puzzle puzzle={puzzles[0]} />
-      </div>
-    )
-  }
-}
+// class PuzzleContainer extends React.Component {
+//   render() {
+//     return(
+//       <div className='puzzle-container'>
+//         <Puzzle puzzle={puzzles[0]} />
+//       </div>
+//     )
+//   }
+// }
 
-export default PuzzleContainer;
+export default PuzzleZone;

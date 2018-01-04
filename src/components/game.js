@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import PuzzleContainer from './puzzleContainer';
+import PuzzleZone from './puzzleZone';
 import Instructions from './instructions';
 
 
@@ -53,21 +53,24 @@ class Game extends Component {
   }
 
   handleLevelChange() {
-    this.setState( () => {
+    console.log(`level change button has been clicked!`);
+    this.setState({
       level: this.state.level + 1
     });
   }
 
   render () {
+    const { level } = this.state
+    console.log(level);
     return (
       <section>
         <Instructions
           // triggerLevelChange={this.handleLevelChange}
-          instructions={levels[0].instructions}
+          instructions={levels[level].instructions}
         />
-        <PuzzleContainer
+        <PuzzleZone
           triggerLevelChange={this.handleLevelChange}
-          puzzle
+          puzzle={levels[level].puzzle}
         />
         <p>I'm a game!</p>
       </section>
