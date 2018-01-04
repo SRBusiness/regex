@@ -58,8 +58,13 @@ section {
   background-color: grey;
 }
 
+
+/***************************/
+/**** PuzzleZone styles ****/
+/***************************/
+
 .puzzle {
-  background-color: #bd6680;
+  background-color: #cef0f9;
 }
 
 div.puzzle-display {
@@ -86,4 +91,10 @@ div.puzzle-display {
 
 .puzzle-display-container {
   overflow: -webkit-paged-x;
+}
+
+.user-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

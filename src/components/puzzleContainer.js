@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // html parser for react so that I can have the facts be strings that include the html of what should be highlighted
 import ReactHtmlParser from 'react-html-parser';
-// import {regexHighlight } from './highlight';
 
 const puzzles = {
   0:{
@@ -22,33 +21,10 @@ const puzzles = {
   }
 }
 
-// TODO: figure out how react handles white space - the puzzle text "a    bc" renders as "a bc"
-// const text = 'Wild otters on the run from others';
-// const userInput = 'otter'
-// let regex = new RegExp(userInput)
-// let f = new RegExp(/ddd/);
+// TODO: figure out how react handles white space - the puzzle text "a    bc" renders as "a bc" Charles said look into using a pre-tag
+// TODO: refactor this so that it shows all matches, the split function wont should all things for /[of]/, look into seeing if you can use the exec method to loop through all of the matches. Also could check and see if there is a method in any regexp lang that returns all the matches with an index of where they are in the string
+// TODO: add a toggle function for the global variable
 
-// function regexHighlight(text, input) {
-//   if (input === ''){
-//     return text
-//   }
-//   const regex = new RegExp(input);
-//   // run exec method with new regex based on user input
-//   const result = regex.exec(text)
-//   // if result is NOT null that means there is a match
-//   if (result !== null) {
-//     return (
-//       text.split(result[0]).reduce( (prev, curr, i) => {
-//           return prev + `<span class='highlight-two'>` + result[0] + `</span>`+ curr
-//       })
-//     )
-//   } else {
-//     return text
-//   }
-// }
-// TODO: think about how I want to this run, do I want it to show all matches? Or just the first one, do I want to to be able to do both with toggle?
-// TODO: refactor this to return proper jsx
-// TODO: rewrite this so it only styles the first match
 function regexHighlightGlobal(text, input, value) {
   console.log(`value: ${value}`);
   let passInClassName;
@@ -76,36 +52,9 @@ function regexHighlightGlobal(text, input, value) {
   if (result !== null) {
     return (
       text.split(result[0]).reduce( (prev, curr, i) => {
-        console.log(`checking that inside of this function you get the value: ${value}`);
-        console.log(`passInClassName = ${passInClassName}`);
+        // console.log(`checking that inside of this function you get the value: ${value}`);
+        // console.log(`passInClassName = ${passInClassName}`);
         return prev + `<span class='${passInClassName}'>` + result[0] + `</span>`+ curr
-      })
-    )
-  } else {
-    return text
-  }
-}
-
-function regexHighlightStrict(text, input, user) {
-  // don't do anything if there is no input
-  if (input === ''){
-    return text
-  }
-  let regex;
-  // try and catch statement because bad RegExp's throw and expection
-  try {
-    regex = new RegExp(input)
-  }
-  catch(err) {
-    console.log(`users regex: '${input} was invalid `);
-    return text
-  }
-  const result = regex.exec(text)
-  // when there is a match
-  if (result !== null) {
-    return (
-      text.split(result[0]).reduce( (prev, curr, i) => {
-        return prev + `<span class='highlight-two'>` + result[0] + `</span>`+ curr
       })
     )
   } else {
@@ -147,12 +96,11 @@ class Puzzle extends React.Component {
           </div>
         </div>
 
-
         <div>
           <h3>Promt: {prompt}</h3>
         </div>
 
-        <div>
+        <div className='user-input-container'>
           /<input
             id='userInput'
             placeholder='insert regex here'
@@ -179,7 +127,7 @@ class PuzzleContainer extends React.Component {
   render() {
     return(
       <div className='puzzle-container'>
-        <Puzzle puzzle={puzzles[1]} />
+        <Puzzle puzzle={puzzles[0]} />
       </div>
     )
   }

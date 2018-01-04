@@ -77,3 +77,24 @@ console.log(j);
 //
 // formatLabel('Lorem ipsum dolor sit amet', 'dolor');
 // // <span>Lorem ipsum <b>dolor</b> sit amet</span>
+
+
+
+// function regexHighlight(text, input) {
+//   if (input === ''){
+//     return text
+//   }
+//   const regex = new RegExp(input);
+//   // run exec method with new regex based on user input
+//   const result = regex.exec(text)
+//   // if result is NOT null that means there is a match
+//   if (result !== null) {
+//     return (
+//       text.split(result[0]).reduce( (prev, curr, i) => {
+//           return prev + `<span class='highlight-two'>` + result[0] + `</span>`+ curr
+//       })
+//     )
+//   } else {
+//     return text
+//   }
+// }
