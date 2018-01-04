@@ -14,7 +14,7 @@ section {
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .left-half {
@@ -40,8 +40,8 @@ section {
 }
 
 .welcome {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   background-color: lightgreen;
   align-items: center;
 }
