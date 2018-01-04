@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // this will need to have state and need to know what level we are on so it can pass that information to the lesson component
 
-class Instructions extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+class Instructions extends Component {
   render() {
     const { title, number, content, example } = this.props.instructions;
     return(
