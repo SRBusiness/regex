@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import PuzzleZone from './puzzleZone';
 import Instructions from './instructions';
-
+import LevelNavigation from './levelsNavBar';
 
 const levels = {
   1: {
@@ -82,11 +82,16 @@ class Game extends Component {
   }
 
   render () {
-    const { level } = this.state
-    console.log(this.state.totalLevels);
+    const { level } = this.state;
+    const levelsArray = Object.keys(levels);
+    // const
+    // console.log(this.state.totalLevels);
 
     return (
-      <section class='game'>
+      <section className='game'>
+        <LevelNavigation
+          levelsArray={levelsArray}
+        />
         <Instructions
           // triggerLevelChange={this.handleLevelChange}
           instructions={levels[level].instructions}
@@ -100,4 +105,4 @@ class Game extends Component {
   }
 }
 
-export default Game
+export default Game;
