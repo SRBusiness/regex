@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Welcome from './components/welcome';
 import Game from './components/game';
 
 class App extends Component {

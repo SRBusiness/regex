@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // made this a stateless functional component
@@ -34,7 +34,6 @@ const LevelNavigation = ({ level, levelsArray, triggerSingleLevelChange, trigger
     </nav>
   )
 }
-
 
 LevelNavigation.propTypes = {
   level: PropTypes.number.isRequired,

@@ -9,8 +9,9 @@ class Game extends Component {
   constructor(props) {
     super(props);
 
+    const level = parseInt(localStorage.getItem('currentLevel'), 10);
     this.state = {
-      level: 1,
+      level: level,
       totalLevels: (Object.keys(this.props.levels).length),
     }
     this.handleLevelChange = this.handleLevelChange.bind(this);
@@ -23,6 +24,7 @@ class Game extends Component {
     this.setState({
       level: levelNumber,
     });
+    localStorage.setItem('currentLevel', levelNumber);
   }
 
   handleSingleLevelChange = (delta) => {
@@ -36,8 +38,10 @@ class Game extends Component {
   }
 
   render () {
+    const cat = localStorage.getItem('currentLevel');
+    console.log(cat);
     const { level } = this.state;
-    const { levels } = this.props
+    const { levels } = this.props;
     const levelsArray = Object.keys(levels);
 
     return (
