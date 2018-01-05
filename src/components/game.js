@@ -68,18 +68,28 @@ class Game extends Component {
     }
 
     this.handleLevelChange = this.handleLevelChange.bind(this);
+    // this.handleSingleLevelChange = this.handleSingleLevelChange.bind(this);
   }
 
-  handleLevelChange() {
-    const { level, totalLevels } = this.state;
-    console.log(`level change button has been clicked!`);
-    // if changing the level by one will not exceed the number of levels increment level by one
-    if (level + 1 <= totalLevels ) {
-      this.setState({
-        level: this.state.level + 1
-      });
-    }
+
+
+  handleLevelChange = (newLevel) => {
+    // event.preventDefault();
+    console.log(`inside handleLevelChange - change to ${newLevel}`);
+    this.setState({
+      level: newLevel,
+    });
   }
+
+  // handleSingleLevelChange(delta) {
+  //   console.log(`inside handleSingleLevelChange - delta: ${delta}`);
+  //   const { level, totalLevels } = this.state;
+  //   // true = + 1 AND false = -1
+  //   const nextLevel = delta ? level + 1 : level - 1;
+  //   if (nextLevel <= totalLevels && nextLevel !== 0 ){
+  //     this.handleLevelChange(nextLevel);
+  //   }
+  // }
 
   render () {
     const { level } = this.state;
@@ -91,9 +101,11 @@ class Game extends Component {
       <section className='game'>
         <LevelNavigation
           levelsArray={levelsArray}
+          triggerLevelChange={this.handleLevelChange}
+          // triggerSingleLevelChange={this.handleSingleLevelChange}
+          level={level}
         />
         <Instructions
-          // triggerLevelChange={this.handleLevelChange}
           instructions={levels[level].instructions}
         />
         <PuzzleZone

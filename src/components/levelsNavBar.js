@@ -11,28 +11,42 @@ function LevelButton() {
 
 
 class LevelNavigation extends Component {
+
+
   render() {
+    const { handleLevelChange } = this.props.triggerLevelChange
+    // const { handleSingleLevelChange } = this.props.triggerSingleLevelChange
+    // console.log(this.props.triggerSingleLevelChange);
+    console.log(handleLevelChange);
     return (
       <nav >
         <div className='level-navigation'>
-          <div>
-            <span className="arrow left">&#8249; </span>
+          {/* <div>
+            <span
+              className="arrow left"
+              onClick={handleSingleLevelChange(false)}>
+              &#8249;
+            </span>
              level 2 of 3
-            <span className="arrow right"> &#8250;</span>
-          </div>
-          <div >
+            <span className="arrow right"
+              onClick={this.props.triggerSingleLevelChange(true)}>
+               &#8250;
+             </span>
+          </div> */}
+          <div className='button-container' >
             {
               this.props.levelsArray.map((level) => {
                 return (
                   <button
                     className="btn"
-                    key={level}>
+                    key={level}
+                    onClick={() => this.props.triggerLevelChange(level)}
+                    >
                     {level}
                   </button>
                 )
               })
             }
-            individual level buttons should live here, later they will go in a modal
           </div>
         </div>
       </nav>
@@ -43,13 +57,8 @@ class LevelNavigation extends Component {
 LevelNavigation.propTypes = {
   level: PropTypes.number.isRequired,
   levelsArray: PropTypes.array.isRequired,
+  // triggerLevelChange: PropTypes.array.isRequired,
   // TODO: add the callback function(s) here
 }
 
 export default LevelNavigation;
-
-
-// while (i < 10) {
-//     text += "The number is " + i;
-//     i++;
-// }
