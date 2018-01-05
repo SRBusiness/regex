@@ -14,25 +14,26 @@ class LevelNavigation extends Component {
 
 
   render() {
-    const { handleLevelChange } = this.props.triggerLevelChange
+    const { level, levelsArray } = this.props
+    // const { handleLevelChange } = this.props.triggerLevelChange
     // const { handleSingleLevelChange } = this.props.triggerSingleLevelChange
     // console.log(this.props.triggerSingleLevelChange);
-    console.log(handleLevelChange);
+    // console.log(handleLevelChange);
     return (
       <nav >
         <div className='level-navigation'>
-          {/* <div>
+          <div>
             <span
               className="arrow left"
-              onClick={handleSingleLevelChange(false)}>
+              onClick={() => this.props.triggerSingleLevelChange(false)}>
               &#8249;
             </span>
-             level 2 of 3
+              {level} of 3 {levelsArray[-1]}
             <span className="arrow right"
-              onClick={this.props.triggerSingleLevelChange(true)}>
+              onClick={() => this.props.triggerSingleLevelChange(true)}>
                &#8250;
              </span>
-          </div> */}
+          </div>
           <div className='button-container' >
             {
               this.props.levelsArray.map((level) => {

@@ -63,12 +63,12 @@ class Game extends Component {
     super(props);
 
     this.state = {
-      level: 1,
+      level: '1',
       totalLevels: (Object.keys(levels).length),
     }
 
     this.handleLevelChange = this.handleLevelChange.bind(this);
-    // this.handleSingleLevelChange = this.handleSingleLevelChange.bind(this);
+    this.handleSingleLevelChange = this.handleSingleLevelChange.bind(this);
   }
 
 
@@ -81,15 +81,15 @@ class Game extends Component {
     });
   }
 
-  // handleSingleLevelChange(delta) {
-  //   console.log(`inside handleSingleLevelChange - delta: ${delta}`);
-  //   const { level, totalLevels } = this.state;
-  //   // true = + 1 AND false = -1
-  //   const nextLevel = delta ? level + 1 : level - 1;
-  //   if (nextLevel <= totalLevels && nextLevel !== 0 ){
-  //     this.handleLevelChange(nextLevel);
-  //   }
-  // }
+  handleSingleLevelChange = (delta) => {
+    console.log(`inside handleSingleLevelChange - delta: ${delta}`);
+    const { level, totalLevels } = this.state;
+    // true = + 1 AND false = -1
+    const nextLevel = delta ? level + 1 : level - 1;
+    if (nextLevel <= totalLevels && nextLevel !== 0 ){
+      this.handleLevelChange(nextLevel);
+    }
+  }
 
   render () {
     const { level } = this.state;
@@ -102,7 +102,7 @@ class Game extends Component {
         <LevelNavigation
           levelsArray={levelsArray}
           triggerLevelChange={this.handleLevelChange}
-          // triggerSingleLevelChange={this.handleSingleLevelChange}
+          triggerSingleLevelChange={this.handleSingleLevelChange}
           level={level}
         />
         <Instructions
