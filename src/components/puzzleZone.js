@@ -91,7 +91,7 @@ class PuzzleZone extends React.Component {
             onChange={this.handleChange}
           />/
         </div>
-        <button onClick={this.props.triggerLevelChange}>Next Level</button>
+        <button onClick={() => this.props.triggerLevelChange(true)}>Next Level</button>
       </div>
     )
   }
