@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import PuzzleZone from './puzzleZone';
 import Instructions from './instructions';
 import LevelNavigation from './levelsNavBar';
+import Welcome from './welcome';
 
 class Game extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class Game extends Component {
 
     return (
       <section className='game'>
+        <Welcome />
         <LevelNavigation
           levelsArray={levelsArray}
           triggerLevelChange={this.handleLevelChange}

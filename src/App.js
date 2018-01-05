@@ -60,17 +60,6 @@ class App extends Component {
     }
     return (
       <section className='container'>
-        <Welcome />
-        {/* <div className='left-half'>
-
-          <p> Level Nav Goes Here </p>
-          <LessonContainer />
-        </div> */}
-
-        {/* <div className='right-half'>
-          <PuzzleContainer />
-          <Game />
-        </div> */}
         <Game levels={levels}/>
       </section>
     );
