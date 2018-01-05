@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// html parser for react so that I can have the facts be strings that include the html of what should be highlighted
 import ReactHtmlParser from 'react-html-parser';
 
 
@@ -45,7 +44,7 @@ function regexHighlightGlobal(text, input, value) {
   }
 }
 
-class PuzzleZone extends React.Component {
+class PuzzleZone extends Component {
   constructor(props) {
     super(props);
 
@@ -67,13 +66,16 @@ class PuzzleZone extends React.Component {
   render () {
     const { text, answer, prompt } = this.props.puzzle
     const { userRegex } = this.state;
-
     return (
       <div className='puzzle'>
         <div className='puzzle-display-container'>
           <div className='puzzle-display'>
-            <p className='top'>{ ReactHtmlParser(regexHighlightGlobal(text, answer, false))}</p>
-            <p className='bottom'>{ ReactHtmlParser(regexHighlightGlobal(text, this.state.userRegex, true))}</p>
+            <p className='top'>
+              { ReactHtmlParser(regexHighlightGlobal(text, answer, false)) }
+            </p>
+            <p className='bottom'>
+              { ReactHtmlParser(regexHighlightGlobal(text, userRegex, true)) }
+            </p>
           </div>
         </div>
 
@@ -82,16 +84,19 @@ class PuzzleZone extends React.Component {
         </div>
 
         <div className='user-input-container'>
-          /<input
+          / <input
             id='userInput'
             placeholder='insert regex here'
             type='text'
             value={userRegex}
             autoComplete='off'
             onChange={this.handleChange}
-          />/
+          /> /
         </div>
-        <button onClick={() => this.props.triggerLevelChange(true)}>Next Level</button>
+        <button
+          onClick={ () => this.props.triggerLevelChange(true) }>
+          Next Level
+        </button>
       </div>
     )
   }
@@ -104,15 +109,5 @@ PuzzleZone.propTypes = {
     solution: PropTypes.isRequired,
   }).isRequired,
 }
-
-// class PuzzleContainer extends React.Component {
-//   render() {
-//     return(
-//       <div className='puzzle-container'>
-//         <Puzzle puzzle={puzzles[0]} />
-//       </div>
-//     )
-//   }
-// }
 
 export default PuzzleZone;
