@@ -8,14 +8,17 @@ import Welcome from './welcome';
 class Game extends Component {
   constructor(props) {
     super(props);
+    // TODO: if I have been logged out for a while then there is nothing stored in localStorage there for the level doesn't load
 
-    const level = parseInt(localStorage.getItem('currentLevel'), 10);
+
+    const level = localStorage.getItem('currentLevel') ? parseInt(localStorage.getItem('currentLevel'), 10) : 1
     this.state = {
       level: level,
       totalLevels: (Object.keys(this.props.levels).length),
     }
     this.handleLevelChange = this.handleLevelChange.bind(this);
     this.handleSingleLevelChange = this.handleSingleLevelChange.bind(this);
+
   }
 
   handleLevelChange = (newLevel) => {

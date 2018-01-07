@@ -7,7 +7,7 @@ class App extends Component {
     const levels = {
       1: {
         puzzle: {
-          text: `Otters love to eat shelled animals, like clams, but otters aren’t equipped with the strength to open their food without some help. Otters are big on tools, and will often use rocks to help crack into food. While they hunt for food underwater, they’ll often store a rock in the skin under their arms for later use.`,
+          text: `Otters love to eat shelled animals, like clams, but otters aren’t equipped with the strength to open their food without some help. Otters are big on tools, and will often use rocks to help crack into food. While they hunt for food underwater they’ll often store a rock in the skin under their arms for later use.`,
           prompt: `Build a Regex that matches the word "rock"`,
           answer: `rock`,
           hints: `I'm a hint!`,
