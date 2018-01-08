@@ -66,12 +66,7 @@ class PuzzleZone extends Component {
   }
 
   incDecLevel(delta) {
-    console.log(`insdie IncDecLevel function`);
-    const { level, totalLevels } = this.props;
-    const nextLevel = delta ? level + 1 : level - 1;
-    if (nextLevel <= totalLevels && nextLevel !== 0 ) {
-      delta ? this.props.incrementLevel(nextLevel, totalLevels) : this.props.decrementLevel(nextLevel)
-    }
+    delta ? this.props.incrementLevel() : this.props.decrementLevel()
   }
 
   render () {
@@ -119,7 +114,7 @@ PuzzleZone.propTypes = {
     prompt: PropTypes.string.isRequired,
     solution: PropTypes.isRequired,
   }).isRequired,
-  // triggerLevelChange: PropTypes.func.isRequired,
+  incrementLevel: PropTypes.func.isRequired,
 }
 
 function mapStateToProps(state) {
@@ -127,15 +122,13 @@ function mapStateToProps(state) {
   return {
     level: state.level,
     totalLevels: state.totalLevels,
-  }
+  };
 }
 
-// makes it so we don't have to call this.props.dispatch(levelsActionCreators.changeLevel(level))
-// instead you can just call this.props.changeLevel(level)
+// makes it so we don't have to call this.props.dispatch(levelsActionCreators.changeLevel(level)) instead you can just call this.props.changeLevel(level)
 function mapDispatchToProps (dispatch) {
-  return bindActionCreators(levelsActionCreators, dispatch)
+  return bindActionCreators(levelsActionCreators, dispatch);
 }
-
 
 export default connect(
   mapStateToProps,

@@ -62,13 +62,12 @@ class App extends Component {
     return (
       <section className='container'>
         <Game
-          // level={this.props.level}
-          // totalLevels={this.props.level}
           levels={levels}/>
       </section>
     );
   }
 }
+
 // tells us what part of the store our specific components needs
 function mapStateToProps(state) {
   console.log('State', state);
