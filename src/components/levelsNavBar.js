@@ -12,6 +12,7 @@ class LevelNavigation extends Component {
   }
 
   render() {
+    const levelsArray = [1,2,3]
     return (
       <nav>
         <div className='level-navigation'>
@@ -28,7 +29,7 @@ class LevelNavigation extends Component {
             </span>
           </div> */}
           <div className='button-container' >
-            {this.props.levelsArray.map( (level) => {
+            {levelsArray.map( (level) => {
 
               return (
                 <button
@@ -49,14 +50,15 @@ class LevelNavigation extends Component {
 LevelNavigation.propTypes = {
   level: PropTypes.number.isRequired,
   levelsArray: PropTypes.array.isRequired,
-  triggerLevelChange: PropTypes.func.isRequired,
-  triggerSingleLevelChange: PropTypes.func.isRequired,
+  // triggerLevelChange: PropTypes.func.isRequired,
+  // triggerSingleLevelChange: PropTypes.func.isRequired,
 }
 
 function mapStateToProps(state) {
   console.log('State in levelsNavBar', state);
   return {
-    level: state.level
+    level: state.level,
+    totalLevels: state.totalLevels,
   }
 }
 export default connect(mapStateToProps)(LevelNavigation);

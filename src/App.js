@@ -62,8 +62,8 @@ class App extends Component {
     return (
       <section className='container'>
         <Game
-          level={this.props.level}
-          totalLevels={this.props.level}
+          // level={this.props.level}
+          // totalLevels={this.props.level}
           levels={levels}/>
       </section>
     );
