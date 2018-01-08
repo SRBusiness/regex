@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as levelsActionCreators from '../actions/levelsActions';
 
 // TODO: figure out how react handles white space - the puzzle text "a    bc" renders as "a bc" Charles said look into using a pre-tag
 // TODO: refactor this so that it shows all matches, the split function wont should all things for /[of]/, look into seeing if you can use the exec method to loop through all of the matches. Also could check and see if there is a method in any regexp lang that returns all the matches with an index of where they are in the string
@@ -62,6 +65,15 @@ class PuzzleZone extends Component {
     })
   }
 
+  incDecLevel(delta) {
+    console.log(`insdie IncDecLevel function`);
+    const { level, totalLevels } = this.props;
+    const nextLevel = delta ? level + 1 : level - 1;
+    if (nextLevel <= totalLevels && nextLevel !== 0 ) {
+      delta ? this.props.incrementLevel(nextLevel, totalLevels) : this.props.decrementLevel(nextLevel)
+    }
+  }
+
   render () {
     const { text, answer, prompt } = this.props.puzzle
     const { userRegex } = this.state;
@@ -93,7 +105,7 @@ class PuzzleZone extends Component {
           /> /
         </div>
         <button
-          onClick={ () => this.props.triggerLevelChange(true) }>
+          onClick={ () => this.incDecLevel(true) }>
           Next Level
         </button>
       </div>
@@ -107,7 +119,25 @@ PuzzleZone.propTypes = {
     prompt: PropTypes.string.isRequired,
     solution: PropTypes.isRequired,
   }).isRequired,
-  triggerLevelChange: PropTypes.func.isRequired,
+  // triggerLevelChange: PropTypes.func.isRequired,
 }
 
-export default PuzzleZone;
+function mapStateToProps(state) {
+  console.log('State in levelsNavBar', state);
+  return {
+    level: state.level,
+    totalLevels: state.totalLevels,
+  }
+}
+
+// makes it so we don't have to call this.props.dispatch(levelsActionCreators.changeLevel(level))
+// instead you can just call this.props.changeLevel(level)
+function mapDispatchToProps (dispatch) {
+  return bindActionCreators(levelsActionCreators, dispatch)
+}
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(PuzzleZone);

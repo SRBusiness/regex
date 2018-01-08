@@ -12,23 +12,33 @@ class LevelNavigation extends Component {
     this.props.changeLevel(level);
   }
 
+  incDecLevel(delta) {
+    console.log(`insdie IncDecLevel function`);
+    const { level, totalLevels } = this.props;
+    const nextLevel = delta ? level + 1 : level - 1;
+    if (nextLevel <= totalLevels && nextLevel !== 0 ) {
+      delta ? this.props.incrementLevel(nextLevel, totalLevels) : this.props.decrementLevel(nextLevel)
+    }
+  }
+
   render() {
+    // TODO: update this to something that is called in state
     const levelsArray = [1,2,3]
     return (
       <nav>
         <div className='level-navigation'>
-          {/* <div>
+          <div>
             <span
               className="arrow left"
-              onClick={ () => triggerSingleLevelChange(false)}>
+              onClick={ () => this.incDecLevel(false)}>
               &#8249;
             </span>
-            {level} of 3 {levelsArray[-1]}
+            {this.props.level} of 3 {levelsArray[-1]}
             <span className="arrow right"
-              onClick={ () => this.triggerSingleLevelChange(true)}>
+              onClick={ () => this.incDecLevel(true)}>
               &#8250;
             </span>
-          </div> */}
+          </div>
           <div className='button-container' >
             {levelsArray.map( (level) => {
 

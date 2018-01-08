@@ -1,4 +1,4 @@
-import { incrementLevel, decrementLevel, changeLevel } from '../actions/levelsActions';
+// import { incrementLevel, decrementLevel, changeLevel } from '../actions/levelsActions';
 // TODO: need to make a function that deals with the logic of when it is appropriate to change levels, that shouldnt live in the reducer. Maybe wrap it in the action creator
 
 // initialState variable
