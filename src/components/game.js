@@ -33,7 +33,7 @@ Game.propTypes = {
 }
 
 function mapStateToProps(state) {
-  console.log('State in Game', state);
+  // console.log('State in Game', state);
   return {
     level: state.level
   }

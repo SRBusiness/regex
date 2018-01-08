@@ -1,4 +1,4 @@
-// action creators - and action wrapped in a functional
+// action creators - and action wrapped in a function - must be a pure function
 
 export function incrementLevel() {
   console.log(`inside incrementLevel action creator`);

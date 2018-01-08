@@ -9,9 +9,7 @@ import levelsReducer from './reducers/levelsReducer';
 
 
 const store = createStore(levelsReducer);
-// console.log(`store`);
 // console.log(store);
-// console.log(`store.getState()`);
 // console.log(store.getState());
 
 ReactDOM.render(

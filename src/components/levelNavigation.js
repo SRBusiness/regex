@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as levelsActionCreators from '../actions/levelsActions';
 
-
-
-// make levels array helper functions
+// creates an ar array of levels that we iterate through in the component below
 function makeLevelsArray(num) {
   let levelsArray = [];
   for (let i = 1; i < num + 1; i++) {
@@ -17,16 +15,15 @@ function makeLevelsArray(num) {
 
 // make this a stateless functional component
 class LevelNavigation extends Component {
-  changeTheLevelFunction(level) {
+  toSpecificLevel(level) {
     this.props.changeLevel(level);
   }
 
-  incDecLevel(delta) {
+  incOrDecLevel(delta) {
     delta ? this.props.incrementLevel() : this.props.decrementLevel()
   }
 
   render() {
-    // TODO: update this to something that is called in state
     const levelsArray = makeLevelsArray(this.props.totalLevels);
     return (
       <nav>
@@ -34,12 +31,12 @@ class LevelNavigation extends Component {
           <div>
             <span
               className="arrow left"
-              onClick={ () => this.incDecLevel(false)}>
+              onClick={ () => this.incOrDecLevel(false)}>
               &#8249;
             </span>
             {this.props.level} of 3 {levelsArray[-1]}
             <span className="arrow right"
-              onClick={ () => this.incDecLevel(true)}>
+              onClick={ () => this.incOrDecLevel(true)}>
               &#8250;
             </span>
           </div>
@@ -49,7 +46,7 @@ class LevelNavigation extends Component {
                 <button
                   className="btn"
                   key={level}
-                  onClick={ () =>  this.changeTheLevelFunction(level)}>
+                  onClick={ () =>  this.toSpecificLevel(level)}>
                   {level}
                 </button>
               )
@@ -69,7 +66,7 @@ LevelNavigation.propTypes = {
 }
 
 function mapStateToProps(state) {
-  console.log('State in levelsNavBar', state);
+  // console.log('State in levelsNavBar', state);
   return {
     level: state.level,
     totalLevels: state.totalLevels,
