@@ -18,12 +18,13 @@ export default function levelsReducer (state = initialState, action) {
     case 'INCREMENT_LEVEL' :
       return {
         ...state,
-        level: state.level + 1,
+        level: Math.min( state.level + 1, state.totalLevels)
+        // TODO: min here
       }
     case 'DECREMENT_LEVEL' :
       return {
         ...state,
-        level: state.level - 1,
+        level: Math.max(state.level - 1, 1)
       }
     case 'CHANGE_LEVEL' :
       return {

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as levelsActionCreators from '../actions/levelsActions';
 
-// made this a stateless functional component
+// make this a stateless functional component
 class LevelNavigation extends Component {
 
   changeTheLevelFunction(level) {
@@ -13,12 +13,12 @@ class LevelNavigation extends Component {
   }
 
   incDecLevel(delta) {
-    console.log(`insdie IncDecLevel function`);
-    const { level, totalLevels } = this.props;
-    const nextLevel = delta ? level + 1 : level - 1;
-    if (nextLevel <= totalLevels && nextLevel !== 0 ) {
-      delta ? this.props.incrementLevel(nextLevel, totalLevels) : this.props.decrementLevel(nextLevel)
-    }
+    // console.log(`insdie IncDecLevel function`);
+    // const { level, totalLevels } = this.props;
+    // const nextLevel = delta ? level + 1 : level - 1;
+    // if (nextLevel <= totalLevels && nextLevel !== 0 ) {
+      delta ? this.props.incrementLevel() : this.props.decrementLevel()
+    // }
   }
 
   render() {
@@ -62,8 +62,6 @@ LevelNavigation.propTypes = {
   level: PropTypes.number.isRequired,
   levelsArray: PropTypes.array.isRequired,
   changeLevel: PropTypes.func.isRequired,
-  // triggerLevelChange: PropTypes.func.isRequired,
-  // triggerSingleLevelChange: PropTypes.func.isRequired,
 }
 
 function mapStateToProps(state) {

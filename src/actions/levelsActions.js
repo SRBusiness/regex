@@ -1,6 +1,6 @@
 // action creators - and action wrapped in a functional
 
-export function incrementLevel(nextLevel, totalLevels) {
+export function incrementLevel() {
   console.log(`inside incrementLevel action creator`);
   return {
     type: 'INCREMENT_LEVEL',

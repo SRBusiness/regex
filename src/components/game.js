@@ -60,43 +60,8 @@ import * as levelsActionCreators from '../actions/levelsActions';
 //     }
 //   },
 // }
-
+// TODO: if I have been logged out for a while then there is nothing stored in localStorage there for the level doesn't load
 class Game extends Component {
-  constructor(props) {
-    super(props);
-    // TODO: if I have been logged out for a while then there is nothing stored in localStorage there for the level doesn't load
-
-
-    // const level = localStorage.getItem('currentLevel') ? parseInt(localStorage.getItem('currentLevel'), 10) : 1
-    // this.state = {
-    //   level: this.props.level,
-    //   totalLevels: (Object.keys(this.props.levels).length),
-    // }
-
-    // this.handleLevelChange = this.handleLevelChange.bind(this);
-    // this.handleSingleLevelChange = this.handleSingleLevelChange.bind(this);
-
-  }
-
-  // handleLevelChange = (newLevel) => {
-  //   let levelNumber = parseInt(newLevel, 10);
-  //   console.log(`inside handleLevelChange - change to ${newLevel}`);
-  //   this.setState({
-  //     level: levelNumber,
-  //   });
-  //   localStorage.setItem('currentLevel', levelNumber);
-  // }
-
-  // handleSingleLevelChange = (delta) => {
-  //   console.log(`inside handleSingleLevelChange - delta: ${delta}`);
-  //   const { level, totalLevels } = this.state;
-  //   // true = + 1 AND false = -1
-  //   const nextLevel = delta ? level + 1 : level - 1;
-  //   if (nextLevel <= totalLevels && nextLevel !== 0 ) {
-  //     this.handleLevelChange(nextLevel);
-  //   }
-  // }
-
   render () {
     // const cat = localStorage.getItem('currentLevel');
     // console.log(cat);
@@ -107,17 +72,11 @@ class Game extends Component {
     return (
       <section className='game'>
         <Welcome />
-        <LevelNavigation
-          // levelsArray={levelsArray}
-          // triggerLevelChange={this.handleLevelChange}
-          // triggerSingleLevelChange={this.handleSingleLevelChange}
-          // level={level}
-        />
+        <LevelNavigation />
         <Instructions
           instructions={levels[level].instructions}
         />
         <PuzzleZone
-          // triggerLevelChange={this.handleSingleLevelChange}
           puzzle={levels[level].puzzle}
         />
       </section>
