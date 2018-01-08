@@ -107,6 +107,7 @@ PuzzleZone.propTypes = {
     prompt: PropTypes.string.isRequired,
     solution: PropTypes.isRequired,
   }).isRequired,
+  triggerLevelChange: PropTypes.func.isRequired,
 }
 
 export default PuzzleZone;
