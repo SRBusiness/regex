@@ -13,8 +13,9 @@ export function decrementLevel() {
 }
 
 export function changeLevel(level) {
+  console.log(`inside changeLevel action creator`);
   return {
-    type: 'DECREMENT_LEVEL',
+    type: 'CHANGE_LEVEL',
     level,
   }
 }

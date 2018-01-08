@@ -4,14 +4,16 @@ import { incrementLevel, decrementLevel, changeLevel } from '../actions/levelsAc
 // initialState variable
 const initialState = {
   level: 1,
-  userRegex: '',
-  globalFlag: true,
-  view: '',
+  totalLevels: 3,
+  // userRegex: '',
+  // globalFlag: true,
+  // view: '',
 }
 
 
-// reducer
+// reducer for changing levels
 export default function levelsReducer (state = initialState, action) {
+  console.log(`inside levelsReducer`);
   switch (action.type) {
     case 'INCREMENT_LEVEL' :
       return {

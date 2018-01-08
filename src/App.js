@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './App.css';
 import Game from './components/game';
 
@@ -59,10 +61,26 @@ class App extends Component {
     }
     return (
       <section className='container'>
-        <Game levels={levels}/>
+        <Game
+          level={this.props.level}
+          totalLevels={this.props.level}
+          levels={levels}/>
       </section>
     );
   }
 }
+// tells us what part of the store our specific components needs
+function mapStateToProps(state) {
+  console.log('State', state);
+  return {
+    level: state.level,
+    totalLevels: state.totalLevels,
+  }
+}
 
-export default App;
+App.propTypes = {
+  level: PropTypes.number.isRequired,
+  totalLevels: PropTypes.number.isRequired,
+}
+
+export default connect(mapStateToProps)(App)
