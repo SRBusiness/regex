@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as levelsActionCreators from '../actions/levelsActions';
 
 // made this a stateless functional component
@@ -8,7 +9,7 @@ class LevelNavigation extends Component {
 
   changeTheLevelFunction(level) {
     console.log(`inside changeTheLevelFunction function  want to change to level - ${level}`);
-    this.props.dispatch(levelsActionCreators.changeLevel(level));
+    this.props.changeLevel(level);
   }
 
   render() {
@@ -50,6 +51,7 @@ class LevelNavigation extends Component {
 LevelNavigation.propTypes = {
   level: PropTypes.number.isRequired,
   levelsArray: PropTypes.array.isRequired,
+  changeLevel: PropTypes.func.isRequired,
   // triggerLevelChange: PropTypes.func.isRequired,
   // triggerSingleLevelChange: PropTypes.func.isRequired,
 }
@@ -61,4 +63,14 @@ function mapStateToProps(state) {
     totalLevels: state.totalLevels,
   }
 }
-export default connect(mapStateToProps)(LevelNavigation);
+
+// makes it so we don't have to call this.props.dispatch(levelsActionCreators.changeLevel(level))
+// instead you can just call this.props.changeLevel(level)
+function mapDispatchToProps (dispatch) {
+  return bindActionCreators(levelsActionCreators, dispatch)
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(LevelNavigation);

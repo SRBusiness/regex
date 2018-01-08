@@ -117,7 +117,7 @@ class Game extends Component {
           instructions={levels[level].instructions}
         />
         <PuzzleZone
-          triggerLevelChange={this.handleSingleLevelChange}
+          // triggerLevelChange={this.handleSingleLevelChange}
           puzzle={levels[level].puzzle}
         />
       </section>
