@@ -6,6 +6,30 @@ import Game from './components/game';
 
 class App extends Component {
   render() {
+    // This could be an array, but you would need to change `level` in you store to be 0 indexed.
+    // Arrays can be used exactly like objects with sequential numberic keys starting with 0.
+    // The benifit of using an array is that it tracks its length automatically, and is easier to read and write
+    // const array = ['a', 'b', 'c']
+    // const object = {0: 'a', 1: 'b', 2: 'c'}
+    // array[0] === object[0]
+    // array.length === 3
+    // object.length === undefined
+    // If you make this change, you would not need to have totalLevels in your state since you can just use levels.length
+    /*
+    const levels = [
+      {
+        puzzle: {
+          ...
+        },
+        instructions: {
+          ...
+        }
+      },
+      {
+        ...
+      },
+    ]
+    */
     const levels = {
       1: {
         puzzle: {
@@ -68,6 +92,10 @@ class App extends Component {
   }
 }
 
+// It looks like your not using these properties in this component.
+// Generally when using redux you only want to "connect" components if they directly
+// use state from your store.  Child components can be hooked up to the store and
+// access data even if their parents are not "connected"
 // tells us what part of the store our specific components needs
 function mapStateToProps(state) {
   // console.log('State', state);

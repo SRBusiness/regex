@@ -31,13 +31,17 @@ const LevelNavigation = (props) => {
         <div>
           <span
             className="arrow left"
+            // This could be just onClick={props.decrementLevel}
             onClick={ () => incOrDecLevel(false)}>
             &#8249;
           </span>
+          
           {props.level} of 3 {levelsArray[-1]}
           <span className="arrow right"
             onClick={ () => incOrDecLevel(true)}>
-            &#8250;
+            {/* &#8250; */}
+            {/* Rather than using &#8250; you can just use a string with the character*/}
+            {'›'}
           </span>
         </div>
         <div className='button-container' >
@@ -46,6 +50,7 @@ const LevelNavigation = (props) => {
               <button
                 className="btn"
                 key={level}
+                // this could be: onClick={ () => props.changeLevel(level)} 
                 onClick={ () =>  toSpecificLevel(level)}>
                 {level}
               </button>
@@ -64,6 +69,9 @@ LevelNavigation.propTypes = {
   decrementLevel: PropTypes.func.isRequired,
 }
 
+// If you move levels into state, and turn it into an array (explained in another comment)
+// you wont have to explicitly track totalLevels in your state and can do something like:
+// totalLevels: state.levels.length
 function mapStateToProps(state) {
   // console.log('State in levelsNavBar', state);
   return {

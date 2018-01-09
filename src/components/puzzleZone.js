@@ -31,6 +31,9 @@ function regexHighlightGlobal(text, input, value) {
     console.log(`users regex: '${input} was invalid `);
     return text
   }
+
+  // This is pretty cool, but looks like it will highlight multiple copies of the initial
+  // match rather than all matches for non-litteral matches like /\w+/
   const result = regex.exec(text)
   // when there is a match
   if (result !== null) {
@@ -100,6 +103,7 @@ class PuzzleZone extends Component {
           /> /
         </div>
         <button
+          // this could be just: onClick={props.incrementLevel}
           onClick={ () => this.incDecLevel(true) }>
           Next Level
         </button>
@@ -121,6 +125,8 @@ function mapStateToProps(state) {
   // console.log('State in puzzleZone', state);
   return {
     level: state.level,
+    // doesn't look like you are using this yet,
+    // but would be cool to hide the nextLevel button once the last level is reached
     totalLevels: state.totalLevels,
   };
 }
