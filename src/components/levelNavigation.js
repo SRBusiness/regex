@@ -15,9 +15,7 @@ const makeLevelsArray = (num) => {
 
 // functional stateless component
 const LevelNavigation = (props) => {
-
   const levelsArray = makeLevelsArray(props.totalLevels);
-
   return (
     <nav>
       <div className='level-navigation'>
@@ -27,7 +25,7 @@ const LevelNavigation = (props) => {
             onClick={ () => props.decrementLevel()}>
             {'<'}
           </span>
-          {props.level} of 3 {levelsArray[-1]}
+          {props.level} of {props.totalLevels}
           <span className="arrow right"
             onClick={ () => props.incrementLevel()}>
             {'>'}

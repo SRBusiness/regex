@@ -9,42 +9,66 @@ import * as levelsActionCreators from '../actions/actionCreators';
 // TODO: refactor this so that it shows all matches, the split function wont should all things for /[of]/, look into seeing if you can use the exec method to loop through all of the matches. Also could check and see if there is a method in any regexp lang that returns all the matches with an index of where they are in the string
 // TODO: add a toggle function for the global variable
 
-function regexHighlightGlobal(text, input, value) {
-  // console.log(`value: ${value}`);
-  let passInClassName;
-  if ( !value ) {
-    passInClassName = 'highlight-one'
-  } else {
-    passInClassName = 'highlight-two'
+function highlighter(stringToMatch, input, value) {
+  let styleToAdd = !value ? 'highlight-one' : 'highlight-two'
+
+  if (input === ''){
+    return stringToMatch
   }
 
-  // don't do anything if there is no input
-  if (input === ''){
-    return text
-  }
-  let regex;
   // try and catch statement because bad RegExp's throw and expection
+  let regex;
   try {
-    regex = new RegExp(input)
+    regex = new RegExp(input, 'g')
   }
   catch(err) {
     console.log(`users regex: '${input} was invalid `);
-    return text
+    return stringToMatch
   }
-  const result = regex.exec(text)
-  // when there is a match
-  if (result !== null) {
-    return (
-      text.split(result[0]).reduce( (prev, curr, i) => {
-        // console.log(`checking that inside of this function you get the value: ${value}`);
-        // console.log(`passInClassName = ${passInClassName}`);
-        return prev + `<span class='${passInClassName}'>` + result[0] + `</span>`+ curr
-      })
-    )
-  } else {
-    return text
+
+  function addStyleTags(match, offset, string) {
+    return `<span class='${styleToAdd}'>` + match + `</span>`;
   }
+
+  return stringToMatch.replace(regex, addStyleTags);
 }
+
+// function regexHighlightGlobal(text, input, value) {
+//   // console.log(`value: ${value}`);
+//   let passInClassName;
+//   if ( !value ) {
+//     passInClassName = 'highlight-one'
+//   } else {
+//     passInClassName = 'highlight-two'
+//   }
+//
+//   // don't do anything if there is no input
+//   if (input === ''){
+//     return text
+//   }
+//   let regex;
+//   // try and catch statement because bad RegExp's throw and expection
+//   try {
+//     regex = new RegExp(input)
+//   }
+//   catch(err) {
+//     console.log(`users regex: '${input} was invalid `);
+//     return text
+//   }
+//   const result = regex.exec(text)
+//   // when there is a match
+//   if (result !== null) {
+//     return (
+//       text.split(result[0]).reduce( (prev, curr, i) => {
+//         // console.log(`checking that inside of this function you get the value: ${value}`);
+//         // console.log(`passInClassName = ${passInClassName}`);
+//         return prev + `<span class='${passInClassName}'>` + result[0] + `</span>`+ curr
+//       })
+//     )
+//   } else {
+//     return text
+//   }
+// }
 
 class PuzzleZone extends Component {
   constructor(props) {
@@ -73,10 +97,12 @@ class PuzzleZone extends Component {
         <div className='puzzle-display-container'>
           <div className='puzzle-display'>
             <p className='top'>
-              { ReactHtmlParser(regexHighlightGlobal(text, answer, false)) }
+              {/* { ReactHtmlParser(regexHighlightGlobal(text, answer, false)) } */}
+              { ReactHtmlParser(highlighter(text, answer, false)) }
             </p>
             <p className='bottom'>
-              { ReactHtmlParser(regexHighlightGlobal(text, userRegex, true)) }
+              {/* { ReactHtmlParser(regexHighlightGlobal(text, userRegex, true)) } */}
+              { ReactHtmlParser(highlighter(text, userRegex, true)) }
             </p>
           </div>
         </div>

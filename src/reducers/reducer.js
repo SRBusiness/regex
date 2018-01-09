@@ -51,6 +51,23 @@ const initialState = {
         content: `Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 `,
         example: `I'm and example /regex/ matches some thing in a string! how cool`,
       }
+    },
+    {
+      puzzle: {
+        text: `tom@hogwarts.com tom.riddle@homwarts.edu	tom.riddle+regexone@hogwarts.com 	tom@hobwarts.eu.cup 	potter@hoswart.gov harry@hohwart.cat hermione+regexone@hogwarts.com`,
+        prompt: `test`,
+        answer: `riverside`,
+        hints: `I'm a hint!`,
+        solution: `I'm a solution regexp(/winner/)`,
+        title: `Matching specific characters`,
+        number: 4,
+      },
+      instructions: {
+        title: `Matching specific characters`,
+        number: 4,
+        content: `Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 `,
+        example: `I'm and example /regex/ matches some thing in a string! how cool`,
+      }
     }
   ]
   // view: '',
@@ -58,7 +75,7 @@ const initialState = {
 
 // reducer for changing levels
 export default function rootReducer (state = initialState, action) {
-  console.log(`inside levelsReducer`);
+  // console.log(`inside levelsReducer`);
   switch (action.type) {
     case 'INCREMENT_LEVEL' :
       return {
