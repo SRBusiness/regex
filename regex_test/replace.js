@@ -19,7 +19,7 @@ function styleHyphenFormat2(propertyName) {
 //   }
 //   return stringToMatch.replace(userRegEpx, addStyleTags);
 // }
-
+// TODO: on level change clear user input
 
 function highlighter(stringToMatch, input) {
   if (input === ''){
