@@ -18,3 +18,9 @@ export function changeLevel(level) {
     level,
   }
 }
+
+export function toggleGlobalFlag() {
+  return {
+    type: 'TOGGLE_GLOBAL_FLAG',
+  }
+}

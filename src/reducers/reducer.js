@@ -69,7 +69,8 @@ const initialState = {
         example: `I'm and example /regex/ matches some thing in a string! how cool`,
       }
     }
-  ]
+  ],
+  globalFlag: true,
   // view: '',
 }
 
@@ -91,6 +92,11 @@ export default function rootReducer (state = initialState, action) {
       return {
         ...state,
         currentLevelIndex: (action.level - 1),
+      }
+    case 'TOGGLE_GLOBAL_FLAG' :
+      return {
+        ...state,
+        globalFlag: !state.globalFlag,
       }
     default :
       return state

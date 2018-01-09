@@ -4,34 +4,16 @@ import ReactHtmlParser from 'react-html-parser';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as levelsActionCreators from '../actions/actionCreators';
+import SwitchButton from 'lyef-switch-button';
+import 'lyef-switch-button/css/main.css';
+// const SwitchButton = require('react-switch-button');
+// import 'react-switch-button/dist/react-switch-button.css';
 
 // TODO: figure out how react handles white space - the puzzle text "a    bc" renders as "a bc" Charles said look into using a pre-tag
 // TODO: refactor this so that it shows all matches, the split function wont should all things for /[of]/, look into seeing if you can use the exec method to loop through all of the matches. Also could check and see if there is a method in any regexp lang that returns all the matches with an index of where they are in the string
 // TODO: add a toggle function for the global variable
 
-function highlighter(stringToMatch, input, value) {
-  let styleToAdd = !value ? 'highlight-one' : 'highlight-two'
 
-  if (input === ''){
-    return stringToMatch
-  }
-
-  // try and catch statement because bad RegExp's throw and expection
-  let regex;
-  try {
-    regex = new RegExp(input, 'g')
-  }
-  catch(err) {
-    console.log(`users regex: '${input} was invalid `);
-    return stringToMatch
-  }
-
-  function addStyleTags(match, offset, string) {
-    return `<span class='${styleToAdd}'>` + match + `</span>`;
-  }
-
-  return stringToMatch.replace(regex, addStyleTags);
-}
 
 // function regexHighlightGlobal(text, input, value) {
 //   // console.log(`value: ${value}`);
@@ -89,6 +71,33 @@ class PuzzleZone extends Component {
     })
   }
 
+  // TODO:  think about putting this two functions in a different file and then import them here
+  makeRegExp(input, value) {
+    try {
+      return value ? new RegExp(input, 'g') : new RegExp(input);
+    }
+    catch(err) {
+      console.log(`users regex: '${input} was invalid `);
+      return false;
+    }
+  }
+
+  highlighter(stringToMatch, input, value) {
+    if (input === ''){
+      return stringToMatch
+    }
+
+    function addStyleTags(match, offset, string) {
+      return `<span class='${styleToAdd}'>` + match + `</span>`;
+    }
+
+    const regExp = this.makeRegExp(input, this.props.globalFlag);
+
+    let styleToAdd = !value ? 'highlight-one' : 'highlight-two';
+
+    return regExp ? stringToMatch.replace(regExp, addStyleTags) : stringToMatch;
+  }
+
   render () {
     const { text, answer, prompt } = this.props.puzzle
     const { userRegex } = this.state;
@@ -97,12 +106,10 @@ class PuzzleZone extends Component {
         <div className='puzzle-display-container'>
           <div className='puzzle-display'>
             <p className='top'>
-              {/* { ReactHtmlParser(regexHighlightGlobal(text, answer, false)) } */}
-              { ReactHtmlParser(highlighter(text, answer, false)) }
+              { ReactHtmlParser(this.highlighter(text, answer, false)) }
             </p>
             <p className='bottom'>
-              {/* { ReactHtmlParser(regexHighlightGlobal(text, userRegex, true)) } */}
-              { ReactHtmlParser(highlighter(text, userRegex, true)) }
+              { ReactHtmlParser(this.highlighter(text, userRegex, true)) }
             </p>
           </div>
         </div>
@@ -125,6 +132,15 @@ class PuzzleZone extends Component {
           onClick={ () => this.props.incrementLevel() }>
           Next Level
         </button>
+        <div>
+          <SwitchButton
+            id="my-button"
+            labelLeft="Off"
+            labelRight="On"
+            isChecked
+            action={ () => this.props.toggleGlobalFlag()}
+          />
+        </div>
       </div>
     )
   }
@@ -137,13 +153,14 @@ PuzzleZone.propTypes = {
     solution: PropTypes.isRequired,
   }).isRequired,
   incrementLevel: PropTypes.func.isRequired,
+  toggleGlobalFlag: PropTypes.func.isRequired,
+  globalFlag: PropTypes.bool.isRequired,
 }
 
 function mapStateToProps(state) {
   // console.log('State in puzzleZone', state);
   return {
-    level: state.level,
-    totalLevels: state.totalLevels,
+    globalFlag: state.globalFlag,
   };
 }
 
