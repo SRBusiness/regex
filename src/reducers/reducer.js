@@ -6,8 +6,8 @@ const initialState = {
 }
 
 // reducer for changing levels
-export default function levelsReducer (state = initialState, action) {
-  console.log(`inside levelsReducer`);
+export default function rootReducer (state = initialState, action) {
+  // console.log(`inside levelsReducer`);
   switch (action.type) {
     case 'INCREMENT_LEVEL' :
       return {

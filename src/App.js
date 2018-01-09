@@ -70,7 +70,7 @@ class App extends Component {
 
 // tells us what part of the store our specific components needs
 function mapStateToProps(state) {
-  console.log('State', state);
+  // console.log('State', state);
   return {
     level: state.level,
     totalLevels: state.totalLevels,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PuzzleZone from './puzzleZone';
@@ -8,24 +8,21 @@ import Welcome from './welcome';
 
 
 // TODO: if I have been logged out for a while then there is nothing stored in localStorage there for the level doesn't load
-class Game extends Component {
-  render () {
-    const { level } = this.props;
-    const { levels } = this.props;
 
-    return (
-      <section className='game'>
-        <Welcome />
-        <LevelNavigation />
-        <Instructions
-          instructions={levels[level].instructions}
-        />
-        <PuzzleZone
-          puzzle={levels[level].puzzle}
-        />
-      </section>
-    )
-  }
+// functional stateless component
+const Game = ({ level, levels }) => {
+  return (
+    <section className='game'>
+      <Welcome />
+      <LevelNavigation />
+      <Instructions
+        instructions={levels[level].instructions}
+      />
+      <PuzzleZone
+        puzzle={levels[level].puzzle}
+      />
+    </section>
+  )
 }
 
 Game.propTypes = {

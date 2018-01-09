@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as levelsActionCreators from '../actions/levelsActions';
+import * as levelsActionCreators from '../actions/actionCreators';
 
 // creates an ar array of levels that we iterate through in the component below
-function makeLevelsArray(num) {
+const makeLevelsArray = (num) => {
   let levelsArray = [];
   for (let i = 1; i < num + 1; i++) {
     levelsArray.push(i);
@@ -13,49 +13,48 @@ function makeLevelsArray(num) {
   return levelsArray;
 };
 
-// make this a stateless functional component
-class LevelNavigation extends Component {
-  toSpecificLevel(level) {
-    this.props.changeLevel(level);
+// functional stateless component
+const LevelNavigation = (props) => {
+  function toSpecificLevel(level) {
+    props.changeLevel(level);
   }
 
-  incOrDecLevel(delta) {
-    delta ? this.props.incrementLevel() : this.props.decrementLevel()
+  function incOrDecLevel(delta) {
+    delta ? props.incrementLevel() : props.decrementLevel()
   }
 
-  render() {
-    const levelsArray = makeLevelsArray(this.props.totalLevels);
-    return (
-      <nav>
-        <div className='level-navigation'>
-          <div>
-            <span
-              className="arrow left"
-              onClick={ () => this.incOrDecLevel(false)}>
-              &#8249;
-            </span>
-            {this.props.level} of 3 {levelsArray[-1]}
-            <span className="arrow right"
-              onClick={ () => this.incOrDecLevel(true)}>
-              &#8250;
-            </span>
-          </div>
-          <div className='button-container' >
-            {levelsArray.map( (level) => {
-              return (
-                <button
-                  className="btn"
-                  key={level}
-                  onClick={ () =>  this.toSpecificLevel(level)}>
-                  {level}
-                </button>
-              )
-            })}
-          </div>
+  const levelsArray = makeLevelsArray(props.totalLevels);
+
+  return (
+    <nav>
+      <div className='level-navigation'>
+        <div>
+          <span
+            className="arrow left"
+            onClick={ () => incOrDecLevel(false)}>
+            &#8249;
+          </span>
+          {props.level} of 3 {levelsArray[-1]}
+          <span className="arrow right"
+            onClick={ () => incOrDecLevel(true)}>
+            &#8250;
+          </span>
         </div>
-      </nav>
-    )
-  }
+        <div className='button-container' >
+          {levelsArray.map( (level) => {
+            return (
+              <button
+                className="btn"
+                key={level}
+                onClick={ () =>  toSpecificLevel(level)}>
+                {level}
+              </button>
+            )
+          })}
+        </div>
+      </div>
+    </nav>
+  )
 }
 
 LevelNavigation.propTypes = {

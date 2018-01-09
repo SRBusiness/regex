@@ -5,10 +5,10 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import levelsReducer from './reducers/levelsReducer';
+import rootReducer from './reducers/reducer';
 
 
-const store = createStore(levelsReducer);
+const store = createStore(rootReducer);
 // console.log(store);
 // console.log(store.getState());
 
