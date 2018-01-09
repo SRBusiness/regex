@@ -15,13 +15,6 @@ const makeLevelsArray = (num) => {
 
 // functional stateless component
 const LevelNavigation = (props) => {
-  function toSpecificLevel(level) {
-    props.changeLevel(level);
-  }
-
-  function incOrDecLevel(delta) {
-    delta ? props.incrementLevel() : props.decrementLevel()
-  }
 
   const levelsArray = makeLevelsArray(props.totalLevels);
 
@@ -31,13 +24,13 @@ const LevelNavigation = (props) => {
         <div>
           <span
             className="arrow left"
-            onClick={ () => incOrDecLevel(false)}>
-            &#8249;
+            onClick={ () => props.decrementLevel()}>
+            {'<'}
           </span>
           {props.level} of 3 {levelsArray[-1]}
           <span className="arrow right"
-            onClick={ () => incOrDecLevel(true)}>
-            &#8250;
+            onClick={ () => props.incrementLevel()}>
+            {'>'}
           </span>
         </div>
         <div className='button-container' >
@@ -46,7 +39,7 @@ const LevelNavigation = (props) => {
               <button
                 className="btn"
                 key={level}
-                onClick={ () =>  toSpecificLevel(level)}>
+                onClick={ () =>  props.changeLevel(level)}>
                 {level}
               </button>
             )
@@ -67,8 +60,8 @@ LevelNavigation.propTypes = {
 function mapStateToProps(state) {
   // console.log('State in levelsNavBar', state);
   return {
-    level: state.level,
-    totalLevels: state.totalLevels,
+    level: state.currentLevelIndex + 1,
+    totalLevels: state.levels.length,
   };
 }
 

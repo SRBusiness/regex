@@ -65,10 +65,6 @@ class PuzzleZone extends Component {
     })
   }
 
-  incDecLevel(delta) {
-    delta ? this.props.incrementLevel() : this.props.decrementLevel()
-  }
-
   render () {
     const { text, answer, prompt } = this.props.puzzle
     const { userRegex } = this.state;
@@ -100,7 +96,7 @@ class PuzzleZone extends Component {
           /> /
         </div>
         <button
-          onClick={ () => this.incDecLevel(true) }>
+          onClick={ () => this.props.incrementLevel() }>
           Next Level
         </button>
       </div>

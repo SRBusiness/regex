@@ -10,29 +10,29 @@ import Welcome from './welcome';
 // TODO: if I have been logged out for a while then there is nothing stored in localStorage there for the level doesn't load
 
 // functional stateless component
-const Game = ({ level, levels }) => {
+const Game = ({ level }) => {
   return (
     <section className='game'>
       <Welcome />
       <LevelNavigation />
       <Instructions
-        instructions={levels[level].instructions}
+        instructions={level.instructions}
       />
       <PuzzleZone
-        puzzle={levels[level].puzzle}
+        puzzle={level.puzzle}
       />
     </section>
   )
 }
 
 Game.propTypes = {
-  levels: PropTypes.object.isRequired,
+  level: PropTypes.object.isRequired,
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({levels, currentLevelIndex}) {
   // console.log('State in Game', state);
   return {
-    level: state.level
+    level: levels[currentLevelIndex],
   }
 }
 
