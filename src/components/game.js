@@ -10,7 +10,7 @@ import RefTables from './refsheet';
 // TODO: if I have been logged out for a while then there is nothing stored in localStorage there for the level doesn't load
 
 // functional stateless component
-const Game = ({ level, refSheet }) => {
+const Game = ({ level, refSheetContent, toggleRef }) => {
   return (
     <section className='game'>
       <Welcome />
@@ -21,23 +21,23 @@ const Game = ({ level, refSheet }) => {
       <PuzzleZone
         puzzle={level.puzzle}
       />
-      <RefTables
-        refArray={refSheet}
-      />
+      { toggleRef ? <RefTables refArray={refSheetContent} /> : null }
     </section>
   )
 }
 
 Game.propTypes = {
   level: PropTypes.object.isRequired,
-  refSheet: PropTypes.array.isRequired,
+  refSheetContent: PropTypes.array.isRequired,
+  toggleRef: PropTypes.bool.isRequired,
 }
 
-function mapStateToProps({levels, currentLevelIndex, refSheet}) {
+function mapStateToProps({ levels, currentLevelIndex, refSheetContent, toggleRefSheet }) {
   // console.log('State in Game', state);
   return {
     level: levels[currentLevelIndex],
-    refSheet: refSheet,
+    refSheetContent: refSheetContent,
+    toggleRef: toggleRefSheet,
   }
 }
 

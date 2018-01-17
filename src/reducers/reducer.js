@@ -71,7 +71,7 @@ const initialState = {
     }
   ],
   globalFlag: true,
-  refSheet: [
+  refSheetContent: [
     [
       ["g",	"global search flag"],
       [".",	"any single character"],
@@ -103,7 +103,8 @@ const initialState = {
       ["\\b", "any word boundary"],
       ["(...)",	"capture everything enclosed"],
     ],
-  ]
+  ],
+  toggleRefSheet: false,
 }
 
 // reducer for changing levels
