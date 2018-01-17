@@ -1,10 +1,24 @@
 import React from 'react';
 
-const RefTable = ({refArray}) => {
+const RefTables = ({refArray}) => {
   return (
-    <table>
+    <div className='ref-sheet'>
+      {refArray.map( (table) => {
+        return(
+          <RefTable
+            table={table}
+          />
+        )
+      })}
+    </div>
+  )
+}
+
+const RefTable = ({table}) => {
+  return(
+    <table className='refTable'>
       <tbody>
-        {refArray.map( (row) => {
+        {table.map( (row) => {
           return(
             <tr key={row[0]}>
               <td>{row[0]}</td>
@@ -17,4 +31,4 @@ const RefTable = ({refArray}) => {
   )
 }
 
-export default RefTable;
+export default RefTables;

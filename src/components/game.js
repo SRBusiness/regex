@@ -5,7 +5,7 @@ import PuzzleZone from './puzzleZone';
 import Instructions from './instructions';
 import LevelNavigation from './levelNavigation';
 import Welcome from './welcome';
-import RefTable from './refsheet';
+import RefTables from './refsheet';
 
 // TODO: if I have been logged out for a while then there is nothing stored in localStorage there for the level doesn't load
 
@@ -21,7 +21,7 @@ const Game = ({ level, refSheet }) => {
       <PuzzleZone
         puzzle={level.puzzle}
       />
-      <RefTable
+      <RefTables
         refArray={refSheet}
       />
     </section>
