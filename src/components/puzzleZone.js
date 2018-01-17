@@ -140,6 +140,7 @@ class PuzzleZone extends Component {
             isChecked
             action={ () => this.props.toggleGlobalFlag()}
           />
+          <iframe frameborder="0" width="371" height="214" src="https://jex.im/regulex/#!embed=true&flags=&re=%5E(a%7Cb)*%3F%24"></iframe>
         </div>
       </div>
     )
