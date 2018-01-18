@@ -9,7 +9,7 @@
   font-size: 13px;
   padding: 5px;
 } */
-.border {
-  composes: borderVis from '../main.css';
+.container {
+  composes: border from '../main.css';
   border-color: yellow;
 }

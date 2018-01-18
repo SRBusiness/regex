@@ -7,7 +7,7 @@ const Instructions = (props) => {
   const { title, number, content, example } = props.instructions;
   return(
     // <div className='lesson-zone'>
-    <div className={styles.border}>
+    <div className={styles.container}>
       <h3>Lesson # {number} - {title}</h3>
       <ul className='lesson-list'>
         <li>{content}</li>

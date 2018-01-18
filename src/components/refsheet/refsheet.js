@@ -17,18 +17,20 @@ import styles from './refsheet.css';
 
 const RefTable = ({refArray}) => {
   return(
-    <table className={styles.border}>
-      <tbody>
-        {refArray.map( (row) => {
-          return(
-            <tr key={row[0]}>
-              <td>{row[0]}</td>
-              <td>{row[1]}</td>
-            </tr>
-          )
-        })}
-      </tbody>
-    </table>
+    <div className={styles.container}>
+      <table>
+        <tbody>
+          {refArray.map( (row) => {
+            return(
+              <tr key={row[0]}>
+                <td>{row[0]}</td>
+                <td>{row[1]}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
   )
 }
 

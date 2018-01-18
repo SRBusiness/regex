@@ -26,15 +26,3 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-.blue {
-  /* font: 'PT Sans', sans-serif;
-  display: flex; */
-  margin: 0;
-  background-color: lightblue;
-  /* min-height: 100%; */
-}
-
-html, body {
-  min-height: 100%;
-}

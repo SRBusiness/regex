@@ -1,8 +1,22 @@
-.borderVis {
+html, body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'PT Sans', sans-serif;
+  height: 100%;
+}
+
+.border {
   border: solid 2px;
 }
 
 .container {
+  display: flex;
+}
+
+.centeredContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,4 +26,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btn:focus {
+  outline:0;
 }

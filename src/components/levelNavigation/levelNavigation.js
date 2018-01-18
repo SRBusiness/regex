@@ -18,32 +18,30 @@ const makeLevelsArray = (num) => {
 const LevelNavigation = (props) => {
   const levelsArray = makeLevelsArray(props.totalLevels);
   return (
-    <nav className={styles.border}>
-      <div className='level-navigation'>
-        <div>
+    <nav className={styles.centeredContainer}>
+        <p>
           <span
-            className="arrow left"
+            className={styles.arrow}
             onClick={ () => props.decrementLevel()}>
-            {'<'}
+            {'< '}
           </span>
-          {props.level} of {props.totalLevels}
-          <span className="arrow right"
+            Level {props.level} of {props.totalLevels}
+          <span className={styles.arrow}
             onClick={ () => props.incrementLevel()}>
-            {'>'}
+            {' >'}
           </span>
-        </div>
-        <div className='button-container' >
+        </p>
+        <div className={styles.btnContainer}>
           {levelsArray.map( (level) => {
             return (
               <button
-                className="btn"
+                className={styles.lvlBtn}
                 key={level}
                 onClick={ () =>  props.changeLevel(level)}>
                 {level}
               </button>
             )
           })}
-        </div>
       </div>
     </nav>
   )

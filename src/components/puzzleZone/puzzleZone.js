@@ -104,7 +104,7 @@ class PuzzleZone extends Component {
     const { text, answer, prompt } = this.props.puzzle
     const { userRegex } = this.state;
     return (
-      <div className={styles.border}>
+      <div className={styles.container}>
         <div className='puzzle-display-container'>
           <div className='puzzle-display'>
             <p className='top'>

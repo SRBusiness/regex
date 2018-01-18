@@ -1,5 +1,10 @@
 .container {
-  composes: borderVis container from '../main.css';
+  composes: border container from '../main.css';
   border-color: blue;
-  padding: 1em;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 0 0.5em;
 }

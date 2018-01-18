@@ -1,6 +1,6 @@
 
 .container {
-  composes: borderVis from '../main.css';
+  composes: border from '../main.css';
   display: flex;
   border-color: pink;
   flex-direction: row;
@@ -18,10 +18,12 @@ div {
   flex: 1;
   padding: 1rem;
   border-right: black solid 2px;
+  background-color: #F9CF00;
 }
 
 .rightSide {
   /* composes: half from '../main.css'; */
   flex: 1;
   padding: 1rem;
+  background-color: #F19F4D;
 }
