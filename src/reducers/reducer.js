@@ -104,7 +104,7 @@ const initialState = {
       ["(...)",	"capture everything enclosed"],
     ],
   ],
-  toggleRefSheet: false,
+  toggleRefSheet: true,
 }
 
 // reducer for changing levels
