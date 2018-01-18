@@ -5,7 +5,7 @@ import PuzzleZone from './puzzleZone';
 import Instructions from './instructions';
 import LevelNavigation from './levelNavigation';
 import Welcome from './welcome';
-import RefTables from './refsheet';
+import RefTables from './refsheet/refsheet';
 
 // TODO: if I have been logged out for a while then there is nothing stored in localStorage there for the level doesn't load
 

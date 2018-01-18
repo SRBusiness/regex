@@ -1,0 +1,11 @@
+.refsheet {
+  background-color: grey;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: left;
+  justify-content: space-around;
+  border: 10px solid #5E5D5E;
+  font-size: 13px;
+  padding: 5px;
+}

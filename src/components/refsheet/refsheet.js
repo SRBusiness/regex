@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './refsheet.css';
 
 const RefTables = ({refArray}) => {
   return (
@@ -16,7 +17,7 @@ const RefTables = ({refArray}) => {
 
 const RefTable = ({table}) => {
   return(
-    <table className='refTable'>
+    <table className={styles.refsheet}>
       <tbody>
         {table.map( (row) => {
           return(
