@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as levelsActionCreators from '../actions/actionCreators';
+import * as levelsActionCreators from '../../actions/actionCreators';
 import SwitchButton from 'lyef-switch-button';
 import 'lyef-switch-button/css/main.css';
 // const SwitchButton = require('react-switch-button');
