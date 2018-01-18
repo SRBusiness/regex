@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as levelsActionCreators from '../../actions/actionCreators';
+import styles from './levelNavigation.css';
 
 // creates an ar array of levels that we iterate through in the component below
 const makeLevelsArray = (num) => {
@@ -17,7 +18,7 @@ const makeLevelsArray = (num) => {
 const LevelNavigation = (props) => {
   const levelsArray = makeLevelsArray(props.totalLevels);
   return (
-    <nav>
+    <nav className={styles.border}>
       <div className='level-navigation'>
         <div>
           <span

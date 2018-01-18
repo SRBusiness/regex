@@ -1,5 +1,5 @@
 .container {
   composes: borderVis container from '../main.css';
-  border-color: blue;
+  border-color: brown;
   padding: 1em;
 }

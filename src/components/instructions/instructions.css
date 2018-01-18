@@ -1,0 +1,4 @@
+.border {
+  composes: borderVis from '../main.css';
+  border-color: red;
+}

@@ -14,7 +14,13 @@ const initialState = {
       instructions: {
         title: 'Intro to regex',
         number: 1,
-        content: `Content Level 1 Content Level 1 Content Level 1 Content Level 1 Content Level 1 Content Level 1 Content Level 1 Content Level 1 Content Level 1 Content Level 1 Content Level 1 `,
+        content: `Spotted sweetlips swim, peppered moray creature jumped. Coral hogfish snake eel goatfish and Black clown goby fanatic jumping at a nurse shark. Mandarinfish in a fire fish, an algae unknown. In the coral threadfin hawkfish. Seahorse rock lobster, papershell shark or scorpionfish is, faucet snail king crab weasel shark. Foxface wabash pigtoe, ear snail banded sole or, mermaid in sea. Zebra moray at banded sole bannerfish. In seahorse banded eel, butter hamlet are butterflyfish blu.
+
+        Tang, wabash pigtoe sea coral king crab heelsplitter, in painted comber Banded eel bicolor blenny. Black clown goby, tilefish catshark sea grape starfish, banana wrasse starfish wobbegong shark, grouper batfish ear snail are at the bottom. Fishies asian clam painted comber, king crab a elktoe a, grey whale seahorse. Coral hogfish at Bursa trigger spot hogfish bite yellow pseudochromis weasel shar.
+
+        Seabass in angelfish. Bursa trigger funny filefish, a Snaggletooth shark lobster in. The crackin, heart pumping at Snaggletooth shark asian clam, banded eel algae applesnail lobster, lionfish tilefish banded sole an spot hogfish. Zebra moray at banded sole bannerfish. Fire fish at deap water pushed. . Quagga mussel cat shark is batfish frogfish. Banana wrasse in yellow pseudochromis non mermaid parrotfish mystery snail. Zebra moray a banded grunt houndshark. Zebra moray at banded sole bannerfish. Puffer fish stingray.
+
+        Bicolor blenny and quickly moving, stingray menacing crab flounder, black clown goby hammerhead with lobster crawling butterflyfish. In the coral threadfin hawkfish. Wobbegong shark peaclam swimming. Milk shark swim Asian clam soldierfish. In Beautiful, ocean is Asian clam elktoe, cardinalfish deep heelsplitter foxface, with crazy Manta ray catshark shaking filefish. Floating ea `,
         example: `I'm and example /regex/ matches some thing in a string! how cool`,
       },
     },
@@ -72,7 +78,7 @@ const initialState = {
   ],
   globalFlag: true,
   refSheetContent: [
-    [
+    // [
       ["g",	"global search flag"],
       [".",	"any single character"],
       ["[paw]",	"a single character of: p, a, or w"],
@@ -82,8 +88,8 @@ const initialState = {
       ["\d", "any digit"],
       ["\D", "any non-digit"],
       ["\w", "any word character (letter, number, underscore)"],
-    ],
-    [
+    // ],
+    // [
       ["\W", "any non-word character"],
       ["o{3}", "exactly 3 of "],
       ["t{3,}",	"3 or more of t"],
@@ -92,8 +98,8 @@ const initialState = {
       ["r*", "zero or more of e"],
       ["s+", "one or more of s"],
       ["(o|t)",	"o or t"],
-    ],
-    [
+    // ],
+    // [
       ["^",	"start of line"],
       ["$",	"end of line"],
       ["\A", "start of string"],
@@ -102,9 +108,9 @@ const initialState = {
       ["\S", "any non-whitespace character"],
       ["\\b", "any word boundary"],
       ["(...)",	"capture everything enclosed"],
-    ],
+    // ],
   ],
-  toggleRefSheet: true,
+  toggleRefSheet: false,
 }
 
 // reducer for changing levels

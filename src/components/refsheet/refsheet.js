@@ -1,25 +1,25 @@
 import React from 'react';
 import styles from './refsheet.css';
 
-const RefTables = ({refArray}) => {
-  return (
-    <div className='ref-sheet'>
-      {refArray.map( (table) => {
-        return(
-          <RefTable
-            table={table}
-          />
-        )
-      })}
-    </div>
-  )
-}
+// const RefTables = ({refArray}) => {
+//   return (
+//     <div className='ref-sheet'>
+//       {refArray.map( (table) => {
+//         return(
+//           <RefTable
+//             table={table}
+//           />
+//         )
+//       })}
+//     </div>
+//   )
+// }
 
-const RefTable = ({table}) => {
+const RefTable = ({refArray}) => {
   return(
-    <table className={styles.refsheet}>
+    <table className={styles.border}>
       <tbody>
-        {table.map( (row) => {
+        {refArray.map( (row) => {
           return(
             <tr key={row[0]}>
               <td>{row[0]}</td>
@@ -32,4 +32,4 @@ const RefTable = ({table}) => {
   )
 }
 
-export default RefTables;
+export default RefTable;

@@ -1,0 +1,15 @@
+.borderVis {
+  border: solid 2px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.half {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -5,23 +5,30 @@ import PuzzleZone from '../puzzleZone/puzzleZone';
 import Instructions from '../instructions/instructions';
 import LevelNavigation from '../levelNavigation/levelNavigation';
 import Welcome from '../welcome/welcome';
-import RefTables from '../refsheet/refsheet';
+import RefTable from '../refsheet/refsheet';
+import Information from '../information/information';
+import styles  from './game.css';
 
 // TODO: if I have been logged out for a while then there is nothing stored in localStorage there for the level doesn't load
 
 // functional stateless component
 const Game = ({ level, refSheetContent, toggleRef }) => {
   return (
-    <section className='game'>
-      <Welcome />
-      <LevelNavigation />
-      <Instructions
-        instructions={level.instructions}
-      />
-      <PuzzleZone
-        puzzle={level.puzzle}
-      />
-      { toggleRef ? <RefTables refArray={refSheetContent} /> : null }
+    <section className={styles.container}>
+      <div className={styles.leftSide}>
+        <Welcome />
+        <LevelNavigation />
+        <PuzzleZone
+          puzzle={level.puzzle}
+        />
+      </div>
+      <div className={styles.rightSide}>
+        <Instructions
+          instructions={level.instructions}
+        />
+        <Information/>
+      </div>
+      { toggleRef ? <RefTable refArray={refSheetContent} /> : null }
     </section>
   )
 }

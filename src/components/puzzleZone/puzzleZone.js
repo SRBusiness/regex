@@ -6,6 +6,8 @@ import { bindActionCreators } from 'redux';
 import * as levelsActionCreators from '../../actions/actionCreators';
 import SwitchButton from 'lyef-switch-button';
 import 'lyef-switch-button/css/main.css';
+import styles from './puzzleZone.css';
+
 // const SwitchButton = require('react-switch-button');
 // import 'react-switch-button/dist/react-switch-button.css';
 
@@ -102,7 +104,7 @@ class PuzzleZone extends Component {
     const { text, answer, prompt } = this.props.puzzle
     const { userRegex } = this.state;
     return (
-      <div className='puzzle'>
+      <div className={styles.border}>
         <div className='puzzle-display-container'>
           <div className='puzzle-display'>
             <p className='top'>

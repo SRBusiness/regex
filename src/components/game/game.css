@@ -1,0 +1,27 @@
+
+.container {
+  composes: borderVis from '../main.css';
+  display: flex;
+  border-color: pink;
+  flex-direction: row;
+  /* height: 100vh; */
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.leftSide {
+  /* composes: half from '../main.css'; */
+  flex: 1;
+  padding: 1rem;
+  border-right: black solid 2px;
+}
+
+.rightSide {
+  /* composes: half from '../main.css'; */
+  flex: 1;
+  padding: 1rem;
+}
