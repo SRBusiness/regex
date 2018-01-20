@@ -1,5 +1,8 @@
 .centeredContainer {
   composes: border centeredContainer from '../main.css';
   border-color: brown;
-  padding: 1em;
+  padding: 1rem;
+}
+.centeredContainer a {
+  text-decoration: none;
 }

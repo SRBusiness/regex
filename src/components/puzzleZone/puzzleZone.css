@@ -1,9 +1,9 @@
 .container {
   composes: border container from '../main.css';
   border-color: green;
-  display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1rem;
 }
 
 div.puzzleDisplay {

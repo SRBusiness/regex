@@ -14,22 +14,28 @@ import styles  from './game.css';
 // functional stateless component
 const Game = ({ level, refSheetContent, toggleRef }) => {
   return (
-    <section className={styles.gameContainer}>
-      <div className={styles.leftSide}>
-        <Welcome />
-        <LevelNavigation />
-        <PuzzleZone
-          puzzle={level.puzzle}
-        />
+    <div>
+      <div className={styles.content}>
+        <section className={styles.gameContainer}>
+          <div className={styles.leftSide}>
+            <Welcome />
+            <LevelNavigation />
+            <PuzzleZone
+              puzzle={level.puzzle}
+            />
+          </div>
+          <div className={styles.rightSide}>
+            <Instructions
+              instructions={level.instructions}
+            />
+            <Information/>
+          </div>
+          { toggleRef ? <RefTable refArray={refSheetContent} /> : null }
+        </section>
       </div>
-      <div className={styles.rightSide}>
-        <Instructions
-          instructions={level.instructions}
-        />
-        <Information/>
-      </div>
-      { toggleRef ? <RefTable refArray={refSheetContent} /> : null }
-    </section>
+      <footer className="footer">
+      </footer>
+    </div>
   )
 }
 

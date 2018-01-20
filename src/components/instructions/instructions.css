@@ -1,4 +1,11 @@
-.container {
+.instructionsContainer {
   composes: border container from '../main.css';
   border-color: red;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+}
+
+.instructionsContainer li {
+  list-style-type: none;
 }

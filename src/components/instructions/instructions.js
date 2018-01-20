@@ -6,13 +6,10 @@ import styles from './instructions.css'
 const Instructions = (props) => {
   const { title, number, content, example } = props.instructions;
   return(
-    // <div className='lesson-zone'>
-    <div className={styles.container}>
-      <h3>Lesson # {number} - {title}</h3>
-      <ul className='lesson-list'>
-        <li>{content}</li>
-        <li>{example}</li>
-      </ul>
+    <div className={styles.instructionsContainer }>
+      <h3>Level # {number} - {title}</h3>
+      <p>{content}</p>
+      <p>{example}</p>
     </div>
   )
 }

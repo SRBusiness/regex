@@ -1,12 +1,6 @@
-
-html, body {
-  min-height: 100%;
-
-}
-
 body {
-  margin: 0 auto;
   height: 100%;
+  margin: 0 auto;
   font-family: 'PT Mono', monospace;
   /* font-family: 'Cutive Mono', monospace; */
   /* font-family: 'Oxygen Mono', monospace; */
