@@ -37,3 +37,8 @@ div.puzzleDisplay {
   align-items: center;
   justify-content: center;
 }
+
+.btn {
+  composes: btn from '../main.css';
+  padding: 15px 32px;
+}

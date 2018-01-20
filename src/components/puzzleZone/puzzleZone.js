@@ -139,8 +139,9 @@ class PuzzleZone extends Component {
             />
           </div>
           <button
+            className={styles.btn}
             onClick={ () => this.props.incrementLevel() }>
-            Next Level
+            Next
           </button>
         </div>
       </div>

@@ -21,15 +21,19 @@
   flex: 1;
   padding: 1rem;
   border-right: black solid 2px;
-  background-color: #00AC9F;
+  background-color: #36A5AB;
 }
 
 .rightSide {
   flex: 1;
   padding: 1rem;
-  background-color: #9EE3BF;
+  background-color: #7DD7DF;
 }
 
 /* .footer {
   flex-shrink: 0;
 } */
+
+.btn {
+  composes: btn from '../main.css';
+}
