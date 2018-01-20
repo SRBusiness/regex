@@ -14,7 +14,7 @@ import styles  from './game.css';
 // functional stateless component
 const Game = ({ level, refSheetContent, toggleRef }) => {
   return (
-    <section className={styles.container}>
+    <section className={styles.gameContainer}>
       <div className={styles.leftSide}>
         <Welcome />
         <LevelNavigation />

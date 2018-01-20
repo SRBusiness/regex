@@ -1,6 +1,9 @@
 .container {
   composes: border container from '../main.css';
   border-color: blue;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
 }
 
 h1 {

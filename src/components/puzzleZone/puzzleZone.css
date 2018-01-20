@@ -1,4 +1,39 @@
 .container {
   composes: border container from '../main.css';
   border-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.puzzleDisplay {
+  position: relative;
+}
+
+.bottom {
+  position: absolute;
+  top: 0px; left: 0px;
+}
+
+.top {
+  position: absolute;
+  top: 0px; left: 0px;
+}
+
+.displayContainer {
+  overflow: -webkit-paged-x;
+}
+
+.highlightOne {
+  text-decoration: underline black;
+}
+
+.highlightTwo {
+  color: grey;
+}
+
+.userInputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

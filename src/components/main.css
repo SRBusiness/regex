@@ -1,11 +1,17 @@
+
 html, body {
   min-height: 100%;
+
 }
 
 body {
   margin: 0 auto;
-  font-family: 'PT Sans', sans-serif;
   height: 100%;
+  font-family: 'PT Mono', monospace;
+  /* font-family: 'Cutive Mono', monospace; */
+  /* font-family: 'Oxygen Mono', monospace; */
+  /* font-family: 'Source Code Pro', monospace; */
+  /* font-family: 'Anonymous Pro', monospace; */
 }
 
 .border {

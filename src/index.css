@@ -129,11 +129,7 @@ div.puzzle-display {
   overflow: -webkit-paged-x;
 }
 
-.user-input-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 .ref-sheet {
   background-color: grey;

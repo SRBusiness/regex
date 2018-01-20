@@ -95,7 +95,7 @@ class PuzzleZone extends Component {
 
     const regExp = this.makeRegExp(input, this.props.globalFlag);
 
-    let styleToAdd = !value ? 'highlight-one' : 'highlight-two';
+    let styleToAdd = !value ? styles.highlightOne : styles.highlightTwo;
 
     return regExp ? stringToMatch.replace(regExp, addStyleTags) : stringToMatch;
   }
@@ -105,22 +105,22 @@ class PuzzleZone extends Component {
     const { userRegex } = this.state;
     return (
       <div className={styles.container}>
-        <div className='puzzle-display-container'>
-          <div className='puzzle-display'>
-            <p className='top'>
-              { ReactHtmlParser(this.highlighter(text, answer, false)) }
-            </p>
-            <p className='bottom'>
-              { ReactHtmlParser(this.highlighter(text, userRegex, true)) }
-            </p>
+        <div>
+          <div className={styles.displayContainer}>
+            <div className={styles.puzzleDisplay}>
+              <p className={styles.top}>
+                { ReactHtmlParser(this.highlighter(text, answer, false)) }
+              </p>
+              <p className={styles.bottom}>
+                { ReactHtmlParser(this.highlighter(text, userRegex, true)) }
+              </p>
+            </div>
           </div>
         </div>
-
         <div>
           <h3>Promt: {prompt}</h3>
         </div>
-
-        <div className='user-input-container'>
+        <div className={styles.userInputContainer}>
           / <input
             id='userInput'
             placeholder='insert regex here'
@@ -129,19 +129,19 @@ class PuzzleZone extends Component {
             autoComplete='off'
             onChange={this.handleChange}
           /> /
-        </div>
-        <button
-          onClick={ () => this.props.incrementLevel() }>
-          Next Level
-        </button>
-        <div>
-          <SwitchButton
-            id="my-button"
-            labelLeft="Off"
-            labelRight="On"
-            isChecked
-            action={ () => this.props.toggleGlobalFlag()}
-          />
+          <div>
+            <SwitchButton
+              id="my-button"
+              labelLeft="Off"
+              labelRight="On"
+              isChecked
+              action={ () => this.props.toggleGlobalFlag()}
+            />
+          </div>
+          <button
+            onClick={ () => this.props.incrementLevel() }>
+            Next Level
+          </button>
         </div>
       </div>
     )

@@ -1,5 +1,5 @@
 
-.container {
+.gameContainer {
   composes: border from '../main.css';
   display: flex;
   border-color: pink;
@@ -8,12 +8,16 @@
 }
 
 div {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+
+.leftSide {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.leftSide {
   /* composes: half from '../main.css'; */
   flex: 1;
   padding: 1rem;
