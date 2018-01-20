@@ -33,7 +33,3 @@
 /* .footer {
   flex-shrink: 0;
 } */
-
-.btn {
-  composes: btn from '../main.css';
-}
