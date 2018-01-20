@@ -14,6 +14,42 @@ const Instructions = (props) => {
   )
 }
 
+// const Paragraph = (props) => {
+//     <p>
+//       {paraArray.map( (ele) => {
+//         if (ele[0] != 'text') {
+//           return (
+//             <span className={styles.ele[0]}>
+//               {ele[1]}
+//             </span>
+//           )
+//         }
+//       })}
+//     </p>
+// }
+
+// paragraph = {
+//   text: 'An important things to note about metacharacters is that if we want to use them as literal characters in our regex we need to escape them using the ',
+//   meta:	'\ (backslash) ',
+//   text:	'character. Did you know that a group of otters is called a romp, bevy, or a raft?  For example the regex we would ',
+//   regex:	'/romp\./ ',
+//   text:	'which would match “romp.”  If we forgot the backslash ',
+//   regex: '/romp./ ',
+//   text:	'the dot would still have its special meaning and would match the text “romp” plus any character.'
+// }
+
+// para = [
+//   ['text', 'An important things to note about metacharacters is that if we want to use them as literal characters in our regex we need to escape them using the '],
+//   ['meta','\ (backslash) '],
+//   ['text', 'character. Did you know that a group of otters is called a romp, bevy, or a raft?  For example the regex we would ' ],
+//   ['regex', '/romp\./'],
+//   ['text','which would match “romp.”  If we forgot the backslash ' ],
+//   ['regex', '/romp./'],
+//   ['text', 'the dot would still have its special meaning and would match the text “romp” plus any character.'],
+// ]
+
+
+
 Instructions.propTypes = {
   instructions: PropTypes.shape({
     title: PropTypes.string.isRequired,
