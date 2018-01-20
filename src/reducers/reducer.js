@@ -1,3 +1,5 @@
+import styles from './reducer.css'
+
 const initialState = {
   currentLevelIndex: 0,
   levels: [
@@ -54,8 +56,8 @@ const initialState = {
       instructions: {
         title: `Matching specific characters`,
         number: 3,
-        content: `Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 Content Level 3 `,
-        example: `I'm and example /regex/ matches some thing in a string! how cool`,
+        content: `An important things to note about metacharacters is that if we want to use them as literal characters in our regex we need to escape them using the <span class='${styles.meta}'>\ (backslash)</span> character. Did you know that a group of otters is called a romp, bevy, or a raft?  For example the regex we would <span className={styles.regex}>/romp\./</span> which would match “romp.”  If we forgot the backslash <span className={styles.regex}>/romp./</span> the dot would still have its special meaning and would match the text “romp” plus any character.',
+        example: "I'm and example /regex/ matches some thing in a string! how cool"`,
       }
     },
     {
@@ -112,15 +114,17 @@ const initialState = {
   ],
   toggleRefSheet: false,
   paragraph: [
-    ['text', 'An important things to note about metacharacters is that if we want to use them as literal characters in our regex we need to escape them using the '],
-    ['meta','\ (backslash) '],
-    ['text', 'character. Did you know that a group of otters is called a romp, bevy, or a raft?  For example the regex we would ' ],
-    ['regex', '/romp\./'],
-    ['text',' which would match “romp.”  If we forgot the backslash ' ],
-    ['regex', '/romp./'],
-    ['text', ' the dot would still have its special meaning and would match the text “romp” plus any character.'],
+    ['An important things to note about metacharacters is that if we want to use them as literal characters in our regex we need to escape them using the '],
+    ['\ (backslash) ', 'meta'],
+    ['character. Did you know that a group of otters is called a romp, bevy, or a raft?  For example the regex we would ' ],
+    ['/romp\./', 'regex'],
+    [' which would match “romp.”  If we forgot the backslash ' ],
+    ['/romp./', 'regex'],
+    [' the dot would still have its special meaning and would match the text “romp” plus any character.'],
   ]
 }
+
+
 
 // reducer for changing levels
 export default function rootReducer (state = initialState, action) {

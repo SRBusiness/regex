@@ -142,3 +142,8 @@ div.puzzle-display {
   font-size: 13px;
   padding: 5px;
 }
+
+.meta {
+  color: purple;
+  background-color: green;
+}

@@ -63,13 +63,13 @@ const Paragraph = (props) => {
   return (
     <p>
       {props.paragraph.map( (ele) => {
-        if (ele[0] === 'meta') {
+        if (ele[1] === 'meta') {
           return (
             <span className={styles.meta}>
-              {ele[1]}
+              {ele[0]}
             </span>
           )
-        } else if (ele[0] === 'regex') {
+        } else if (ele[1] === 'regex') {
           return (
             // <span className={styles.regex}>
               <code className={styles.regex}>{ele[1]}</code>
@@ -77,7 +77,7 @@ const Paragraph = (props) => {
           )
         } else {
           return (
-            ele[1]
+            ele[0]
           )
         }
       })}
@@ -85,3 +85,8 @@ const Paragraph = (props) => {
     </p>
   )
 }
+const a = [
+  <p>
+
+  </p>
+]

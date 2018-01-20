@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactHtmlParser from 'react-html-parser';
 import styles from './instructions.css'
 
 // Functional stateless component
@@ -8,7 +9,7 @@ const Instructions = (props) => {
   return(
     <div className={styles.instructionsContainer }>
       <h3>Level # {number} - {title}</h3>
-      <p>{content}</p>
+      <p>{ReactHtmlParser(content)}</p>
       <p>{example}</p>
     </div>
   )
