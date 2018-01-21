@@ -12,7 +12,7 @@ import styles  from './game.css';
 // TODO: if I have been logged out for a while then there is nothing stored in localStorage there for the level doesn't load
 
 // functional stateless component
-const Game = ({ level, refSheetContent, toggleRef, paragraph }) => {
+const Game = ({ level, refSheetContent, toggleRef, paragraph, contentObj }) => {
   return (
     <div>
       <div className={styles.content}>
@@ -29,7 +29,8 @@ const Game = ({ level, refSheetContent, toggleRef, paragraph }) => {
               instructions={level.instructions}
             /> */}
             <Information/>
-            <BuildPara paragraph={paragraph}/>
+            {/* <BuildPara paragraph={paragraph}/> */}
+            <BuildContent contentObj={contentObj}/>
           </div>
           { toggleRef ? <RefTable refArray={refSheetContent} /> : null }
         </section>
@@ -46,49 +47,60 @@ Game.propTypes = {
   toggleRef: PropTypes.bool.isRequired,
 }
 
-function mapStateToProps({ levels, currentLevelIndex, refSheetContent, toggleRefSheet, paragraph}) {
+function mapStateToProps({ levels, currentLevelIndex, refSheetContent, toggleRefSheet, paragraph, contentObj}) {
   // console.log('State in Game', state);
   return {
     level: levels[currentLevelIndex],
     refSheetContent: refSheetContent,
     toggleRef: toggleRefSheet,
     paragraph: paragraph,
+    contentObj: contentObj,
   }
 }
 
 export default connect(mapStateToProps)(Game);
 
 
-const Paragraph = (props) => {
-  return (
-    <p className={styles.newline}>
-      {props.paragraph.map( (ele) => {
-        if (ele[1] === 'meta') {
-          return (
-            <span className={styles.meta}>
-              {ele[0]}
-            </span>
-          )
-        } else if (ele[1] === 'regex') {
-          return (
-            // <span className={styles.regex}>
-              <code className={styles.regex}>{ele[1]}</code>
-            // </span>
-          )
-        } else {
-          return (
-            ele[0]
-          )
-        }
-      })}
-      {console.log(props.paragraph)}
-    </p>
-  )
-}
+// const Paragraph = (props) => {
+//   return (
+//     <p className={styles.newline}>
+//       {props.paragraph.map( (ele) => {
+//         if (ele[1] === 'meta') {
+//           return (
+//             <span className={styles.meta}>
+//               {ele[0]}
+//             </span>
+//           )
+//         } else if (ele[1] === 'regex') {
+//           return (
+//             // <span className={styles.regex}>
+//               <code className={styles.regex}>{ele[1]}</code>
+//             // </span>
+//           )
+//         } else {
+//           return (
+//             ele[0]
+//           )
+//         }
+//       })}
+//       {console.log(props.paragraph)}
+//     </p>
+//   )
+// }
 
 
 const BuildContent = ({contentObj}) => {
-
+  return(
+    <div>
+      {contentObj.map( p => {
+        return (
+          <BuildPara
+            paragraph={p}
+          />
+        )
+      })}
+    </div>
+  )
 }
 
 const BuildPara = ({ paragraph }) => (
