@@ -21,6 +21,8 @@
   flex: 1 0 auto;
   padding: var( - space) var( - space) 0;
   width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 .innerContainer:after {
   content: '\00a0';
@@ -28,6 +30,7 @@
   margin-top: var( - space );
   height: 0;
   visibility: hidden;
+
 }
 
 footer {
@@ -35,10 +38,10 @@ footer {
   height: 50px;
 }
 
-.gameWrapper {
+/* .gameWrapper {
   width: 100%;
   height: 100%;
-}
+} */
 .gameContainer {
   composes: border from '../main.css';
   display: flex;
@@ -46,6 +49,7 @@ footer {
 }
 
 .leftSide {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,6 +60,7 @@ footer {
 }
 
 .rightSide {
+  width: 50%;
   padding: 1rem;
   background-color: #7DD7DF;
 }

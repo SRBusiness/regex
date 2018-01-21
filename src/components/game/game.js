@@ -16,8 +16,8 @@ const Game = ({ level, refSheetContent, toggleRef, paragraph, contentObj }) => {
   return (
     <div className={styles.content}>
       <div className={styles.innerContainer}>
-        <div className={styles.gameWrapper}>
-          <section className={styles.gameContainer}>
+        {/* <div className={styles.gameWrapper}> */}
+          <div className={styles.gameContainer}>
             <div className={styles.leftSide}>
               <Welcome />
               <LevelNavigation />
@@ -34,8 +34,8 @@ const Game = ({ level, refSheetContent, toggleRef, paragraph, contentObj }) => {
               {/* <BuildContent contentObj={contentObj}/> */}
             </div>
             { toggleRef ? <RefTable refArray={refSheetContent} /> : null }
-          </section>
-        </div>
+          </div>
+        {/* </div> */}
       </div>
       <footer className="footer">
         <p>"atetsetest"</p>
