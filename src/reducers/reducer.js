@@ -114,14 +114,20 @@ const initialState = {
   ],
   toggleRefSheet: false,
   paragraph: [
-    ['An important things to note about metacharacters is that if we want to use them as literal characters in our regex we need to escape them using the '],
-    ['\ (backslash) ', 'meta'],
-    ['character. Did you know that a group of otters is called a romp, bevy, or a raft?  For example the regex we would ' ],
-    ['/romp\./', 'regex'],
-    [' which would match “romp.”  If we forgot the backslash ' ],
-    ['/romp./', 'regex'],
-    ['ANIMAL-STATEABREVIATION-AQUARIUM-GENDER-OTHER\no773R-WA-SEA-M-!34\no773R-WA-PDA-M-br5\no773R-WA-SEA-F--{k\no773R-WA-SEA-F-:)a\no773R-OR-SSA-F-r4f\no773R-OR-OCA-M-c1%\no773R-CA-SFZ-F-d0g\no773R-CA-MBA-F-13g\no773R-CA-MBA-M-0kj\n5Qw1d-CA-SFZ-F-.-1\n5Qw1d-OR-OCA-F-\\31\n5Qw1d-WA-SEA-M-!3f\n5Qw1d-WA-PDA-F-o9!\n5Qw1d-WA-SEA-F-d3w\n5Qw1d-WA-PDA-M-abc'],
-  ]
+    {
+      text: 'Regular expressions are made up of two different types of characters. Normal text characters like the letter “a”  or the number  “1” are called ',
+    }, {
+      text: 'literals',
+      type: 'BOLD',
+    }, {
+      text: ', while special characters are called ',
+    }, {
+      text: 'metacharacters',
+      type: 'BOLD',
+    }, {
+      text: '. Don’t worry about metacharacters for now, we will go over them slowly as we progress.',
+    }
+  ],
 }
 
 
