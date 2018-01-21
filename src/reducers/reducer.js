@@ -120,7 +120,7 @@ const initialState = {
     ['/romp\./', 'regex'],
     [' which would match “romp.”  If we forgot the backslash ' ],
     ['/romp./', 'regex'],
-    [' the dot would still have its special meaning and would match the text “romp” plus any character.'],
+    ['ANIMAL-STATEABREVIATION-AQUARIUM-GENDER-OTHER\no773R-WA-SEA-M-!34\no773R-WA-PDA-M-br5\no773R-WA-SEA-F--{k\no773R-WA-SEA-F-:)a\no773R-OR-SSA-F-r4f\no773R-OR-OCA-M-c1%\no773R-CA-SFZ-F-d0g\no773R-CA-MBA-F-13g\no773R-CA-MBA-M-0kj\n5Qw1d-CA-SFZ-F-.-1\n5Qw1d-OR-OCA-F-\\31\n5Qw1d-WA-SEA-M-!3f\n5Qw1d-WA-PDA-F-o9!\n5Qw1d-WA-SEA-F-d3w\n5Qw1d-WA-PDA-M-abc'],
   ]
 }
 

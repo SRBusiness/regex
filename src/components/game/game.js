@@ -25,9 +25,9 @@ const Game = ({ level, refSheetContent, toggleRef, paragraph }) => {
             />
           </div>
           <div className={styles.rightSide}>
-            <Instructions
+            {/* <Instructions
               instructions={level.instructions}
-            />
+            /> */}
             <Information/>
             <Paragraph paragraph={paragraph}/>
           </div>
@@ -61,7 +61,7 @@ export default connect(mapStateToProps)(Game);
 
 const Paragraph = (props) => {
   return (
-    <p>
+    <p className={styles.newline}>
       {props.paragraph.map( (ele) => {
         if (ele[1] === 'meta') {
           return (
@@ -85,8 +85,53 @@ const Paragraph = (props) => {
     </p>
   )
 }
-const a = [
-  <p>
 
-  </p>
-]
+const BuildPara = ({ tokens }) => (
+  <div>
+    {tokens.map(t => {
+      switch(t.type) {
+        case 'BOLD':
+          return <b>{t.text}</b>
+        case 'ITALIC':
+          return <i>{t.text}</i>
+        case 'UNDERLINE':
+          return <u>{t.text}</u>
+        case 'META':
+          return (
+            <span className={styles.meta}>{t.text}</span>
+          )
+        case 'REGEX':
+          return (
+            <span className={styles.regex}>{t.text}</span>
+          )
+        case 'PLAIN':
+        default:
+          return <span>{t.text}</span>
+      }
+    })}
+  </div>
+)
+//
+// const tokens = [{
+//   text: 'Text before a ',
+//   type: PLAIN
+// }, {
+//   text: 'bold thing',
+//   type: BOLD
+// }, {
+//   text: ' and then some more text leading up to a '
+//   // You can leave off the type: PLAIN
+// }, {
+//   text: 'different thing',
+//   type: ITALIC
+// }, {
+//   text: '. Then maybe an '
+// }, {
+//   text: 'underlined thing',
+//   type: UNDERLINE
+// }, {
+//   text: '. The possibilities are '
+// }, {
+//   text: 'Endless!',
+//   type: SPECIAL
+// }]

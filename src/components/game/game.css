@@ -1,4 +1,4 @@
-/* .box {
+.box {
   flex: 1 0 auto;
 }
 
@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-} */
+}
 
 .gameContainer {
   composes: border from '../main.css';
@@ -30,9 +30,9 @@
   background-color: #7DD7DF;
 }
 
-/* .footer {
+.footer {
   flex-shrink: 0;
-} */
+}
 
 .regex {
   background-color: yellow;
@@ -42,4 +42,43 @@
 .meta {
   background-color: blue;
   color: green;
+}
+
+b {
+  color: #8f8f8f;
+  display: inline-block;
+  background: #1e2320;
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
+i {
+  display: inline-block;
+  background: #6f6f6f;
+  color: #1e2320;
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
+u {
+  font-weight: 100;
+  letter-spacing: -1px;
+  text-decoration: underline;
+  color: #709080;
+}
+
+em {
+  font-size: 1.3em;
+  margin: 0 8px;
+  text-align: center;
+  color: #dcdccc;
+  text-shadow: #FA0 0 0 10px;
+  font-weight: bold;
+  letter-spacing: 8px;
+  font-variant: small-caps;
+  font-style: italic;
+}
+
+p .newline {
+  white-space: pre-wrap;
 }
