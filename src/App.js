@@ -8,9 +8,7 @@ import Game from './components/game/game';
 class App extends Component {
   render() {
     return (
-      <section>
         <Game />
-      </section>
     );
   }
 }

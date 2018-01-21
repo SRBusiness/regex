@@ -1,16 +1,23 @@
 body {
   height: 100%;
+  width: 100%;
   margin: 0 auto;
   font-family: 'PT Mono', monospace;
   /* font-family: 'Cutive Mono', monospace; */
   /* font-family: 'Oxygen Mono', monospace; */
   /* font-family: 'Source Code Pro', monospace; */
   /* font-family: 'Anonymous Pro', monospace; */
+
+}
+html{
+  height: 100%;
+  width: 100%;
 }
 
 .border {
   border: solid 2px;
 }
+
 
 .container {
   display: flex;
