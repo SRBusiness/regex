@@ -58,7 +58,7 @@ class PuzzleZone extends Component {
   }
 
   render () {
-    const { globalFlag, currentExerciseIndex, currentLevelIndex, puzzles } = this.props
+    const { globalFlag, currentExerciseIndex, currentLevelIndex, puzzles, maxLevel, maxExeCurLvl } = this.props
     const { text, answer, prompt } = puzzles[currentExerciseIndex];
     const ExePerLvl = puzzles.length
     const { userRegex } = this.state;
@@ -79,9 +79,7 @@ class PuzzleZone extends Component {
           <p>Promt: {prompt}</p>
         </div>
         <div className={styles.userInputWrapper}>
-          {currentLevelIndex === 0 && currentExerciseIndex === 0 ?
-            null
-            :
+          {currentLevelIndex === 0 && currentExerciseIndex === 0 ? null :
             <button
               className={styles.btn}
               onClick={this.handlePrev}>
@@ -113,11 +111,13 @@ class PuzzleZone extends Component {
               action={ () => this.props.toggleGlobalFlag()}
             />
           </div>
-          <button
-            className={styles.btn}
-            onClick={ this.handleNext }>
-            Next
-          </button>
+          {currentLevelIndex === maxLevel && currentExerciseIndex === maxExeCurLvl? null:
+            <button
+              className={styles.btn}
+              onClick={ this.handleNext }>
+              Next
+            </button>
+          }
         </div>
       </div>
     )
