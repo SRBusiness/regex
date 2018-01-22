@@ -36,3 +36,9 @@ export function decrementExercise() {
     type: 'DECREMENT_EXERCISE',
   }
 }
+
+export function previousLevelLastExercise() {
+  return {
+    type: 'PREVIOUS_LEVEL_LAST_EXERCISE',
+  }
+}

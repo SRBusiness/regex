@@ -50,10 +50,10 @@ class PuzzleZone extends Component {
   handlePrev() {
     const {currentExerciseIndex, currentLevelIndex, maxLevel, maxExeCurLvl } = this.props
 
-    if (currentExerciseIndex === 0 ){
-      this.props.decrementLevel()
+    if (currentExerciseIndex === 0 && currentLevelIndex !== 0){
+      this.props.previousLevelLastExercise();
     } else {
-      this.props.decrementExercise()
+      this.props.decrementExercise();
     }
   }
 

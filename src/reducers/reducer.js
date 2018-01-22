@@ -17,13 +17,8 @@ export default function rootReducer (state = initialState, action) {
         currentExerciseIndex: 0,
       }
     case 'INCREMENT_EXERCISE' :
-      // number of exercises for this level
-      // const ExePerLvl = state.levels[state.currentLevelIndex].puzzles.length
-
       return {
         ...state,
-
-
         currentExerciseIndex: Math.min( state.currentExerciseIndex + 1, state.levels[state.currentLevelIndex].puzzles.length - 1)
       }
     case 'DECREMENT_EXERCISE' :
@@ -42,7 +37,12 @@ export default function rootReducer (state = initialState, action) {
         ...state,
         globalFlag: !state.globalFlag,
       }
-
+    case 'PREVIOUS_LEVEL_LAST_EXERCISE' :
+      return {
+        ...state,
+        currentLevelIndex: Math.max(state.currentLevelIndex - 1, 0),
+        currentExerciseIndex: (state.levels[state.currentLevelIndex].puzzles.length - 1),
+      }
     default :
       return state
   }
