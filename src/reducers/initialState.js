@@ -1,5 +1,4 @@
 const initialState = {
-  currentLevelIndex: 0,
   levels: [
     {
       puzzles: [
@@ -439,7 +438,7 @@ const initialState = {
       }
     }
   ],
-  globalFlag: true,
+
   refSheetContent: [
     // [
       ["g",	"global search flag"],
@@ -473,8 +472,10 @@ const initialState = {
       ["(...)",	"capture everything enclosed"],
     // ],
   ],
-  toggleRefSheet: false,
   currentExerciseIndex: 0,
+  currentLevelIndex: 0,
+  globalFlag: true,
+  toggleRefSheet: false,
 }
 
 export default initialState;

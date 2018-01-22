@@ -33,6 +33,6 @@ export function incrementExercise() {
 
 export function decrementExercise() {
   return {
-    type: 'DECREMENT_INCREMENT_EXERCISE',
+    type: 'DECREMENT_EXERCISE',
   }
 }

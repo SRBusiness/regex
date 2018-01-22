@@ -57,9 +57,16 @@ class PuzzleZone extends Component {
           <p>Promt: {prompt}</p>
         </div>
         <div className={styles.userInputWrapper}>
+          <button
+            className={styles.btn}
+            onClick={ () => this.props.decrementExercise() }>
+            Previous
+          </button>
           <div className={styles.subWrapper}>
             <label>Your Regex:</label>
             <div>
+
+
               <span>/</span>
                 <input
                   id='userInput'
@@ -84,9 +91,12 @@ class PuzzleZone extends Component {
           </div>
           <button
             className={styles.btn}
-            onClick={ () => this.props.incrementLevel() }>
+            onClick={ () => this.props.incrementExercise() }>
             Next
           </button>
+        </div>
+        <div>
+
         </div>
       </div>
     )
