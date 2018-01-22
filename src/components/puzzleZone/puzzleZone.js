@@ -7,6 +7,7 @@ import * as levelsActionCreators from '../../actions/actionCreators';
 import SwitchButton from 'lyef-switch-button';
 import 'lyef-switch-button/css/main.css';
 import styles from './puzzleZone.css';
+import highlighter from '../highlight';
 
 // const SwitchButton = require('react-switch-button');
 // import 'react-switch-button/dist/react-switch-button.css';
@@ -35,34 +36,35 @@ class PuzzleZone extends Component {
   }
 
   // TODO:  think about putting this two functions in a different file and then import them here
-  makeRegExp(input, value) {
-    try {
-      return value ? new RegExp(input, 'g') : new RegExp(input);
-    }
-    catch(err) {
-      console.log(`users regex: '${input} was invalid `);
-      return false;
-    }
-  }
-
-  highlighter(stringToMatch, input, value) {
-    if (input === ''){
-      return stringToMatch
-    }
-
-    function addStyleTags(match, offset, string) {
-      return `<span class='${styleToAdd}'>` + match + `</span>`;
-    }
-
-    const regExp = this.makeRegExp(input, this.props.globalFlag);
-
-    let styleToAdd = !value ? styles.highlightOne : styles.highlightTwo;
-
-    return regExp ? stringToMatch.replace(regExp, addStyleTags) : stringToMatch;
-  }
+  // makeRegExp(input, value) {
+  //   try {
+  //     return value ? new RegExp(input, 'g') : new RegExp(input);
+  //   }
+  //   catch(err) {
+  //     console.log(`users regex: '${input} was invalid `);
+  //     return false;
+  //   }
+  // }
+  //
+  // highlighter(stringToMatch, input, value) {
+  //   if (input === ''){
+  //     return stringToMatch
+  //   }
+  //
+  //   function addStyleTags(match, offset, string) {
+  //     return `<span class='${styleToAdd}'>` + match + `</span>`;
+  //   }
+  //
+  //   const regExp = this.makeRegExp(input, this.props.globalFlag);
+  //
+  //   let styleToAdd = !value ? styles.highlightOne : styles.highlightTwo;
+  //
+  //   return regExp ? stringToMatch.replace(regExp, addStyleTags) : stringToMatch;
+  // }
 
   render () {
     const { text, answer, prompt } = this.props.puzzle
+    const { globalFlag } = this.props
     const { userRegex } = this.state;
     return (
       <div className={styles.container}>
@@ -70,10 +72,10 @@ class PuzzleZone extends Component {
           <div className={styles.displayContainer}>
             <div className={styles.puzzleDisplay}>
               <p className={styles.top}>
-                { ReactHtmlParser(this.highlighter(text, answer, false)) }
+                { ReactHtmlParser(highlighter(text, answer, false, globalFlag)) }
               </p>
               <p className={styles.bottom}>
-                { ReactHtmlParser(this.highlighter(text, userRegex, true)) }
+                { ReactHtmlParser(highlighter(text, userRegex, true, globalFlag)) }
               </p>
             </div>
           </div>
@@ -84,7 +86,7 @@ class PuzzleZone extends Component {
         <div className={styles.userInputWrapper}>
           <div className={styles.subWrapper}>
             {/* <label id="regex_label" for="regex">Your regular expression:</label> */}
-            <label for='userInput'>Your Regex:</label>
+            <label>Your Regex:</label>
             <div>
               <span>/</span>
               {/* <input id="regex" name="regex" size="80" tabindex="1" type="text"> */}

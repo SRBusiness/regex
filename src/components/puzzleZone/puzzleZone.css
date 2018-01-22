@@ -24,13 +24,13 @@ div.puzzleDisplay {
   overflow: -webkit-paged-x;
 }
 
-.highlightOne {
+/* .highlightOne {
   text-decoration: underline red;
 }
 
 .highlightTwo {
   color: yellow;
-}
+} */
 
 .userInputWrapper {
   display: flex;

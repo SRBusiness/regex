@@ -5,7 +5,7 @@ import PuzzleZone from '../puzzleZone/puzzleZone';
 import Instructions from '../instructions/instructions';
 import LevelNavigation from '../levelNavigation/levelNavigation';
 import Welcome from '../welcome/welcome';
-import RefTable from '../refsheet/refsheet';
+// import RefTable from '../refsheet/refsheet';
 import Information from '../information/information';
 import styles  from './game.css';
 

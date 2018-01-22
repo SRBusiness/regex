@@ -40,8 +40,7 @@ const LessonLvl1 = [
     }, {
       text: 'isan” but would not match “Artifact” because regex’s, by default, are case sensitive unless you tell them to act otherwise with a flag.',
     },
-  ],
-  [
+  ],[
     {
       text: 'Speaking of flags there is one flag worth introducing now. The default behavior for a regular expression is that it will look through the text, character by character, and stop once it finds the first occurance of a match. When we want to search for all possible matches not just the first we will add the ',
     }, {
