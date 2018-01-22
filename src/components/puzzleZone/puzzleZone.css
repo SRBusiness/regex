@@ -25,17 +25,21 @@ div.puzzleDisplay {
 }
 
 .highlightOne {
-  text-decoration: underline black;
+  text-decoration: underline red;
 }
 
 .highlightTwo {
-  color: grey;
+  color: yellow;
 }
 
-.userInputContainer {
+.userInputWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.subWrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .btn {

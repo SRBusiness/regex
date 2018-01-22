@@ -81,15 +81,25 @@ class PuzzleZone extends Component {
         <div>
           <h3>Promt: {prompt}</h3>
         </div>
-        <div className={styles.userInputContainer}>
-          / <input
-            id='userInput'
-            placeholder='insert regex here'
-            type='text'
-            value={userRegex}
-            autoComplete='off'
-            onChange={this.handleChange}
-          /> /
+        <div className={styles.userInputWrapper}>
+          <div className={styles.subWrapper}>
+            {/* <label id="regex_label" for="regex">Your regular expression:</label> */}
+            <label for='userInput'>Your Regex:</label>
+            <div>
+              <span>/</span>
+              {/* <input id="regex" name="regex" size="80" tabindex="1" type="text"> */}
+                <input
+                  id='userInput'
+                  placeholder='insert regex here'
+                  type='text'
+                  value={userRegex}
+                  autoComplete='off'
+                  onChange={this.handleChange}
+                  size='40'
+                />
+                <span>/</span>
+            </div>
+          </div>
           <div>
             <SwitchButton
               id="my-button"

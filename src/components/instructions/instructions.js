@@ -9,13 +9,15 @@ const Instructions = (props) => {
   return(
     <div className={styles.instructionsContainer }>
       <h3>Level # {number} - {title}</h3>
-      {content.map( type => {
-        return (
-          <BuildParagraph
-            content={type}
-          />
-        )
-      })}
+      <div className={styles.scrollWrapper}>
+        {content.map( type => {
+          return (
+            <BuildParagraph
+              content={type}
+            />
+          )
+        })}
+      </div>
     </div>
   )
 }
