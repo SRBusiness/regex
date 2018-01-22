@@ -41,7 +41,7 @@ export default function rootReducer (state = initialState, action) {
       return {
         ...state,
         currentLevelIndex: Math.max(state.currentLevelIndex - 1, 0),
-        currentExerciseIndex: (state.levels[state.currentLevelIndex].puzzles.length - 1),
+        currentExerciseIndex: (state.levels[state.currentLevelIndex - 1].puzzles.length - 1),
       }
     default :
       return state

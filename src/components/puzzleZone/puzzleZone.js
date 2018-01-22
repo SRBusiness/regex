@@ -15,7 +15,7 @@ import highlighter from '../highlight/highlight';
 // TODO: figure out how react handles white space - the puzzle text "a    bc" renders as "a bc" Charles said look into using a pre-tag
 // TODO: refactor this so that it shows all matches, the split function wont should all things for /[of]/, look into seeing if you can use the exec method to loop through all of the matches. Also could check and see if there is a method in any regexp lang that returns all the matches with an index of where they are in the string
 // TODO: add a toggle function for the global variable
-
+// TODO: make user input its own component
 class PuzzleZone extends Component {
   constructor(props) {
     super(props);
@@ -48,7 +48,7 @@ class PuzzleZone extends Component {
   }
 
   handlePrev() {
-    const {currentExerciseIndex, currentLevelIndex, maxLevel, maxExeCurLvl } = this.props
+    const {currentExerciseIndex, currentLevelIndex } = this.props
 
     if (currentExerciseIndex === 0 && currentLevelIndex !== 0){
       this.props.previousLevelLastExercise();
@@ -58,7 +58,7 @@ class PuzzleZone extends Component {
   }
 
   render () {
-    const { globalFlag, currentExerciseIndex, puzzles } = this.props
+    const { globalFlag, currentExerciseIndex, currentLevelIndex, puzzles } = this.props
     const { text, answer, prompt } = puzzles[currentExerciseIndex];
     const ExePerLvl = puzzles.length
     const { userRegex } = this.state;
@@ -79,11 +79,15 @@ class PuzzleZone extends Component {
           <p>Promt: {prompt}</p>
         </div>
         <div className={styles.userInputWrapper}>
-          <button
-            className={styles.btn}
-            onClick={this.handlePrev}>
-            Previous
-          </button>
+          {currentLevelIndex === 0 && currentExerciseIndex === 0 ?
+            null
+            :
+            <button
+              className={styles.btn}
+              onClick={this.handlePrev}>
+              Previous
+            </button>
+          }
           <div className={styles.subWrapper}>
             <label>Your Regex:</label>
             <div>
