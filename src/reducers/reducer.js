@@ -9,28 +9,33 @@ export default function rootReducer (state = initialState, action) {
         ...state,
         currentLevelIndex: Math.min( state.currentLevelIndex + 1, state.levels.length - 1),
         currentExerciseIndex: 0,
+        userRegex: '',
       }
     case 'DECREMENT_LEVEL' :
       return {
         ...state,
         currentLevelIndex: Math.max(state.currentLevelIndex - 1, 0),
         currentExerciseIndex: 0,
+        userRegex: '',
       }
     case 'INCREMENT_EXERCISE' :
       return {
         ...state,
-        currentExerciseIndex: Math.min( state.currentExerciseIndex + 1, state.levels[state.currentLevelIndex].puzzles.length - 1)
+        currentExerciseIndex: Math.min( state.currentExerciseIndex + 1, state.levels[state.currentLevelIndex].puzzles.length - 1),
+        userRegex: '',
       }
     case 'DECREMENT_EXERCISE' :
       return {
         ...state,
-        currentExerciseIndex: Math.max(state.currentExerciseIndex - 1, 0)
+        currentExerciseIndex: Math.max(state.currentExerciseIndex - 1, 0),
+        userRegex: '',
       }
     case 'CHANGE_LEVEL' :
       return {
         ...state,
         currentLevelIndex: (action.level - 1),
         currentExerciseIndex: 0,
+        userRegex: '',
       }
     case 'TOGGLE_GLOBAL_FLAG' :
       return {
@@ -42,6 +47,13 @@ export default function rootReducer (state = initialState, action) {
         ...state,
         currentLevelIndex: Math.max(state.currentLevelIndex - 1, 0),
         currentExerciseIndex: (state.levels[state.currentLevelIndex - 1].puzzles.length - 1),
+        userRegex: '',
+      }
+    case 'UPDATE_USER_REGEX' :
+    console.log(action.userRegex);
+      return {
+        ...state,
+        userRegex: action.userRegex,
       }
     default :
       return state

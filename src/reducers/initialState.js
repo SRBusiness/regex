@@ -242,15 +242,15 @@ const initialState = {
     {
       puzzles: [
         {
-          text: 'Claaaaaaaawwwwww\nClawwwwwww\nClaaaaaaw\nClaw\nCla\nCaw',
+          text: 'Claaaaaaaawwwwww Clawwwwwww Claaaaaaw Claw Cla Caw',
           prompt: 'Build a regex pattern that matches the first four lines of clawish code but not the last two using the + (plus) and the * (asterix)',
           answer: 'Cla*w+',
         }, {
-          text: '\nClawwwwwwless-Otter\nClwing-Otter\nClawwwwwwwd-Otter\nClawing-Otterzzzz\nClaww-Otter\nClaw-Oterz\nCaw-Otterz\nClang-Otter',
+          text: 'Clawwwwwwless-Otter Clwing-Otter Clawwwwwwwd-Otter Clawing-Otterzzzz Claww-Otter Claw-Oterz Caw-Otterz Clang-Otter',
           prompt: 'Build a regex pattern that matches the first five lines of claw-ish-otter-ish text but not the last three using the + (plus),* (asterix) , and . (dot)',
           answer: 'Cla*w.+Otterz*',
         }, {
-          text: '\nClawwwwwwless-Otter\nClwing-Otter\nClawwwwwwwd-Otter\nClawing-Otterzzzz\nClaww-Otter\nClaw-Oterz\nCaw-Otterz\nClang-Otter',
+          text: 'Clawwwwwwless-Otter Clwing-Otter Clawwwwwwwd-Otter Clawing-Otterzzzz Claww-Otter Claw-Oterz Caw-Otterz Clang-Otter',
           prompt: 'Build a regex pattern that matches everything.' ,
           answer: '.+',
         }
@@ -476,6 +476,7 @@ const initialState = {
   currentLevelIndex: 0,
   globalFlag: true,
   toggleRefSheet: false,
+  userRegex: '',
 }
 
 export default initialState;

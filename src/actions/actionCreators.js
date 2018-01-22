@@ -42,3 +42,10 @@ export function previousLevelLastExercise() {
     type: 'PREVIOUS_LEVEL_LAST_EXERCISE',
   }
 }
+
+export function updateRegex(userRegex) {
+  return {
+    type: 'UPDATE_USER_REGEX',
+    userRegex,
+  }
+}
