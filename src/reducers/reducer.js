@@ -4,15 +4,21 @@ const initialState = {
   currentLevelIndex: 0,
   levels: [
     {
-      puzzle: {
-        text: `Otters love to eat shelled animals, like clams, but otters aren’t equipped with the strength to open their food without some help. Otters are big on tools, and will often use rocks to help crack into food. While they hunt for food underwater they’ll often store a rock in the skin under their arms for later use.`,
-        prompt: `Build a Regex that matches the word "rock"`,
-        answer: `rock`,
-        hints: `I'm a hint!`,
-        solution: `I'm a solution regexp(/winner/)`,
-        title: `Intro to RegExp`,
-        number: 1,
-      },
+      puzzles: [
+        {
+          text: 'Otters spend a good part of their day grooming themselves. They clean their fur by biting it and scratching it against rocks, or rubbing it on logs or grass. They actually have two layers of fur: a dense undercoat that traps air and a topcoat of long, waterproof hairs.Otters have the densest fur in the world. It ranges from 250,000 to a million hairs per square inch, according to the Defenders of Wildlife.',
+          prompt: 'Build a regex pattern using literal characters that matches the text "fur"',
+          answer: 'fur',
+        }, {
+          text: 'Otters spend a good part of their day grooming themselves. They clean their fur by biting it and scratching it against rocks, or rubbing it on logs or grass. They actually have two layers of fur: a dense undercoat that traps air and a topcoat of long, waterproof hairs.Otters have the densest fur in the world. It ranges from 250,000 to a million hairs per square inch, according to the Defenders of Wildlife.',
+          prompt: 'Build a regex pattern using literal characters that matches the text "coat"',
+          answer: 'coat',
+        }, {
+          text: 'Otters spend a good part of their day grooming themselves. They clean their fur by biting it and scratching it against rocks, or rubbing it on logs or grass. They actually have two layers of fur: a dense undercoat that traps air and a topcoat of long, waterproof hairs.Otters have the densest fur in the world. It ranges from 250,000 to a million hairs per square inch, according to the Defenders of Wildlife.',
+          prompt: 'Build a regex pattern using literal characters that matches the text "250,000"',
+          answer: '250,000',
+        }
+      ],
       instructions: {
         title: 'Intro to regex',
         number: 1,
@@ -74,15 +80,21 @@ const initialState = {
       },
     },
     {
-      puzzle: {
-        text: `There are 13 species of Otters, and just about all of them are decreasing.`,
-        prompt: `Build a Regex that matches the number "13"`,
-        answer: `13`,
-        hints: `I'm a hint!`,
-        solution: `I'm a solution regexp(/winner/)`,
-        title: `More regex`,
-        number: 2,
-      },
+      puzzles: [
+        {
+          text: 'ANIMAL-STATEABREVIATION-AQUARIUM-GENDER-OTHER\no773R-WA-SEA-M-!34\no773R-WA-PDA-M-br5\no773R-WA-SEA-F--{k\no773R-WA-SEA-F-:)a\no773R-OR-SSA-F-r4f\no773R-OR-OCA-M-c1%\no773R-CA-SFZ-F-d0g\no773R-CA-MBA-F-13g\no773R-CA-MBA-M-0kj\n5Qw1d-CA-SFZ-F-.-1\n5Qw1d-OR-OCA-F-\\31\n5Qw1d-WA-SEA-M-!3f\n5Qw1d-WA-PDA-F-o9!\n5Qw1d-WA-SEA-F-d3w\n5Qw1d-WA-PDA-M-abc',
+          prompt: 'You are a marine mammal researcher and often looking through the National Standard Zoo and Aquarium (NSZA) database to find information. From the snippet of NSZA codes provided build a regex pattern that matches the entire NSZA code for all female (F), Otters (o773R), in the state of California (CA), from the Monterey Bay Aquarium (MBA).' ,
+          answer: 'o773R.CA.MBA.F....',
+        }, {
+          text: 'ANIMAL-STATEABREVIATION-AQUARIUM-GENDER-OTHER\no773R-WA-SEA-M-!34\no773R-WA-PDA-M-br5\no773R-WA-SEA-F--{k\no773R-WA-SEA-F-:)a\no773R-OR-SSA-F-r4f\no773R-OR-OCA-M-c1%\no773R-CA-SFZ-F-d0g\no773R-CA-MBA-F-13g\no773R-CA-MBA-M-0kj\n5Qw1d-CA-SFZ-F-.-1\n5Qw1d-OR-OCA-F-\\31\n5Qw1d-WA-SEA-M-!3f\n5Qw1d-WA-PDA-F-o9!\n5Qw1d-WA-SEA-F-d3w\n5Qw1d-WA-PDA-M-abc',
+          prompt: 'You are a marine mammal researcher and often looking through the National Standard Zoo and Aquarium (NSZA) database to find information. From the snippet of NSZA codes provided build a regex pattern that matches the entire NSZA code for all female (F) animals in the state of Washington (WA).',
+          answer: '......WA-...-F....',
+        }, {
+          text: 'ANIMAL-STATEABREVIATION-AQUARIUM-GENDER-OTHER\no773R-WA-SEA-M-!34\no773R-WA-PDA-M-br5\no773R-WA-SEA-F--{k\no773R-WA-SEA-F-:)a\no773R-OR-SSA-F-r4f\no773R-OR-OCA-M-c1%\no773R-CA-SFZ-F-d0g\no773R-CA-MBA-F-13g\no773R-CA-MBA-M-0kj\n5Qw1d-CA-SFZ-F-.-1\n5Qw1d-OR-OCA-F-\\31\n5Qw1d-WA-SEA-M-!3f\n5Qw1d-WA-PDA-F-o9!\n5Qw1d-WA-SEA-F-d3w\n5Qw1d-WA-PDA-M-abc',
+          prompt: 'You are a marine mammal researcher and often looking through the National Standard Zoo and Aquarium (NSZA) database to find information. From the snippet of NSZA codes provided build a regex pattern that matches the entire NSZA code for all Otters (o773R).' ,
+          answer: 'o773R.............',
+        }
+      ],
       instructions: {
         title: `More regex`,
         number: 2,
@@ -161,15 +173,17 @@ const initialState = {
       }
     },
     {
-      puzzle: {
-        text: `Otters sometimes sleep above ground in a ‘couch’ (den). However they predominantly reside in underground ‘holts’. These are chambers dug out of the river bank or cavities under riverside tree roots. They also have their young in the holts.`,
-        prompt: `Build a Regex that matches "river"`,
-        answer: `riverside`,
-        hints: `I'm a hint!`,
-        solution: `I'm a solution regexp(/winner/)`,
-        title: `Matching specific characters`,
-        number: 3,
-      },
+      puzzles: [
+        {
+          text: 'WILLIAM WORTHLESS Mar 2014\notter friend\ni saw a little otter swimming in a brook\ni got a little closer so i could take a look\nhe was having fun chasing all the fish\nfor the little otter this was his favorite dish\nhe was very friendly and wanted me to play\nso i played with him to pass the time away\nhe was very happy he had company \nhe had found a friend and that friend was me\nthen he swam away in to his otter hole\nhe was getting tired poor little soul\ni waved and said goodbye and let him go to sleep\nin his otter home so very long and deep',
+          prompt: 'Build a regex to match both of the words dish and fish using the character class [ ] (square brackets ).',
+          answer: '[fd]ish',
+        }, {
+          text: 'WILLIAM WORTHLESS Mar 2014\notter friend\ni saw a little otter swimming in a brook\ni got a little closer so i could take a look\nhe was having fun chasing all the fish\nfor the little otter this was his favorite dish\nhe was very friendly and wanted me to play\nso i played with him to pass the time away\nhe was very happy he had company \nhe had found a friend and that friend was me\nthen he swam away in to his otter hole\nhe was getting tired poor little soul\ni waved and said goodbye and let him go to sleep\nin his otter home so very long and deep',
+          prompt: 'Build a regex to match both of the words deep and sleep using the character class [ ] (square brackets )',
+          answer: '[dsl]+eep',
+        }
+      ],
       instructions: {
         title: `Matching specific characters`,
         number: 3,
@@ -229,15 +243,21 @@ const initialState = {
       },
     },
     {
-      puzzle: {
-        text: 'tom@hogwarts.com tom.riddle@homwarts.edu	tom.riddle+regexone@hogwarts.com 	tom@hobwarts.eu.cup 	potter@hoswart.gov harry@hohwart.cat hermione+regexone@hogwarts.com',
-        prompt: 'test',
-        answer: 'riverside',
-        hints: `I'm a hint!`,
-        solution: `Im a solution regexp(/winner/)`,
-        title: 'Matching specific characters',
-        number: 4,
-      },
+      puzzles: [
+        {
+          text: 'Claaaaaaaawwwwww\nClawwwwwww\nClaaaaaaw\nClaw\nCla\nCaw',
+          prompt: 'Build a regex pattern that matches the first four lines of clawish code but not the last two using the + (plus) and the * (asterix)',
+          answer: 'Cla*w+',
+        }, {
+          text: '\nClawwwwwwless-Otter\nClwing-Otter\nClawwwwwwwd-Otter\nClawing-Otterzzzz\nClaww-Otter\nClaw-Oterz\nCaw-Otterz\nClang-Otter',
+          prompt: 'Build a regex pattern that matches the first five lines of claw-ish-otter-ish text but not the last three using the + (plus),* (asterix) , and . (dot)',
+          answer: 'Cla*w.+Otterz*',
+        }, {
+          text: '\nClawwwwwwless-Otter\nClwing-Otter\nClawwwwwwwd-Otter\nClawing-Otterzzzz\nClaww-Otter\nClaw-Oterz\nCaw-Otterz\nClang-Otter',
+          prompt: 'Build a regex pattern that matches everything.' ,
+          answer: '.+',
+        }
+      ],
       instructions: {
         title: `Matching specific characters`,
         number: 4,
@@ -334,15 +354,17 @@ const initialState = {
         ],
       }
     },{
-      puzzle: {
-        text: 'tom@hogwarts.com tom.riddle@homwarts.edu	tom.riddle+regexone@hogwarts.com 	tom@hobwarts.eu.cup 	potter@hoswart.gov harry@hohwart.cat hermione+regexone@hogwarts.com',
-        prompt: 'test',
-        answer: 'riverside',
-        hints: `I'm a hint!`,
-        solution: `Im a solution regexp(/winner/)`,
-        title: 'Matching specific characters',
-        number: 5,
-      },
+      puzzles: [
+        {
+          text: '\nCho C. Chang\nSeamus O. Finnigan\nHermione J. Granger\nViktor N. Krum\nFlipper	I. Longbottom\nLuna L. Lovegood\nUrchin S. Malfoy\nBarry G. pOtter\nDanny	D. pOtter\nGarny	B. pOtter\nHarry J. pOtter\nJerry A. pOtter\nMarry	P. pOtter\nPerny	B. pOtter\nTimmy	P. pOtter\nBon T. Weasley\nDon P. Weasley\nRon L. Weasley',
+          prompt: 'You have a list of all of the otters currently attending Hogwarts school of Beachcraft and Oceanry that are enrolled in professor Furwick’s charms class. Build a regex to match the first name of all the weasley brothers except Don.' ,
+          answer: '[^D]on',
+        }, {
+          text: '\nCho C. Chang\nSeamus O. Finnigan\nHermione J. Granger\nViktor N. Krum\nFlipper	I. Longbottom\nLuna L. Lovegood\nUrchin S. Malfoy\nBarry G. pOtter\nDanny	D. pOtter\nGarny	B. pOtter\nHarry J. pOtter\nJerry A. pOtter\nMarry	P. pOtter\nPerny	B. pOtter\nTimmy	P. pOtter\nBon T. Weasley\nDon P. Weasley\nRon L. Weasley',
+          prompt: 'You have a list of all of the otters currently attending Hogwarts school of Beachcraft and Oceanry that are enrolled in professor Furwick’s charms class. Build a regex pattern, using the ^ (caret), that selects the full name of all the members of the Otter family except Berry and Larry.',
+          answer: '[^BLJ][eai].+pOtter',
+        },
+      ],
       instructions: {
         title: `Matching specific characters`,
         number: 5,
@@ -454,6 +476,7 @@ const initialState = {
     // ],
   ],
   toggleRefSheet: false,
+  currentExerciseIndex: 1,
 }
 
 

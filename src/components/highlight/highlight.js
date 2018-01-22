@@ -1,5 +1,34 @@
 import styles from './highlight.css';
 
+function makeRegExp(input, value) {
+  try {
+    return value ? new RegExp(input, 'g') : new RegExp(input);
+  }
+  catch(err) {
+    console.log(`users regex: '${input} was invalid `);
+    return false;
+  }
+}
+
+function highlighter(stringToMatch, input, value, globalFlag) {
+  if (input === ''){
+    return stringToMatch
+  }
+
+  function addStyleTags(match, offset, string) {
+    return `<span class='${styleToAdd}'>` + match + `</span>`;
+  }
+
+  const regExp = makeRegExp(input, globalFlag);
+
+  let styleToAdd = !value ? styles.highlightOne : styles.highlightTwo;
+
+  return regExp ? stringToMatch.replace(regExp, addStyleTags) : stringToMatch;
+}
+
+export default highlighter;
+
+
 // const text = 'Wild otters on the run from others';
 // const userInput = 'otter'
 // let regex = new RegExp(userInput)
@@ -30,32 +59,3 @@ import styles from './highlight.css';
 // split(/<\/?b>/) => [ 'The ', 'Otter', 's are cool animals!' ]
 // is there a way to do this that isnt inline styling? something do with absolute position by text?
 // two overlapping strings one is underlined one is highlighted
-
-
-function makeRegExp(input, value) {
-  try {
-    return value ? new RegExp(input, 'g') : new RegExp(input);
-  }
-  catch(err) {
-    console.log(`users regex: '${input} was invalid `);
-    return false;
-  }
-}
-
-function highlighter(stringToMatch, input, value, globalFlag) {
-  if (input === ''){
-    return stringToMatch
-  }
-
-  function addStyleTags(match, offset, string) {
-    return `<span class='${styleToAdd}'>` + match + `</span>`;
-  }
-
-  const regExp = makeRegExp(input, globalFlag);
-
-  let styleToAdd = !value ? styles.highlightOne : styles.highlightTwo;
-
-  return regExp ? stringToMatch.replace(regExp, addStyleTags) : stringToMatch;
-}
-
-export default highlighter;

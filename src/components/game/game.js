@@ -21,7 +21,7 @@ const Game = ({ level, refSheetContent, toggleRef, paragraph, contentObj }) => {
             <Welcome />
             <LevelNavigation />
             <PuzzleZone
-              puzzle={level.puzzle}
+              puzzles={level.puzzles}
             />
           </div>
           <div className={styles.rightSide}>

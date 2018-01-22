@@ -36,8 +36,9 @@ class PuzzleZone extends Component {
   }
 
   render () {
-    const { text, answer, prompt } = this.props.puzzle
-    const { globalFlag } = this.props
+
+    const { globalFlag, currentExerciseIndex } = this.props
+    const { text, answer, prompt } = this.props.puzzles[currentExerciseIndex];
     const { userRegex } = this.state;
     return (
       <div className={styles.container}>
@@ -96,11 +97,11 @@ class PuzzleZone extends Component {
 }
 
 PuzzleZone.propTypes = {
-  puzzle: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    prompt: PropTypes.string.isRequired,
-    solution: PropTypes.isRequired,
-  }).isRequired,
+  // puzzles: PropTypes.array.shape({
+  //   text: PropTypes.string.isRequired,
+  //   prompt: PropTypes.string.isRequired,
+  //   solution: PropTypes.isRequired,
+  // }).isRequired,
   incrementLevel: PropTypes.func.isRequired,
   toggleGlobalFlag: PropTypes.func.isRequired,
   globalFlag: PropTypes.bool.isRequired,
@@ -109,6 +110,7 @@ PuzzleZone.propTypes = {
 function mapStateToProps(state) {
   return {
     globalFlag: state.globalFlag,
+    currentExerciseIndex: state.currentExerciseIndex,
   };
 }
 
