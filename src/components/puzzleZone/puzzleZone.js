@@ -24,6 +24,8 @@ class PuzzleZone extends Component {
       userRegex: '',
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleNext = this.handleNext.bind(this);
+    this.handlePrev = this.handlePrev.bind(this);
   }
 
   handleChange(event) {
@@ -33,6 +35,26 @@ class PuzzleZone extends Component {
         userRegex: userInput,
       }
     })
+  }
+
+  handleNext() {
+    const {currentExerciseIndex, currentLevelIndex, maxLevel, maxExeCurLvl } = this.props
+
+    if (currentExerciseIndex === maxExeCurLvl && currentLevelIndex !== maxLevel ) {
+      this.props.incrementLevel()
+    } else {
+      this.props.incrementExercise()
+    }
+  }
+
+  handlePrev() {
+    const {currentExerciseIndex, currentLevelIndex, maxLevel, maxExeCurLvl } = this.props
+
+    if (currentExerciseIndex === 0 ){
+      this.props.decrementLevel()
+    } else {
+      this.props.decrementExercise()
+    }
   }
 
   render () {
@@ -59,14 +81,12 @@ class PuzzleZone extends Component {
         <div className={styles.userInputWrapper}>
           <button
             className={styles.btn}
-            onClick={ () => this.props.decrementExercise() }>
+            onClick={this.handlePrev}>
             Previous
           </button>
           <div className={styles.subWrapper}>
             <label>Your Regex:</label>
             <div>
-
-
               <span>/</span>
                 <input
                   id='userInput'
@@ -91,12 +111,9 @@ class PuzzleZone extends Component {
           </div>
           <button
             className={styles.btn}
-            onClick={ () => this.props.incrementExercise() }>
+            onClick={ this.handleNext }>
             Next
           </button>
-        </div>
-        <div>
-
         </div>
       </div>
     )
@@ -114,10 +131,13 @@ PuzzleZone.propTypes = {
   globalFlag: PropTypes.bool.isRequired,
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ globalFlag, currentExerciseIndex, levels,currentLevelIndex }) {
   return {
-    globalFlag: state.globalFlag,
-    currentExerciseIndex: state.currentExerciseIndex,
+    globalFlag: globalFlag,
+    currentExerciseIndex: currentExerciseIndex,
+    currentLevelIndex: currentLevelIndex,
+    maxLevel: (levels.length - 1),
+    maxExeCurLvl: (levels[currentLevelIndex].puzzles.length - 1 )
   };
 }
 

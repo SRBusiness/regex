@@ -7,12 +7,14 @@ export default function rootReducer (state = initialState, action) {
     case 'INCREMENT_LEVEL' :
       return {
         ...state,
-        currentLevelIndex: Math.min( state.currentLevelIndex + 1, state.levels.length - 1)
+        currentLevelIndex: Math.min( state.currentLevelIndex + 1, state.levels.length - 1),
+        currentExerciseIndex: 0,
       }
     case 'DECREMENT_LEVEL' :
       return {
         ...state,
-        currentLevelIndex: Math.max(state.currentLevelIndex - 1, 0)
+        currentLevelIndex: Math.max(state.currentLevelIndex - 1, 0),
+        currentExerciseIndex: 0,
       }
     case 'INCREMENT_EXERCISE' :
       // number of exercises for this level
