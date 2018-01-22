@@ -7,7 +7,7 @@ import * as levelsActionCreators from '../../actions/actionCreators';
 import SwitchButton from 'lyef-switch-button';
 import 'lyef-switch-button/css/main.css';
 import styles from './puzzleZone.css';
-import highlighter from '../highlight';
+import highlighter from '../highlight/highlight';
 
 // const SwitchButton = require('react-switch-button');
 // import 'react-switch-button/dist/react-switch-button.css';
@@ -34,33 +34,6 @@ class PuzzleZone extends Component {
       }
     })
   }
-
-  // TODO:  think about putting this two functions in a different file and then import them here
-  // makeRegExp(input, value) {
-  //   try {
-  //     return value ? new RegExp(input, 'g') : new RegExp(input);
-  //   }
-  //   catch(err) {
-  //     console.log(`users regex: '${input} was invalid `);
-  //     return false;
-  //   }
-  // }
-  //
-  // highlighter(stringToMatch, input, value) {
-  //   if (input === ''){
-  //     return stringToMatch
-  //   }
-  //
-  //   function addStyleTags(match, offset, string) {
-  //     return `<span class='${styleToAdd}'>` + match + `</span>`;
-  //   }
-  //
-  //   const regExp = this.makeRegExp(input, this.props.globalFlag);
-  //
-  //   let styleToAdd = !value ? styles.highlightOne : styles.highlightTwo;
-  //
-  //   return regExp ? stringToMatch.replace(regExp, addStyleTags) : stringToMatch;
-  // }
 
   render () {
     const { text, answer, prompt } = this.props.puzzle
@@ -134,13 +107,11 @@ PuzzleZone.propTypes = {
 }
 
 function mapStateToProps(state) {
-  // console.log('State in puzzleZone', state);
   return {
     globalFlag: state.globalFlag,
   };
 }
 
-// makes it so we don't have to call this.props.dispatch(levelsActionCreators.changeLevel(level)) instead you can just call this.props.changeLevel(level)
 function mapDispatchToProps (dispatch) {
   return bindActionCreators(levelsActionCreators, dispatch);
 }
