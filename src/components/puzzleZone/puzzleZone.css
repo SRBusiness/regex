@@ -23,18 +23,3 @@ div.puzzleDisplay {
 .displayContainer {
   overflow: -webkit-paged-x;
 }
-
-.userInputWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.subWrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.btn {
-  composes: btn from '../main.css';
-  padding: 15px 32px;
-}

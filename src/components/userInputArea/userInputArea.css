@@ -1,0 +1,15 @@
+.userInputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  composes: btn from '../main.css';
+  padding: 15px 32px;
+}
+
+.subWrapper {
+  display: flex;
+  flex-direction: column;
+}
