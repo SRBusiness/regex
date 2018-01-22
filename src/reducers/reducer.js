@@ -476,7 +476,7 @@ const initialState = {
     // ],
   ],
   toggleRefSheet: false,
-  currentExerciseIndex: 1,
+  currentExerciseIndex: 0,
 }
 
 

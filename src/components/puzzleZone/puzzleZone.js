@@ -36,34 +36,31 @@ class PuzzleZone extends Component {
   }
 
   render () {
-
-    const { globalFlag, currentExerciseIndex } = this.props
-    const { text, answer, prompt } = this.props.puzzles[currentExerciseIndex];
+    const { globalFlag, currentExerciseIndex, puzzles } = this.props
+    const { text, answer, prompt } = puzzles[currentExerciseIndex];
+    const ExePerLvl = puzzles.length
     const { userRegex } = this.state;
     return (
       <div className={styles.container}>
-        <div>
-          <div className={styles.displayContainer}>
-            <div className={styles.puzzleDisplay}>
-              <p className={styles.top}>
-                { ReactHtmlParser(highlighter(text, answer, false, globalFlag)) }
-              </p>
-              <p className={styles.bottom}>
-                { ReactHtmlParser(highlighter(text, userRegex, true, globalFlag)) }
-              </p>
-            </div>
+        <div className={styles.displayContainer}>
+          <p>Exercise {currentExerciseIndex + 1} of {ExePerLvl}</p>
+          <div className={styles.puzzleDisplay}>
+            <p className={styles.top}>
+              { ReactHtmlParser(highlighter(text, answer, false, globalFlag)) }
+            </p>
+            <p className={styles.bottom}>
+              { ReactHtmlParser(highlighter(text, userRegex, true, globalFlag)) }
+            </p>
           </div>
         </div>
         <div>
-          <h3>Promt: {prompt}</h3>
+          <p>Promt: {prompt}</p>
         </div>
         <div className={styles.userInputWrapper}>
           <div className={styles.subWrapper}>
-            {/* <label id="regex_label" for="regex">Your regular expression:</label> */}
             <label>Your Regex:</label>
             <div>
               <span>/</span>
-              {/* <input id="regex" name="regex" size="80" tabindex="1" type="text"> */}
                 <input
                   id='userInput'
                   placeholder='insert regex here'

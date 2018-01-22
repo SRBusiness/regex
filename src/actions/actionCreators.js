@@ -24,3 +24,15 @@ export function toggleGlobalFlag() {
     type: 'TOGGLE_GLOBAL_FLAG',
   }
 }
+
+export function incrementExercise() {
+  return {
+    type: 'INCREMENT_EXERCISE',
+  }
+}
+
+export function decrementExercise() {
+  return {
+    type: 'DECREMENT_INCREMENT_EXERCISE',
+  }
+}
