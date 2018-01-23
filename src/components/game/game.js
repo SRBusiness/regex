@@ -19,14 +19,14 @@ const Game = ({ level, refSheetContent, toggleRef, paragraph, contentObj }) => {
         <div className={styles.gameContainer}>
           <div className={styles.leftSide}>
             <Welcome />
-            <LevelNavigation />
-            <PuzzleZone
-              puzzles={level.puzzles}
+            <Instructions
+              instructions={level.instructions}
             />
           </div>
           <div className={styles.rightSide}>
-            <Instructions
-              instructions={level.instructions}
+            <LevelNavigation />
+            <PuzzleZone
+              puzzles={level.puzzles}
             />
           </div>
           {/* { toggleRef ? <RefTable refArray={refSheetContent} /> : null } */}
