@@ -22,4 +22,5 @@ div.puzzleDisplay {
 
 .displayContainer {
   overflow: -webkit-paged-x;
+  padding-left: 1em;
 }

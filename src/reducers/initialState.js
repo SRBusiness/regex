@@ -170,7 +170,7 @@ const initialState = {
             },
           ], [
             {
-              text: 'In most cards games a wildcard is a playing card that substitutes for any other card in card the game. In regex the',
+              text: 'In most cards games a wildcard is a playing card that substitutes for any other card in card the game. In regex the ',
             }, {
               text: '. (dot)',
               type: 'META',
@@ -457,9 +457,9 @@ const initialState = {
           text: [
           `Cho C. Chang`,
           `Seamus O. Finnigan`,
-          `Hermione J. Granger`,
+          // `Hermione J. Granger`,
           `Viktor N. Krum`,
-          `Flipper	I. Longbottom`,
+          // `Flipper	I. Longbottom`,
           `Luna L. Lovegood`,
           `Urchin S. Malfoy`,
           `Barry G. pOtter`,
@@ -495,8 +495,8 @@ const initialState = {
           `Bon T. Weasley`,
           `Don P. Weasley`,
           `Ron L. Weasley`],
-          prompt: 'You have a list of all of the otters currently attending Hogwarts school of Beachcraft and Oceanry that are enrolled in professor Furwick’s charms class. Build a regex pattern, using the ^ (caret), that selects the full name of all the members of the Otter family except Berry and Larry.',
-          answer: '[^BLJ][eai].+pOtter',
+          prompt: 'You have a list of all of the otters currently attending Hogwarts school of Beachcraft and Oceanry that are enrolled in professor Furwick’s charms class. Build a regex pattern, using the ^ (caret), that selects the full name of all the members of the Otter family except Berry and Jerry.',
+          answer: '[^BJ][eai].+pOtter',
         },
       ],
       instructions: {

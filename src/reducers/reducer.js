@@ -10,6 +10,7 @@ export default function rootReducer (state = initialState, action) {
         currentLevelIndex: Math.min( state.currentLevelIndex + 1, state.levels.length - 1),
         currentExerciseIndex: 0,
         userRegex: '',
+        globalFlag: true,
       }
     case 'DECREMENT_LEVEL' :
       return {
@@ -17,18 +18,21 @@ export default function rootReducer (state = initialState, action) {
         currentLevelIndex: Math.max(state.currentLevelIndex - 1, 0),
         currentExerciseIndex: 0,
         userRegex: '',
+        globalFlag: true,
       }
     case 'INCREMENT_EXERCISE' :
       return {
         ...state,
         currentExerciseIndex: Math.min( state.currentExerciseIndex + 1, state.levels[state.currentLevelIndex].puzzles.length - 1),
         userRegex: '',
+        globalFlag: true,
       }
     case 'DECREMENT_EXERCISE' :
       return {
         ...state,
         currentExerciseIndex: Math.max(state.currentExerciseIndex - 1, 0),
         userRegex: '',
+        globalFlag: true,
       }
     case 'CHANGE_LEVEL' :
       return {
@@ -36,6 +40,7 @@ export default function rootReducer (state = initialState, action) {
         currentLevelIndex: (action.level - 1),
         currentExerciseIndex: 0,
         userRegex: '',
+        globalFlag: true,
       }
     case 'TOGGLE_GLOBAL_FLAG' :
       return {
@@ -47,6 +52,7 @@ export default function rootReducer (state = initialState, action) {
         ...state,
         currentLevelIndex: Math.max(state.currentLevelIndex - 1, 0),
         currentExerciseIndex: (state.levels[state.currentLevelIndex - 1].puzzles.length - 1),
+        globalFlag: true,
         userRegex: '',
       }
     case 'UPDATE_USER_REGEX' :

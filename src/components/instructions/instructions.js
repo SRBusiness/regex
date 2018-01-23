@@ -33,11 +33,11 @@ const BuildParagraph = ({ content }) => {
         counter += 1;
         switch(t.type) {
           case 'BOLD':
-            return <b
-              key={`p${counter}`}>{t.text}</b>
-          case 'ITALIC':
             return <i
               key={`p${counter}`}>{t.text}</i>
+          // case 'ITALIC':
+          //   return <
+          //     key={`p${counter}`}>{t.text}</i>
           case 'UNDERLINE':
             return <u
               key={`p${counter}`}>{t.text}</u>

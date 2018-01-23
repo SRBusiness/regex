@@ -1,7 +1,9 @@
 .highlightOne {
-  text-decoration: underline red;
+  border-bottom: solid 2px yellow;
+  /* text-decoration: underline wavy yellow; */
 }
 
 .highlightTwo {
-  color: yellow;
+  color: #FF5733;
+  background-color: rgba(255, 255, 255, 0.2);
 }
