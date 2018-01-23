@@ -19,30 +19,31 @@ const LevelNavigation = (props) => {
   const levelsArray = makeLevelsArray(props.totalLevels);
   return (
     <nav className={styles.centeredContainer}>
-        <p>
+        <h3>
+          Level {props.level} of {props.totalLevels}
+        </h3>
+        <div className={styles.btnContainer}>
           <span
             className={styles.arrow}
             onClick={ () => props.decrementLevel()}>
             {'< '}
           </span>
-            Level {props.level} of {props.totalLevels}
-          <span className={styles.arrow}
-            onClick={ () => props.incrementLevel()}>
-            {' >'}
-          </span>
-        </p>
-        <div className={styles.btnContainer}>
-          {levelsArray.map( (level) => {
+          {levelsArray.map( (level, index) => {
             return (
               <button
-                className={styles.lvlBtn}
+                className={ props.currentLevelIndex === index ? styles.curLvlBtn  : styles.lvlBtn }
                 key={level}
                 onClick={ () =>  props.changeLevel(level)}>
                 {level}
               </button>
             )
           })}
+          <span className={styles.arrow}
+            onClick={ () => props.incrementLevel()}>
+            {' >'}
+          </span>
       </div>
+
     </nav>
   )
 }
@@ -52,6 +53,7 @@ LevelNavigation.propTypes = {
   changeLevel: PropTypes.func.isRequired,
   incrementLevel: PropTypes.func.isRequired,
   decrementLevel: PropTypes.func.isRequired,
+  currentLevelIndex: PropTypes.number.isRequired,
 }
 
 function mapStateToProps(state) {
@@ -59,6 +61,7 @@ function mapStateToProps(state) {
   return {
     level: state.currentLevelIndex + 1,
     totalLevels: state.levels.length,
+    currentLevelIndex: state.currentLevelIndex,
   };
 }
 
