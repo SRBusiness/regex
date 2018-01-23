@@ -30,10 +30,21 @@ class PuzzleZone extends Component {
           <p>Exercise {currentExerciseIndex + 1} of {ExePerLvl}</p>
           <div className={styles.puzzleDisplay}>
             <p className={styles.top}>
-              { ReactHtmlParser(highlighter(text, answer, false, true)) }
+              { text.map( (t, key) => {
+                return (
+                  <span key={key}>
+                  {ReactHtmlParser(highlighter(t, answer, false, true))}<br/></span>
+                )
+              })}
             </p>
             <p className={styles.bottom}>
-              { ReactHtmlParser(highlighter(text, userRegex, true, globalFlag)) }
+              { text.map( (t, key) => {
+                return(
+                  <span key={key}>
+                  {ReactHtmlParser(highlighter(t, userRegex, true, globalFlag))}<br/></span>
+                )
+              })}
+              {/* { ReactHtmlParser(highlighter(text, userRegex, true, globalFlag)) } */}
             </p>
           </div>
         </div>
