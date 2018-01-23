@@ -24,3 +24,9 @@ div.puzzleDisplay {
   overflow: -webkit-paged-x;
   padding-left: 1em;
 }
+
+
+.btn {
+  composes: btn from '../main.css';
+  padding: 15px 32px;
+}

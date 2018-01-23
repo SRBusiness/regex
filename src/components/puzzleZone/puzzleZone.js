@@ -52,6 +52,14 @@ class PuzzleZone extends Component {
           <p>Promt: {prompt}</p>
         </div>
         <UserInputArea puzzles={puzzles}/>
+        <div>
+          <button
+            className={styles.btn}
+            onClick={ () => this.props.toggleRefSheet() }>
+            Toggle Ref Sheet
+          </button>
+        </div>
+
       </div>
     )
   }

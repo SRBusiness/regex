@@ -49,3 +49,9 @@ export function updateRegex(userRegex) {
     userRegex,
   }
 }
+
+export function toggleRefSheet() {
+  return {
+    type: 'TOGGLE_REF_SHEET',
+  }
+}

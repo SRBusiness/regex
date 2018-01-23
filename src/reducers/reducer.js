@@ -42,11 +42,6 @@ export default function rootReducer (state = initialState, action) {
         userRegex: '',
         globalFlag: true,
       }
-    case 'TOGGLE_GLOBAL_FLAG' :
-      return {
-        ...state,
-        globalFlag: !state.globalFlag,
-      }
     case 'PREVIOUS_LEVEL_LAST_EXERCISE' :
       return {
         ...state,
@@ -60,6 +55,17 @@ export default function rootReducer (state = initialState, action) {
       return {
         ...state,
         userRegex: action.userRegex,
+      }
+    case 'TOGGLE_GLOBAL_FLAG' :
+      return {
+        ...state,
+        globalFlag: !state.globalFlag,
+      }
+    case 'TOGGLE_REF_SHEET' :
+    console.log(`inside TOGGLE_REF_SHEET`);
+      return {
+        ...state,
+        toggleRefSheet: !state.toggleRefSheet,
       }
     default :
       return state

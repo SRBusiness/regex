@@ -577,7 +577,7 @@ const initialState = {
   ],
 
   refSheetContent: [
-    // [
+    [
       ["g",	"global search flag"],
       [".",	"any single character"],
       ["[paw]",	"a single character of: p, a, or w"],
@@ -587,8 +587,8 @@ const initialState = {
       ["\d", "any digit"],
       ["\D", "any non-digit"],
       ["\w", "any word character (letter, number, underscore)"],
-    // ],
-    // [
+    ],
+    [
       ["\W", "any non-word character"],
       ["o{3}", "exactly 3 of "],
       ["t{3,}",	"3 or more of t"],
@@ -597,8 +597,8 @@ const initialState = {
       ["r*", "zero or more of e"],
       ["s+", "one or more of s"],
       ["(o|t)",	"o or t"],
-    // ],
-    // [
+    ],
+    [
       ["^",	"start of line"],
       ["$",	"end of line"],
       ["\A", "start of string"],
@@ -607,7 +607,7 @@ const initialState = {
       ["\S", "any non-whitespace character"],
       ["\\b", "any word boundary"],
       ["(...)",	"capture everything enclosed"],
-    // ],
+    ],
   ],
   currentExerciseIndex: 0,
   currentLevelIndex: 0,

@@ -80,6 +80,7 @@ class UserInputArea extends Component {
           </button>
         }
       </div>
+
     )
   }
 }
@@ -90,6 +91,7 @@ UserInputArea.propTypes = {
   incrementExercise: PropTypes.func.isRequired,
   previousLevelLastExercise: PropTypes.func.isRequired,
   decrementExercise: PropTypes.func.isRequired,
+  // toggleRefSheet: PropTypes.func.isRequired,
   currentExerciseIndex: PropTypes.number.isRequired,
   currentLevelIndex: PropTypes.number.isRequired,
   maxLevel: PropTypes.number.isRequired,
