@@ -18,7 +18,7 @@ const initialState = {
         }
       ],
       instructions: {
-        title: 'Intro to regex',
+        title: 'Literal Characters',
         number: 1,
         content: [
           [
@@ -91,6 +91,7 @@ const initialState = {
           `o773R-OR-OCA-M-c1%`,
           `o773R-CA-SFZ-F-d0g`,
           `o773R-CA-MBA-F-13g`,
+          'o773R-CA-MBA-F-srb',
           `o773R-CA-MBA-M-0kj`,
           `5Qw1d-CA-SFZ-F-.-1`,
           `5Qw1d-OR-OCA-F-\\31`,
@@ -111,6 +112,7 @@ const initialState = {
           `o773R-OR-OCA-M-c1%`,
           `o773R-CA-SFZ-F-d0g`,
           `o773R-CA-MBA-F-13g`,
+          'o773R-CA-MBA-F-srb',
           `o773R-CA-MBA-M-0kj`,
           `5Qw1d-CA-SFZ-F-.-1`,
           `5Qw1d-OR-OCA-F-\\31`,
@@ -118,7 +120,7 @@ const initialState = {
           `5Qw1d-WA-PDA-F-o9!`,
           `5Qw1d-WA-SEA-F-d3w`,
           `5Qw1d-WA-PDA-M-abc`],
-          prompt: 'You are a marine mammal researcher and often looking through the National Standard Zoo and Aquarium (NSZA) database to find information. From the snippet of NSZA codes provided build a regex pattern that matches the entire NSZA code for all female (F) animals in the state of Washington (WA).',
+          prompt: 'From the snippet of NSZA codes provided build a regex pattern that matches the entire NSZA code for all female (F) animals in the state of Washington (WA).',
           answer: '......WA-...-F....',
         }, {
           text:[
@@ -131,6 +133,7 @@ const initialState = {
           `o773R-OR-OCA-M-c1%`,
           `o773R-CA-SFZ-F-d0g`,
           `o773R-CA-MBA-F-13g`,
+          'o773R-CA-MBA-F-srb',
           `o773R-CA-MBA-M-0kj`,
           `5Qw1d-CA-SFZ-F-.-1`,
           `5Qw1d-OR-OCA-F-\\31`,
@@ -138,12 +141,12 @@ const initialState = {
           `5Qw1d-WA-PDA-F-o9!`,
           `5Qw1d-WA-SEA-F-d3w`,
           `5Qw1d-WA-PDA-M-abc`],
-          prompt: 'You are a marine mammal researcher and often looking through the National Standard Zoo and Aquarium (NSZA) database to find information. From the snippet of NSZA codes provided build a regex pattern that matches the entire NSZA code for all Otters (o773R).' ,
+          prompt: 'From the snippet of NSZA codes provided build a regex pattern that matches the entire NSZA code for all Otters (o773R).' ,
           answer: 'o773R.............',
         }
       ],
       instructions: {
-        title: `More regex`,
+        title: `The Regex . (dot)`,
         number: 2,
         content: [
           [
@@ -261,7 +264,7 @@ const initialState = {
         }
       ],
       instructions: {
-        title: `Matching specific characters`,
+        title: `Chararacter Classes [ ] (square brackets)`,
         number: 3,
         content: [
           [
@@ -361,7 +364,7 @@ const initialState = {
         }
       ],
       instructions: {
-        title: `Matching specific characters`,
+        title: `Multipliers Part 1 + * (plus asterix)`,
         number: 4,
         content: [
           [
@@ -466,13 +469,14 @@ const initialState = {
           `Luna L. Lovegood`,
           `Urchin S. Malfoy`,
           `Barry G. pOtter`,
-          `Danny	D. pOtter`,
-          `Garny	B. pOtter`,
+          `Danny D. pOtter`,
+          `Garny B. pOtter`,
           `Harry J. pOtter`,
           `Jerry A. pOtter`,
-          `Marry	P. pOtter`,
-          `Perny	B. pOtter`,
-          `Timmy	P. pOtter`,
+          `Marry P. pOtter`,
+          `Perny B. pOtter`,
+          `Timmy P. pOtter`,
+          `Harry G. Rubeus`,
           `Bon T. Weasley`,
           `Don P. Weasley`,
           `Ron L. Weasley`],
@@ -484,17 +488,18 @@ const initialState = {
           `Seamus O. Finnigan`,
           `Hermione J. Granger`,
           `Viktor N. Krum`,
-          `Flipper	I. Longbottom`,
+          `Flipper I. Longbottom`,
           `Luna L. Lovegood`,
           `Urchin S. Malfoy`,
           `Barry G. pOtter`,
-          `Danny	D. pOtter`,
-          `Garny	B. pOtter`,
+          `Danny D. pOtter`,
+          `Garny B. pOtter`,
           `Harry J. pOtter`,
           `Jerry A. pOtter`,
-          `Marry	P. pOtter`,
-          `Perny	B. pOtter`,
-          `Timmy	P. pOtter`,
+          `Marry P. pOtter`,
+          `Perny B. pOtter`,
+          `Timmy P. pOtter`,
+          `Harry G. Rubeus`,
           `Bon T. Weasley`,
           `Don P. Weasley`,
           `Ron L. Weasley`],
@@ -503,7 +508,7 @@ const initialState = {
         },
       ],
       instructions: {
-        title: `Matching specific characters`,
+        title: `Character Class Negation [^] (carret)`,
         number: 5,
         content: [
           [
