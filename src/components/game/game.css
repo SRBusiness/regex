@@ -8,6 +8,12 @@
   height: 100vh;
 } */
 
+.centeredContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 :root {
  - space: 1.5em 0;
  - space: 2em 0;
@@ -65,16 +71,9 @@ footer {
   /* background-color: #7DD7DF; */
 }
 
-/* .footer {
-  flex-shrink: 0;
-} */
-
-/* .regex {
-  background-color: yellow;
-  color: red;
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  /* margin-left: 2em;
+  margin-top: 2em; */
 }
-
-.meta {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: green;
-} */

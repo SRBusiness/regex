@@ -26,8 +26,9 @@ class PuzzleZone extends Component {
 
     return (
       <div className={styles.container}>
+        <h3>Exercise {currentExerciseIndex + 1} of {ExePerLvl}</h3>
+        <h3>Text:</h3>
         <div className={styles.displayContainer}>
-          <p>Exercise {currentExerciseIndex + 1} of {ExePerLvl}</p>
           <div className={styles.puzzleDisplay}>
             <p className={styles.top}>
               { text.map( (t, key) => {
@@ -44,12 +45,11 @@ class PuzzleZone extends Component {
                   {ReactHtmlParser(highlighter(t, userRegex, true, globalFlag))}<br/></span>
                 )
               })}
-              {/* { ReactHtmlParser(highlighter(text, userRegex, true, globalFlag)) } */}
             </p>
           </div>
         </div>
         <div>
-          <p>Promt: {prompt}</p>
+          <p className={styles.prompt}>Prompt: {prompt}</p>
         </div>
         <UserInputArea puzzles={puzzles}/>
         <div className={styles.centeredContainer}>
@@ -59,7 +59,6 @@ class PuzzleZone extends Component {
             Toggle Ref Sheet
           </button>
         </div>
-
       </div>
     )
   }
@@ -68,7 +67,7 @@ class PuzzleZone extends Component {
 // TODO: go back and make sure prop types are correct
 PuzzleZone.propTypes = {
   puzzles: PropTypes.arrayOf(PropTypes.shape({
-     text: PropTypes.string.isRequired,
+     text: PropTypes.array.isRequired,
      prompt: PropTypes.string.isRequired,
      answer: PropTypes.string.isRequired,
    })).isRequired,

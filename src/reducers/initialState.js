@@ -1,6 +1,7 @@
 const initialState = {
   levels: [
     {
+      fact: "Otters are known to be quite chatty creatures. In fact, a large group of otters can create quite a chaotic sounding noise. However, despite the cacophony, otters seem to be able to discern the sounds made by the otters with which they identify. These sounds can take the form of squeaks, growls, grunts and chirps.",
       puzzles: [
         {
           text: ['Otters spend a good part of their day grooming themselves. They clean their fur by biting it and scratching it against rocks, or rubbing it on logs or grass. They actually have two layers of fur: a dense undercoat that traps air and a topcoat of long, waterproof hairs.Otters have the densest fur in the world. It ranges from 250,000 to a million hairs per square inch, according to the Defenders of Wildlife.'],
@@ -77,6 +78,7 @@ const initialState = {
       },
     },
     {
+      fact: 'Otters can be found on almost every continent, with Australia and Antarctica being the only two exceptions. Most otters are found near freshwater, although they are also known to enjoy the oceans’ saltwater. In addition, otters tend to prefer cooler waters, but they can be found on sandy landscapes near warmer waters.',
       puzzles: [
         {
           text:[
@@ -218,6 +220,7 @@ const initialState = {
       }
     },
     {
+      fact: 'Otters spend time both in water and on land, and their bodies are uniquely designed for this. They are able to move easily in both environments. One feature that illustrates this perfectly is their feet. Otters have four strong webbed feet, each with with sharp claws. These feet enable them to move with strength, stability and speed both in the water and on land.',
       puzzles: [
         {
           text: [
@@ -316,6 +319,7 @@ const initialState = {
       },
     },
     {
+      fact: 'Otters can hold their breath and remain under water for up to 4 minutes. In addition, otters are known to dive as deep as 300 feet when hunting for food.',
       puzzles: [
         {
           text: [
@@ -452,14 +456,13 @@ const initialState = {
         ],
       }
     },{
+      fact: 'Otters have particularly muscular tails that can reach up to one foot in length. As a general guide, an otter’s tail constitutes about one third of its body length. The only exception is sea otters as their tails are shorter and less muscular. Otters’ tails are used as navigational tools, guiding and steering otters in the water. However, one of the lesser known otter facts is that otters also use their tail as weapons.',
       puzzles: [
         {
           text: [
           `Cho C. Chang`,
           `Seamus O. Finnigan`,
-          // `Hermione J. Granger`,
           `Viktor N. Krum`,
-          // `Flipper	I. Longbottom`,
           `Luna L. Lovegood`,
           `Urchin S. Malfoy`,
           `Barry G. pOtter`,

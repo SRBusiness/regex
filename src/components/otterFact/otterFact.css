@@ -4,11 +4,11 @@
   /* display: flex; */
   flex-direction: column;
   justify-content: center;
-  padding: 1rem;
+  padding: 0 1rem 0 1rem;
 }
 
-h1 {
-  font-size: 28px;
+.fact {
+  font-size: 25px;
   font-weight: bold;
   margin: 0 0 0.5em;
 }
