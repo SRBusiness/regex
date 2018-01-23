@@ -1,15 +1,16 @@
 .refSheet {
-  background-color: grey;
+  background-color: #FAFAFA;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  text-align: left;
-  justify-content: space-around;
-  border: 10px solid #5E5D5E;
+  justify-content: center;
+  border: 10px solid #1E2532;
   font-size: 13px;
   padding: 5px;
 }
-.container {
-  composes: border from '../main.css';
-  border-color: yellow;
+table {
+  text-align: left;
+  font-size: 1.2em;
+  padding-left: 1em;
+  padding-right: 1em;
 }

@@ -14,14 +14,18 @@ class RefTables extends Component {
   render () {
     const {refArray} = this.props
     return (
-      <div className={styles.refSheet}>
-        {refArray.map( (table) => {
-          return(
-            <RefTable
-              table={table}
-            />
-          )
-        })}
+      <div>
+        <div className={styles.refSheet}>
+          {refArray.map( (table) => {
+            return(
+              <div className={styles.wrapper}>
+                <RefTable
+                  table={table}
+                />
+              </div>
+            )
+          })}
+        </div>
         <div
           ref={(el) => { this.messagesEnd = el; }}>
         </div>
