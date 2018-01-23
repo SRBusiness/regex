@@ -1,7 +1,7 @@
 .centeredContainer {
-  composes: centeredContainer border from '../main.css';
-  border-color: purple;
+  composes: centeredContainer from '../main.css';
   flex-direction: column;
+  padding-top: 1em;
 }
 
 .btnContainer {

@@ -6,6 +6,12 @@
   padding: 1rem;
 }
 
+.centeredContainer {
+  padding-top: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 div.puzzleDisplay {
   position: relative;
 }
@@ -29,4 +35,5 @@ div.puzzleDisplay {
 .btn {
   composes: btn from '../main.css';
   padding: 15px 32px;
+  background-color: #DDB700;
 }
