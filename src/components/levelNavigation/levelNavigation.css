@@ -1,7 +1,7 @@
 .centeredContainer {
   composes: centeredContainer from '../main.css';
   flex-direction: column;
-  padding-top: 1em;
+  /* padding-top: 1em; */
 }
 
 .btnContainer {

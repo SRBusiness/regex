@@ -78,7 +78,7 @@ const initialState = {
       },
     },
     {
-      fact: 'Otters can be found on almost every continent, with Australia and Antarctica being the only two exceptions. Most otters are found near freshwater, although they are also known to enjoy the oceans’ saltwater. In addition, otters tend to prefer cooler waters, but they can be found on sandy landscapes near warmer waters.',
+      fact: 'Otters can be found on almost every continent, with Australia and Antarctica being the only two exceptions. Most otters are found near freshwater, although they are also known to enjoy the oceans’ saltwater. Otters tend to prefer cooler waters, but they can be found on sandy landscapes near warmer waters.',
       puzzles: [
         {
           text:[
@@ -223,7 +223,7 @@ const initialState = {
       }
     },
     {
-      fact: 'Otters spend time both in water and on land, and their bodies are uniquely designed for this. They are able to move easily in both environments. One feature that illustrates this perfectly is their feet. Otters have four strong webbed feet, each with with sharp claws. These feet enable them to move with strength, stability and speed both in the water and on land.',
+      fact: 'Otters spend time both in water and on land, and their bodies are uniquely designed for this. They are able to move easily in both environments. Otters have four strong webbed feet, each with with sharp claws. These feet enable them to move with strength, stability and speed both in the water and on land.',
       puzzles: [
         {
           text: [
@@ -459,7 +459,7 @@ const initialState = {
         ],
       }
     },{
-      fact: 'Otters have particularly muscular tails that can reach up to one foot in length. As a general guide, an otter’s tail constitutes about one third of its body length. The only exception is sea otters as their tails are shorter and less muscular. Otters’ tails are used as navigational tools, guiding and steering otters in the water. However, one of the lesser known otter facts is that otters also use their tail as weapons.',
+      fact: 'Otters have particularly muscular tails that can reach up to one foot in length. As a general guide, an otter’s tail constitutes about one third of its body length. The only exception is sea otters as their tails are shorter and less muscular. Otters’ tails are used as navigational tools, guiding and steering otters in the water.',
       puzzles: [
         {
           text: [

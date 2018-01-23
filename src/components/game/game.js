@@ -20,12 +20,13 @@ const Game = ({ level, refSheetContent, toggleRef, paragraph, contentObj }) => {
               <h1>You Otter Learn Regex</h1>
             </div>
             <OtterFact fact={level.fact} />
+            <LevelNavigation />
             <Instructions
               instructions={level.instructions}
             />
           </div>
           <div className={styles.rightSide}>
-            <LevelNavigation />
+
             <PuzzleZone
               puzzles={level.puzzles}
             />

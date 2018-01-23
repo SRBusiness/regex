@@ -6,7 +6,6 @@ import styles from './otterFact.css';
 const OtterFact = ({fact}) => {
   return (
     <div className={styles.container}>
-
       <p><span className={styles.fact}>Otter Fact:</span> {fact} </p>
     </div>
   )

@@ -3,7 +3,7 @@
   border-color: red;
   flex-direction: column;
   /* justify-content: center; */
-  padding: 1em;
+  padding: 0 1em 1em 1em;
   height: 60vh;
 
 }
