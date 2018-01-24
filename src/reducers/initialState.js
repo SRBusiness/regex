@@ -99,7 +99,7 @@ const initialState = {
           `5Qw1d-WA-PDA-F-o9!`,
           `5Qw1d-WA-SEA-F-d3w`,
           `5Qw1d-WA-PDA-M-abc`],
-          prompt: 'You are a marine mammal researcher and often looking through the National Standard Zoo and Aquarium (NSZA) database to find information. From the snippet of NSZA codes provided build a regex pattern that matches the entire NSZA code for all female (F), Otters (o773R), in the state of California (CA), from the Monterey Bay Aquarium (MBA).' ,
+          prompt: 'From the snippet of National Standard Zoo and Aquarium (NSZA) codes provided build a regex pattern that matches the entire NSZA code for all female (F), Otters (o773R), in the state of California (CA), from the Monterey Bay Aquarium (MBA).' ,
           answer: 'o773R.CA.MBA.F....',
         }, {
           text: [
@@ -486,9 +486,7 @@ const initialState = {
           text: [
           `Cho C. Chang`,
           `Seamus O. Finnigan`,
-          `Hermione J. Granger`,
           `Viktor N. Krum`,
-          `Flipper I. Longbottom`,
           `Luna L. Lovegood`,
           `Urchin S. Malfoy`,
           `Barry G. pOtter`,
