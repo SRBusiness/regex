@@ -1,6 +1,6 @@
 import styles from './highlight.css';
 
-function makeRegExp(input, value) {
+export function makeRegExp(input, value) {
   try {
     return value ? new RegExp(input, 'g') : new RegExp(input);
   }

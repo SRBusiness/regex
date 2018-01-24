@@ -9,6 +9,16 @@
   padding: 15px 32px;
 }
 
+.btnFalse {
+  background-color: red; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .subWrapper {
   display: flex;
   flex-direction: column;

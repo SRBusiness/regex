@@ -622,6 +622,7 @@ const initialState = {
   globalFlag: true,
   toggleRefSheet: false,
   userRegex: '',
+  curLvlCorrectRegex: false,
 }
 
 export default initialState;
