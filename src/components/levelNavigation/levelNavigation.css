@@ -1,7 +1,6 @@
 .centeredContainer {
   composes: centeredContainer from '../main.css';
   flex-direction: column;
-  /* padding-top: 1em; */
 }
 
 .centeredContainer h3 {
@@ -13,10 +12,11 @@
   flex-direction: row;
   align-items: center;
 }
+
 .arrow {
-  /* padding: 0.25em 0.4em 0.2em; */
   cursor: pointer;
   font-size: 30px;
+  padding: 0 3px;
 }
 
 .lvlBtn {
@@ -26,6 +26,7 @@
   user-select: none;
   height: 35px;
   width: 35px;
+  margin: 0 2px;
 }
 
 .curLvlBtn {
@@ -35,6 +36,7 @@
   user-select: none;
   height: 35px;
   width: 35px;
+  margin: 0 2px;
 }
 
 .centeredContainer p {

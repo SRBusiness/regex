@@ -10,14 +10,6 @@ const OtterFact = ({fact}) => {
       <div>
         <img src={otterVector} alt="Otter" /><p><span className={styles.fact}><b>Otter Fact:</b></span> {fact} </p>
       </div>
-
-      {/* <figure> */}
-      {/* <div>
-        <img src={otterVector} alt="Otter" />
-      </div> */}
-
-      {/* </figure> */}
-
     </div>
   )
 }

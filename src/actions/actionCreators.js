@@ -20,6 +20,7 @@ export function changeLevel(level) {
 }
 
 export function toggleGlobalFlag() {
+  console.log(`inside toggleGlobalFlag`);
   return {
     type: 'TOGGLE_GLOBAL_FLAG',
   }

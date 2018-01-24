@@ -2,6 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: white;
+  border-radius: 4px;
+  color: #777;
+  font-family: monospace;
+  padding: 0.5rem;
 }
 
 .btnTrue {
@@ -11,7 +16,6 @@
 }
 
 .btnTrue:hover {
-  /* composes: btn:hover from '../main.css'; */
   background-color: #449d44;
 }
 
@@ -22,7 +26,6 @@
 }
 
 .btnFalse:hover {
-  /* composes: btn:hover from '../main.css'; */
   background-color: #c9302c;
 }
 
@@ -31,4 +34,25 @@
   flex-direction: column;
   padding-left: 2em;
   padding-right: 2em;
+}
+
+.theDivAboveUserInput {
+  /* background: white;
+  border-radius: 4px;
+  color: #777;
+  font-family: monospace;
+  padding: 0.5rem; */
+}
+
+.userInput {
+  border: none;
+  border-bottom: 2px solid #CDF;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1em;
+  padding: 0.25rem 0.5rem;
+}
+
+.userInput:focus {
+  outline: none;
+  border-bottom: 2px solid #27C;
 }

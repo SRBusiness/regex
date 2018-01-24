@@ -617,11 +617,11 @@ const initialState = {
   ],
   currentExerciseIndex: 0,
   currentLevelIndex: 0,
-  globalFlag: true,
+  globalFlag: false,
   toggleRefSheet: false,
   userRegex: '',
   curLvlCorrectRegex: false,
-  splash: false,
+  splash: true,
 }
 
 export default initialState;

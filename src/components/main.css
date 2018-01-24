@@ -4,16 +4,15 @@ body {
   margin: 0 auto;
   font-family: 'Libre Franklin', sans-serif;
 }
+
 html{
   height: 100%;
   width: 100%;
 }
 
-/* #1E1F21 */
 .border {
   /* border: solid 2px; */
 }
-
 
 .container {
   display: flex;
@@ -32,7 +31,6 @@ html{
 }
 
 .btn {
-  /* background-color: #4CAF50;*/
   border: none;
   color: white;
   text-align: center;
@@ -41,7 +39,7 @@ html{
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-  padding: 15px 15px;
+  /* padding: 15px 15px; */
 }
 
 .btn:focus {
@@ -51,7 +49,3 @@ html{
 .btn:hover {
   box-shadow: 0 0 2px black;
 }
-
-/* .btn:active {
-  box-shadow: 0 0 10px;
-} */

@@ -99,7 +99,7 @@ class UserInputArea extends Component {
   };
 
   render () {
-    const { currentExerciseIndex, currentLevelIndex, maxLevel, maxExeCurLvl, userRegex, curLvlCorrectRegex } = this.props
+    const { currentExerciseIndex, currentLevelIndex, maxLevel, maxExeCurLvl, userRegex, curLvlCorrectRegex, globalFlag } = this.props
 
     const btnStyle = curLvlCorrectRegex ? styles.btn : styles.btnFalse
 
@@ -123,18 +123,27 @@ class UserInputArea extends Component {
                 value={userRegex}
                 autoComplete='off'
                 onChange={this.handleChange}
+                className={styles.userInput}
               />
               <span>/</span>
           </div>
         </div>
         <div>
-          <SwitchButton
+          {/* <SwitchButton
             id="my-button"
             labelLeft="Off"
             labelRight="On"
             isChecked
             action={ () => this.props.toggleGlobalFlag()}
-          />
+          /> */}
+          <form>
+            <label>
+              <input type="checkbox" value="globalFlag"
+                onChange={() => this.props.toggleGlobalFlag()}
+                checked={globalFlag}/>
+                Global (g)
+              </label>
+          </form>
         </div>
         {currentLevelIndex === maxLevel && currentExerciseIndex === maxExeCurLvl? null:
           <button
@@ -164,7 +173,7 @@ UserInputArea.propTypes = {
   // puzzles: PropTypes
 }
 
-function mapStateToProps({currentExerciseIndex, levels, currentLevelIndex, userRegex,curLvlCorrectRegex }) {
+function mapStateToProps({currentExerciseIndex, levels, currentLevelIndex, userRegex, curLvlCorrectRegex, globalFlag }) {
   return {
     currentExerciseIndex: currentExerciseIndex,
     currentLevelIndex: currentLevelIndex,
@@ -172,6 +181,7 @@ function mapStateToProps({currentExerciseIndex, levels, currentLevelIndex, userR
     maxExeCurLvl: (levels[currentLevelIndex].puzzles.length - 1 ),
     userRegex: userRegex,
     curLvlCorrectRegex: curLvlCorrectRegex,
+    globalFlag: globalFlag,
   };
 }
 
