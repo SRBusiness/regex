@@ -122,7 +122,6 @@ class UserInputArea extends Component {
                 type='text'
                 value={userRegex}
                 autoComplete='off'
-                // onChange={(event) => this.props.updateRegex(event.target.value)}
                 onChange={this.handleChange}
               />
               <span>/</span>

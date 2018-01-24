@@ -51,7 +51,6 @@ Game.propTypes = {
 }
 
 function mapStateToProps({ levels, currentLevelIndex, refSheetContent, toggleRefSheet, paragraph, contentObj}) {
-  // console.log('State in Game', state);
   return {
     level: levels[currentLevelIndex],
     refSheetContent: refSheetContent,

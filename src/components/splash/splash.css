@@ -1,0 +1,10 @@
+.btn {
+  composes: btn from '../main.css';
+  padding: 15px 32px;
+}
+
+.splashContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}
