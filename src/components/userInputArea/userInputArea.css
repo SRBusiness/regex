@@ -7,7 +7,7 @@
 .btn {
   composes: btn from '../main.css';
   padding: 15px 32px;
-  background-color: red; /* Green */
+  background-color: #4CAF50; /* Green */
 }
 
 .btnFalse {

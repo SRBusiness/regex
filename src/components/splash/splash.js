@@ -46,6 +46,9 @@ const Splash = (props) => {
           Read aloud the steps in your regex and try to be as literal as possible. Ex “‘a’ followed by ‘b’ followed by ‘c’”
           Don’t assume your regex is matching what you want or think, test each piece as you go. If you get stuck try using a visualizer tool to like REGEXPER or Regulex to help you understand exactly what your regex is matching.
         </p>
+        <p>
+          regexes are widely supported in programming languages, text processing programs, advanced text editors, and many other programs. There are many different flavors of regex each with their own specific nuances in syntax and additional supported properties. This site attempts to keep things simple and only show regex syntax that is universally applicable. For more information about different implementations of regex please see the resources page. 
+        </p>
       </div>
 
       <button
