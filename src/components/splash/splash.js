@@ -4,58 +4,69 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import * as levelsActionCreators from '../../actions/actionCreators';
 import styles  from './splash.css';
+import otterHead from './otterhead1.png';
+import otterRight from './otterright.png';
+import otterLeft from './otterleft.png';
 
 const Splash = (props) => {
-  let regex = '`/ <pattern to match> / <flag(s)>`'
+  let regex = '/ <pattern to match> / <flag(s)>'
   return (
     <div className={styles.splashContainer}>
       <div>
-        <h1>You Otter Learn Regex</h1>
-        <h3>What are Regular Expressions?</h3>
-        <p>
-          Regular expressions are search patterns that try to describe, identify, or parse patterns of text. Learning regular expressions can be difficult at first, but they can be powerful tools to simplify your code. Regular expressions are commonly referred to as “regex” or “regexp”.
-        </p>
-        <p>
-          Regular expressions are flexible and powerful ways to match strings that have many useful applications. Common uses of regex include:
-          <ul>
-            <li>
-              Searching for text within a larger text body that matches a pattern - Ex. find all dates in a document
-            </li>
-            <li>
-              Replacing text items - Ex. look through a word doc and replace misspelled word X with correctly spelled word Y
-            </li>
-            <li>
-              Validating that a users input meets certain criteria - Ex. email, password, or phone number validation
-            </li>
-            <li>
-              Reformating text - Ex. split a large block of text into smaller pieces by matching a specific pattern
-            </li>
-          </ul>
-        </p>
-        <p>
-          Regular expressions are made up of two forward slashes, one at the beginning and one at the end, anything that lives between them forms the pattern we match against text. After the final forward slash you can add optional flags which alter the regex pattern.
-        </p>
-        <div>
-          <p>
-            {regex}
-          </p>
+        <div className={styles.clear}>
+          <img src={otterHead} alt="Otter head" />
+          <h1> You Otter Learn Regex</h1>
+        </div>
+        <p>Welcome to You Otter Learn Regex, an otter themed game to help introduce and teach regular expressions.</p>
+        <div className={styles.wrapper}>
+          <img className={styles.left} src={otterRight} alt="Otter icon right" />
+          <h2>What are Regular Expressions?</h2>
+          <img className={styles.right} src={otterLeft} alt="Otter icon left" />
         </div>
         <p>
-          General tips for how to tackle learning regular expressions:
-          Split regular expressions down into smaller parts
-          Read aloud the steps in your regex and try to be as literal as possible. Ex “‘a’ followed by ‘b’ followed by ‘c’”
-          Don’t assume your regex is matching what you want or think, test each piece as you go. If you get stuck try using a visualizer tool to like REGEXPER or Regulex to help you understand exactly what your regex is matching.
+          Regular expressions, commonly referred to as “regex” or “regexp”, are search patterns that try to describe or parse patterns of text.
+          Regular expressions are flexible and powerful ways to match strings that have many useful applications. Common uses of regex include searcing for text, replacing text, and validating a user input.
         </p>
+        <div className={styles.wrapper}>
+          <img className={styles.left} src={otterRight} alt="Otter icon right" />
+          <h2>How to regex</h2>
+          <img className={styles.right} src={otterLeft} alt="Otter icon left" />
+        </div>
         <p>
-          regexes are widely supported in programming languages, text processing programs, advanced text editors, and many other programs. There are many different flavors of regex each with their own specific nuances in syntax and additional supported properties. This site attempts to keep things simple and only show regex syntax that is universally applicable. For more information about different implementations of regex please see the resources page. 
+          Regular expressions are made up of two forward slashes, one at the beginning and one at the end. Anything that lives between the forward slashes forms the pattern we use match against text. After the final forward slash you can add optional flags which alter the regex pattern.
         </p>
+        <div className={styles.regex}>
+          <div className={styles.subWrapper}>
+            <p> <span className={styles.slash}>/</span> <span className={styles.pattern}>pattern to match</span> <span className={styles.slash}>/</span> <span className={styles.flag}>flag(s)</span> </p>
+          </div>
+        </div>
+        <div className={styles.wrapper}>
+          <img className={styles.left} src={otterRight} alt="Otter icon right" />
+          <h2>Tips for learning regex</h2>
+          <img className={styles.right} src={otterLeft} alt="Otter icon left" />
+        </div>
+        <ul>
+          <li>
+            Split regular expressions down into smaller parts
+          </li>
+          <li>
+            Read aloud the steps in your regex and try to be as literal as possible. Ex “‘a’ followed by ‘b’ followed by ‘c’”
+          </li>
+          <li>
+            Don’t assume your regex is matching what you want or think, test each piece as you go.
+          </li>
+          <li>
+            If you get stuck try using a visualizer tool to like REGEXPER or Regulex to help you understand exactly what your regex is matching.
+          </li>
+        </ul>
+        <div className={styles.buttonDiv}>
+          <button
+            className={styles.btn}
+            onClick={props.switchToGame}>
+            Play the Game!
+          </button>
+        </div>
       </div>
-
-      <button
-        className={styles.btn}
-        onClick={props.switchToGame}>
-        Play the Game!
-      </button>
     </div>
   )
 }

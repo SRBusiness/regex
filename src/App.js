@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Game from './components/game/game';
 import Splash from './components/splash/splash';
-import * as levelsActionCreators from './actions/actionCreators';
-// import styles from './App.css';
+import styles from './App.css';
 
 const App = ({splash}) => {
   return (
-    <div>
+    <div className={styles.container}>
       {splash
         ? <Splash />
         : <Game />

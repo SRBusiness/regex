@@ -6,5 +6,79 @@
 .splashContainer {
   display: flex;
   flex-direction: column;
-  padding: 2em;
+  padding: 1em 1em;
+  margin: 4em 7em;
+  background-color: grey;
+  /* height: 100%; */
+}
+
+.clear {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.clear:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.clear img {
+  height: 80px;
+  float: left;
+  padding-right: 10px;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.wrapper h2 {
+  margin: 0;
+}
+
+.wrapper img {
+  width: 40px;
+  /* padding: 0 10px; */
+}
+.left {
+  padding-right: 10px;
+}
+
+.right {
+  padding-left: 10px;
+}
+
+.regex {
+  display: flex;
+  justify-content: center;
+  /* background-color: yellow; */
+}
+
+.regex div {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  padding: 0 5px;
+}
+.regex p {
+  /* font-size: 1.3em; */
+}
+
+.slash {
+
+}
+
+.pattern {
+
+}
+
+.flag {
+
 }
