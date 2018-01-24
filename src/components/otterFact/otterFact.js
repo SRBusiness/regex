@@ -8,7 +8,7 @@ const OtterFact = ({fact}) => {
   return (
     <div className={styles.otterFactContainer}>
       <div>
-        <img src={otterVector} alt="Otter" /><p><span className={styles.fact}>Otter Fact:</span> {fact} </p>
+        <img src={otterVector} alt="Otter" /><p><span className={styles.fact}><b>Otter Fact:</b></span> {fact} </p>
       </div>
 
       {/* <figure> */}

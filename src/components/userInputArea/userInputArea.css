@@ -6,7 +6,7 @@
 
 .btnTrue {
   composes: btn from '../main.css';
-  padding: 15px 32px;
+  padding: 15px 15px;
   background-color: #5cb85c;
 }
 
@@ -17,7 +17,7 @@
 
 .btnFalse {
   composes: btn from '../main.css';
-  padding: 15px 32px;
+  padding: 15px 15px;
   background-color: #d9534f;
 }
 
