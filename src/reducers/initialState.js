@@ -4,7 +4,7 @@ const initialState = {
       fact: "Otters are known to be quite chatty creatures. In fact, a large group of otters can create quite a chaotic sounding noise. However, despite the cacophony, otters seem to be able to discern the sounds made by the otters with which they identify. These sounds can take the form of squeaks, growls, grunts and chirps.",
       puzzles: [
         {
-          text: ['Otters spend a good part of their day grooming themselves. DELETE ME LATER r. They clean their fur by biting it and scratching it against rocks, or rubbing it on logs or grass. They actually have two layers of fur: a dense undercoat that traps air and a topcoat of long, waterproof hairs.Otters have the densest fur in the world. It ranges from 250,000 to a million hairs per square inch, according to the Defenders of Wildlife. '],
+          text: ['Otters spend a good part of their day grooming themselves. They clean their fur by biting it and scratching it against rocks, or rubbing it on logs or grass. They actually have two layers of fur: a dense undercoat that traps air and a topcoat of long, waterproof hairs.Otters have the densest fur in the world. It ranges from 250,000 to a million hairs per square inch, according to the Defenders of Wildlife. '],
           prompt: 'Build a regex pattern using literal characters that matches the text "fur"',
           answer: 'fur',
         }, {

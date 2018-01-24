@@ -30,5 +30,5 @@
 .container {
   display: flex;
   height: 100vh;
-  background-color: pink;
+  background-color: lightgrey;
 }

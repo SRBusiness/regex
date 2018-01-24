@@ -9,7 +9,6 @@ import RefTables from '../refsheet/refsheet';
 import Information from '../information/information';
 import styles  from './game.css';
 
-// functional stateless component
 const Game = ({ level, refSheetContent, toggleRef, paragraph, contentObj }) => {
   return (
     <div className={styles.content}>
@@ -26,19 +25,15 @@ const Game = ({ level, refSheetContent, toggleRef, paragraph, contentObj }) => {
             />
           </div>
           <div className={styles.rightSide}>
-
             <PuzzleZone
               puzzles={level.puzzles}
             />
           </div>
-
         </div>
       </div>
-
       <footer className="footer">
         { toggleRef ? <RefTables refArray={refSheetContent} /> : null }
         <Information/>
-        {/* <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */}
       </footer>
     </div>
   )

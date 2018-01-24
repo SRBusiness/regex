@@ -11,7 +11,7 @@
 .btnContainer {
   composes: container from '../main.css';
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
 }
 .arrow {
   /* padding: 0.25em 0.4em 0.2em; */
@@ -40,4 +40,16 @@
 .centeredContainer p {
   font-size: 1em;
   margin: 0;
+}
+
+.left {
+  padding-right: 10px;
+}
+
+.right {
+  padding-left: 10px;
+}
+.arrow img {
+  width: 40px;
+  margin-top: 8px;
 }

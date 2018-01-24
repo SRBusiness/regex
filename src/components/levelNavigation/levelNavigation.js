@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as levelsActionCreators from '../../actions/actionCreators';
 import styles from './levelNavigation.css';
+import otterRight from './otterright.png';
+import otterLeft from './otterleft.png';
 
 // creates an ar array of levels that we iterate through in the component below
 const makeLevelsArray = (num) => {
@@ -26,7 +28,8 @@ const LevelNavigation = (props) => {
           <span
             className={styles.arrow}
             onClick={ () => props.decrementLevel()}>
-            {'< '}
+            {/* {'< '} */}
+            <img className={styles.left} src={otterRight} alt="Otter icon right" />
           </span>
           {levelsArray.map( (level, index) => {
             return (
@@ -40,7 +43,8 @@ const LevelNavigation = (props) => {
           })}
           <span className={styles.arrow}
             onClick={ () => props.incrementLevel()}>
-            {' >'}
+            {/* {' >'} */}
+            <img className={styles.right} src={otterLeft} alt="Otter icon left" />
           </span>
       </div>
 

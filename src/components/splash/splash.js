@@ -9,7 +9,6 @@ import otterRight from './otterright.png';
 import otterLeft from './otterleft.png';
 
 const Splash = (props) => {
-  let regex = '/ <pattern to match> / <flag(s)>'
   return (
     <div className={styles.splashContainer}>
       <div>
@@ -53,10 +52,7 @@ const Splash = (props) => {
             Read aloud the steps in your regex and try to be as literal as possible. Ex “‘a’ followed by ‘b’ followed by ‘c’”
           </li>
           <li>
-            Don’t assume your regex is matching what you want or think, test each piece as you go.
-          </li>
-          <li>
-            If you get stuck try using a visualizer tool to like REGEXPER or Regulex to help you understand exactly what your regex is matching.
+            Don’t assume your regex is matching what you want or think, test each piece as you go. If you get stuck try using a visualizer tool to like REGEXPER or Regulex to help you understand exactly what your regex is matching.
           </li>
         </ul>
         <div className={styles.buttonDiv}>
@@ -76,13 +72,7 @@ Splash.propTypes = {
 }
 
 function mapStateToProps() {
-  // console.log('State in Game', state);
   return {
-    // level: levels[currentLevelIndex],
-    // refSheetContent: refSheetContent,
-    // toggleRef: toggleRefSheet,
-    // paragraph: paragraph,
-    // contentObj: contentObj,
   }
 }
 
