@@ -31,12 +31,16 @@ div.puzzleDisplay {
   padding-left: 1em;
 }
 
-
 .btn {
   composes: btn from '../main.css';
   padding: 15px 32px;
-  background-color: #DDB700;
+  background-color: #ffae00;
 }
+
+.btn:hover {
+  background-color: #cc8b00;
+}
+
 .prompt {
   font-size: 1em;
 }

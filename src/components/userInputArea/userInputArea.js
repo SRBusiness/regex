@@ -107,7 +107,7 @@ class UserInputArea extends Component {
       <div className={styles.userInputWrapper}>
         {currentLevelIndex === 0 && currentExerciseIndex === 0 ? null :
           <button
-            className={styles.btn}
+            className={styles.btnTrue}
             onClick={this.handlePrev}>
             Previous
           </button>

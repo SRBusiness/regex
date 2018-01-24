@@ -1,6 +1,7 @@
 .btn {
   composes: btn from '../main.css';
   padding: 15px 32px;
+  background-color: navy;
 }
 
 .splashContainer {

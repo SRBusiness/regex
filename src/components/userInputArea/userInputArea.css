@@ -4,21 +4,26 @@
   justify-content: center;
 }
 
-.btn {
+.btnTrue {
   composes: btn from '../main.css';
   padding: 15px 32px;
-  background-color: #4CAF50; /* Green */
+  background-color: #5cb85c;
+}
+
+.btnTrue:hover {
+  /* composes: btn:hover from '../main.css'; */
+  background-color: #449d44;
 }
 
 .btnFalse {
-  background-color: red; /* Green */
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  composes: btn from '../main.css';
   padding: 15px 32px;
+  background-color: #d9534f;
+}
+
+.btnFalse:hover {
+  /* composes: btn:hover from '../main.css'; */
+  background-color: #c9302c;
 }
 
 .subWrapper {

@@ -51,7 +51,7 @@ html{
 }
 
 .btn {
-  /* background-color: #4CAF50; /* Green */ */
+  /* background-color: #4CAF50;*/
   border: none;
   color: white;
   text-align: center;
@@ -65,3 +65,11 @@ html{
 .btn:focus {
   outline:0;
 }
+
+.btn:hover {
+  box-shadow: 0 0 2px black;
+}
+
+/* .btn:active {
+  box-shadow: 0 0 10px;
+} */
