@@ -37,29 +37,20 @@ class UserInputArea extends Component {
     }
   }
 
-  helper() {
-    const { puzzles, currentExerciseIndex, userRegex } = this.props
-    const { text, answer } = puzzles[currentExerciseIndex];
-    // const correct = validator(text, answer, userRegex)
-    // return correct;
-  }
-
   handleChange(event) {
-
     const { puzzles, currentExerciseIndex } = this.props
     const { text, answer } = puzzles[currentExerciseIndex];
     const userRegex = event.target.value
     this.props.updateRegex(userRegex)
-    // let validation = this.validator(text, answer, userRegex )
-
-
-    // pass in
-    this.props.validateUserRegex()
+    let validation = this.validator(text, answer, userRegex )
+    this.props.validateUserRegex(validation);
   }
 
   makeExecArray = (text, inputAnswer) => {
-    // let regex = new RegExp(inputAnswer, 'g');
     let regex;
+    if (inputAnswer === '') {
+      return false;
+    }
     try {
       regex = new RegExp(inputAnswer, 'g');
     }
@@ -172,7 +163,7 @@ UserInputArea.propTypes = {
   maxExeCurLvl: PropTypes.number.isRequired,
   userRegex: PropTypes.string.isRequired,
   curLvlCorrectRegex: PropTypes.bool.isRequired,
-  puzzles: PropTypes
+  // puzzles: PropTypes
 }
 
 function mapStateToProps({currentExerciseIndex, levels, currentLevelIndex, userRegex,curLvlCorrectRegex }) {
