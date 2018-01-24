@@ -105,7 +105,6 @@ class UserInputArea extends Component {
 
     return (
       <div className={styles.userInputWrapper}>
-        <p>{`${curLvlCorrectRegex}`}</p>
         {currentLevelIndex === 0 && currentExerciseIndex === 0 ? null :
           <button
             className={styles.btn}
