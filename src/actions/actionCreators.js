@@ -56,8 +56,9 @@ export function toggleRefSheet() {
   }
 }
 
-export function validateUserRegex() {
+export function validateUserRegex(result) {
   return {
     type: 'VALIDATE_USER_REGEX',
+    result,
   }
 }

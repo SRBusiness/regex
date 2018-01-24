@@ -71,7 +71,7 @@ export default function rootReducer (state = initialState, action) {
     console.log(`inside VALIDATE_USER_REGEX`);
       return {
         ...state,
-        curLvlCorrectRegex: !state.curLvlCorrectRegex,
+        curLvlCorrectRegex: action.result,
       }
     default :
       return state
