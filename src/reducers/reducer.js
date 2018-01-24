@@ -73,6 +73,12 @@ export default function rootReducer (state = initialState, action) {
         ...state,
         curLvlCorrectRegex: action.result,
       }
+    case 'SWITCH_TO_GAME' :
+    console.log(`inside SWITCH_TO_GAME`);
+      return {
+        ...state,
+        splash: false,
+      }
     default :
       return state
   }

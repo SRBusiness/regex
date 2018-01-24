@@ -62,3 +62,9 @@ export function validateUserRegex(result) {
     result,
   }
 }
+
+export function switchToGame() {
+  return {
+    type: 'SWITCH_TO_GAME',
+  }
+}

@@ -623,6 +623,7 @@ const initialState = {
   toggleRefSheet: false,
   userRegex: '',
   curLvlCorrectRegex: false,
+  splash: false,
 }
 
 export default initialState;

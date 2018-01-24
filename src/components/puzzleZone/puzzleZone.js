@@ -26,7 +26,7 @@ class PuzzleZone extends Component {
 
     return (
       <div className={styles.container}>
-        <h3>Exercise {currentExerciseIndex + 1} of {ExePerLvl}</h3>
+        <h3>Exercise # {currentExerciseIndex + 1} of {ExePerLvl}</h3>
         <h3>Text:</h3>
         <div className={styles.displayContainer}>
           <div className={styles.puzzleDisplay}>
