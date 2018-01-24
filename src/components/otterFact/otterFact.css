@@ -1,4 +1,4 @@
-.container {
+.otterFactContainer {
   composes: border container from '../main.css';
   border-color: blue;
   /* display: flex; */
@@ -11,4 +11,10 @@
   /* font-size: 20px; */
   font-weight: bold;
   margin: 0 0 0.5em;
+}
+
+.otterFactContainer img {
+  max-height: 70px;
+  float: left;
+  margin-right: 1em;
 }
