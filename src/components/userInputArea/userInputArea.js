@@ -111,7 +111,7 @@ class UserInputArea extends Component {
   render () {
     const { currentExerciseIndex, currentLevelIndex, maxLevel, maxExeCurLvl, userRegex, curLvlCorrectRegex, globalFlag } = this.props
 
-    const prevBtnStyle = (currentLevelIndex === 0 && currentExerciseIndex === 0) ? styles.btnTrueDisabled : styles.btnTrue
+    const prevBtnStyle = (currentLevelIndex === 0 && currentExerciseIndex === 0) ? styles.btnPrevDisabled : styles.btnPrev
 
     const gFlagStyle = globalFlag ? null : styles.blank
     return (

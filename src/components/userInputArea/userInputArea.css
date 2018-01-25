@@ -13,6 +13,8 @@
   composes: btn from '../main.css';
   padding: 15px 15px;
   background-color: #5cb85c;
+  min-width: 100px;
+  min-width: 100px;
 }
 
 .btnTrue:hover {
@@ -25,6 +27,7 @@
   background-color: #5cb85c;
   opacity: 0.65;
   cursor: not-allowed;
+  min-width: 100px;
 }
 
 
@@ -35,6 +38,7 @@
   composes: btn from '../main.css';
   padding: 15px 15px;
   background-color: #d9534f;
+  min-width: 100px;
 }
 
 .btnFalseDisabled {
@@ -43,10 +47,31 @@
   background-color: #d9534f;
   opacity: 0.65;
   cursor: not-allowed;
+  width: 100px;
 }
 
 .btnFalse:hover {
   background-color: #c9302c;
+}
+
+.btnPrev {
+  composes: btn from '../main.css';
+  padding: 15px 15px;
+  background-color: #0275d8;
+  min-width: 100px;
+}
+
+.btnPrevDisabled {
+  composes: btn from '../main.css';
+  padding: 15px 15px;
+  background-color: #0275d8;
+  opacity: 0.65;
+  cursor: not-allowed;
+  width: 100px;
+}
+
+.btnPrev:hover {
+  background-color: #025aa5;
 }
 
 .subWrapper {
