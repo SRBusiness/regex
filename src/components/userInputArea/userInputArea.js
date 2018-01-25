@@ -109,11 +109,12 @@ class UserInputArea extends Component {
   }
 
   render () {
-    const { currentExerciseIndex, currentLevelIndex, userRegex, globalFlag } = this.props
+    const { currentExerciseIndex, currentLevelIndex, userRegex, globalFlag, refSheet } = this.props
 
     const prevBtnStyle = (currentLevelIndex === 0 && currentExerciseIndex === 0) ? styles.btnPrevDisabled : styles.btnPrev
 
     const gFlagStyle = globalFlag ? null : styles.blank
+
     return (
       <div className={styles.userInputWrapper}>
         <button
@@ -141,7 +142,16 @@ class UserInputArea extends Component {
               <input type="checkbox" value="globalFlag"
                 onChange={() => this.props.toggleGlobalFlag()}
                 checked={globalFlag}/>
-                Global (g)
+                Global flag (g)
+            </label>
+          </form>
+          <form>
+            <label>
+              <input type="checkbox" value="globalFlag"
+                onChange={() => this.props.toggleRefSheet()}
+                checked={refSheet}/>
+                {refSheet ? 'Hide ' : 'Show '}
+                Quick Reference Sheet
             </label>
           </form>
         </div>
@@ -171,9 +181,10 @@ UserInputArea.propTypes = {
   maxExeCurLvl: PropTypes.number.isRequired,
   userRegex: PropTypes.string.isRequired,
   curLvlCorrectRegex: PropTypes.bool.isRequired,
+  refSheet: PropTypes.bool.isRequired,
 }
 
-function mapStateToProps({currentExerciseIndex, levels, currentLevelIndex, userRegex, curLvlCorrectRegex, globalFlag }) {
+function mapStateToProps({currentExerciseIndex, levels, currentLevelIndex, userRegex, curLvlCorrectRegex, globalFlag, refSheet }) {
   return {
     currentExerciseIndex: currentExerciseIndex,
     currentLevelIndex: currentLevelIndex,
@@ -182,6 +193,7 @@ function mapStateToProps({currentExerciseIndex, levels, currentLevelIndex, userR
     userRegex: userRegex,
     curLvlCorrectRegex: curLvlCorrectRegex,
     globalFlag: globalFlag,
+    refSheet: refSheet,
   };
 }
 

@@ -3,9 +3,11 @@
   border-color: green;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.6rem;
 }
-
+.textalign {
+  text-align: center;
+}
 .centeredContainer {
   padding-top: 3em;
   display: flex;
@@ -43,6 +45,13 @@ div.puzzleDisplay {
 
 .prompt {
   font-size: 1em;
+  /* background-color: var(--color-four);
+  color: white; */
+
+  /* background-color: #D8EFFF; */
+  background-color: var(--transparent-two);
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .container h3 {

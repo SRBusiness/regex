@@ -44,11 +44,13 @@ footer {
   /* border-right: black solid 2px; */
   width: 50%;
   background-color: var(--color-one);
+  padding: 0 10px;
 }
 
 .rightSide {
   width: 50%;
   /* background-color: #7DD7DF; */
+  /* padding: 0 10px; */
 }
 
 h1 {

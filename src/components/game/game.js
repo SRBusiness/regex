@@ -45,11 +45,11 @@ Game.propTypes = {
   toggleRef: PropTypes.bool.isRequired,
 }
 
-function mapStateToProps({ levels, currentLevelIndex, refSheetContent, toggleRefSheet, paragraph, contentObj}) {
+function mapStateToProps({ levels, currentLevelIndex, refSheetContent, refSheet, paragraph, contentObj}) {
   return {
     level: levels[currentLevelIndex],
     refSheetContent: refSheetContent,
-    toggleRef: toggleRefSheet,
+    toggleRef: refSheet,
     paragraph: paragraph,
     contentObj: contentObj,
   }

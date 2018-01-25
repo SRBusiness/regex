@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: var(--color-one);
   border-radius: 4px;
   color: #777;
   font-family: monospace;
@@ -88,7 +88,9 @@
   font-family: monospace;
   padding: 0.5rem; */
 }
-
+form {
+  text-align: center;
+}
 .userInput {
   border: none;
   border-bottom: 2px solid #CDF;
@@ -104,7 +106,7 @@
 
 
 span.blank {
-  color: #ffffff;
+  color: var(--color-one);
 }
 
 .userInputWrapper form {

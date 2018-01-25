@@ -71,7 +71,7 @@ export default function rootReducer (state = initialState, action) {
     console.log(`inside TOGGLE_REF_SHEET`);
       return {
         ...state,
-        toggleRefSheet: !state.toggleRefSheet,
+        refSheet: !state.refSheet,
       }
     case 'VALIDATE_USER_REGEX' :
     console.log(`inside VALIDATE_USER_REGEX`);

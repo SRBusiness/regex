@@ -26,12 +26,12 @@ class PuzzleZone extends Component {
 
     return (
       <div className={styles.container}>
-        <h3>Exercise # {currentExerciseIndex + 1} of {ExePerLvl}</h3>
+        <h3 className={styles.textalign}>Exercise # {currentExerciseIndex + 1} of {ExePerLvl}</h3>
         <h3>Text:</h3>
         <div className={styles.displayContainer}>
           <div className={styles.puzzleDisplay}>
             <p className={styles.top}>
-              { text.map( (t, key) => {
+               { text.map( (t, key) => {
                 return (
                   <span key={key}>
                   {ReactHtmlParser(highlighter(t, answer, false, true))}<br/></span>
@@ -52,13 +52,13 @@ class PuzzleZone extends Component {
           <p className={styles.prompt}>Prompt: {prompt}</p>
         </div>
         <UserInputArea puzzles={puzzles}/>
-        <div className={styles.centeredContainer}>
+        {/* <div className={styles.centeredContainer}>
           <button
             className={styles.btn}
             onClick={ () => this.props.toggleRefSheet() }>
             Toggle Ref Sheet
           </button>
-        </div>
+        </div> */}
       </div>
     )
   }
