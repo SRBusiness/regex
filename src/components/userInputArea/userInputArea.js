@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as levelsActionCreators from '../../actions/actionCreators';
-// import Validator from '../validation';
-import SwitchButton from 'lyef-switch-button';
-import 'lyef-switch-button/css/main.css';
 import styles from './userInputArea.css';
 
 class UserInputArea extends Component {
@@ -98,20 +95,43 @@ class UserInputArea extends Component {
     return result;
   };
 
+  buttonStyleNext = (props) => {
+    const { currentExerciseIndex, currentLevelIndex, maxLevel, maxExeCurLvl, curLvlCorrectRegex } = this.props
+    let btnStyle;
+    const nextLast = (currentLevelIndex === maxLevel && currentExerciseIndex === maxExeCurLvl) ? true : false
+
+    if (nextLast) {
+      btnStyle = curLvlCorrectRegex ? styles.btnTrueDisabled : styles.btnFalseDisabled
+    } else {
+      btnStyle = curLvlCorrectRegex ? styles.btnTrue: styles.btnFalse
+    }
+    return btnStyle
+  }
+
   render () {
     const { currentExerciseIndex, currentLevelIndex, maxLevel, maxExeCurLvl, userRegex, curLvlCorrectRegex, globalFlag } = this.props
+    //
+    // let btnStyle;
+    // const nextLast = (currentLevelIndex === maxLevel && currentExerciseIndex === maxExeCurLvl) ? true : false
+    //
+    // if (nextLast) {
+    //   btnStyle = curLvlCorrectRegex ? styles.btnTrueDisabled : styles.btnFalseDisabled
+    // } else {
+    //   btnStyle = curLvlCorrectRegex ? styles.btnTrue: styles.btnFalse
+    // }
 
-    const btnStyle = curLvlCorrectRegex ? styles.btn : styles.btnFalse
+
+
+
+    const prevBtnStyle = (currentLevelIndex === 0 && currentExerciseIndex === 0) ? styles.btnTrueDisabled : styles.btnTrue
 
     return (
       <div className={styles.userInputWrapper}>
-        {currentLevelIndex === 0 && currentExerciseIndex === 0 ? null :
-          <button
-            className={styles.btnTrue}
-            onClick={this.handlePrev}>
-            Previous
-          </button>
-        }
+        <button
+          className={prevBtnStyle}
+          onClick={this.handlePrev}>
+          Previous
+        </button>
         <div className={styles.subWrapper}>
           <label>Your Regex:</label>
           <div>
@@ -127,31 +147,23 @@ class UserInputArea extends Component {
               />
               <span>/</span>
           </div>
-        </div>
-        <div>
-          {/* <SwitchButton
-            id="my-button"
-            labelLeft="Off"
-            labelRight="On"
-            isChecked
-            action={ () => this.props.toggleGlobalFlag()}
-          /> */}
           <form>
             <label>
               <input type="checkbox" value="globalFlag"
                 onChange={() => this.props.toggleGlobalFlag()}
                 checked={globalFlag}/>
                 Global (g)
-              </label>
+            </label>
           </form>
         </div>
-        {currentLevelIndex === maxLevel && currentExerciseIndex === maxExeCurLvl? null:
-          <button
-            className={ btnStyle }
-            onClick={ this.handleNext }>
-            Next
-          </button>
-        }
+        <div>
+
+        </div>
+        <button
+          className={ this.buttonStyleNext()}
+          onClick={ this.handleNext }>
+          Next
+        </button>
       </div>
     )
   }
