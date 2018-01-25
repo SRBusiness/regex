@@ -49,3 +49,12 @@ html{
 .btn:hover {
   box-shadow: 0 0 2px black;
 }
+:root {
+  --light-blue: #C4E6E7;
+  --dark-blue: #232462;
+  --white: #FEFFFF;
+  --dark-grey-purple: #646B94;
+  --med-grey-purple: #8E92B1;
+  --light-grey-purple: #CACAD9;
+  --blue-grey: #9EB3C6;
+}
