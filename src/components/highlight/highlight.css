@@ -1,9 +1,12 @@
 .highlightOne {
-  border-bottom: solid 2px yellow;
+  /* border-bottom: solid 2px #e6e600; */
   /* text-decoration: underline wavy yellow; */
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .highlightTwo {
-  color: #FF5733;
-  background-color: rgba(255, 255, 255, 0.2);
+  /* color: #c644b7; */
+  border-bottom: solid 2px #e6e600;
+  color: #b23da4;
+  /* background-color: rgba(255, 255, 255, 0.2); */
 }

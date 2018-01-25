@@ -4,7 +4,6 @@
   flex-direction: column;
   padding: 0 1em 1em 1em;
   height: 80vh;
-
 }
 
 .instructionsContainer li {
@@ -34,7 +33,7 @@
   background: rgba(255, 255, 255, 0.2);
   background-color: var(--color-two);
   border-radius: 10px;
-  padding: 10px;
+  padding: 0px 15px;
 }
 
 /* b {
