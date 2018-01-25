@@ -24,7 +24,8 @@
 }
 
 footer {
-  background-color: #36A5AB;
+  background-color: var(--color-five);
+  color: var(--color-two);
 }
 .gameContainer {
   composes: border from '../main.css';

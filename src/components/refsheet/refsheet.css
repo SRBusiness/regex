@@ -4,7 +4,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  border: 10px solid #1E2532;
+  border: 10px solid var(--color-five);
   font-size: 13px;
   padding: 5px;
 }
