@@ -617,7 +617,7 @@ const initialState = {
   ],
   currentExerciseIndex: 0,
   currentLevelIndex: 0,
-  globalFlag: false,
+  globalFlag: true,
   toggleRefSheet: false,
   userRegex: '',
   curLvlCorrectRegex: false,

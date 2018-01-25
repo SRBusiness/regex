@@ -110,21 +110,10 @@ class UserInputArea extends Component {
 
   render () {
     const { currentExerciseIndex, currentLevelIndex, maxLevel, maxExeCurLvl, userRegex, curLvlCorrectRegex, globalFlag } = this.props
-    //
-    // let btnStyle;
-    // const nextLast = (currentLevelIndex === maxLevel && currentExerciseIndex === maxExeCurLvl) ? true : false
-    //
-    // if (nextLast) {
-    //   btnStyle = curLvlCorrectRegex ? styles.btnTrueDisabled : styles.btnFalseDisabled
-    // } else {
-    //   btnStyle = curLvlCorrectRegex ? styles.btnTrue: styles.btnFalse
-    // }
-
-
-
 
     const prevBtnStyle = (currentLevelIndex === 0 && currentExerciseIndex === 0) ? styles.btnTrueDisabled : styles.btnTrue
 
+    const gFlagStyle = globalFlag ? null : styles.blank
     return (
       <div className={styles.userInputWrapper}>
         <button
@@ -145,7 +134,7 @@ class UserInputArea extends Component {
                 onChange={this.handleChange}
                 className={styles.userInput}
               />
-              <span>/</span>
+              <span>/ <span className={gFlagStyle}>g</span></span>
           </div>
           <form>
             <label>
@@ -182,7 +171,6 @@ UserInputArea.propTypes = {
   maxExeCurLvl: PropTypes.number.isRequired,
   userRegex: PropTypes.string.isRequired,
   curLvlCorrectRegex: PropTypes.bool.isRequired,
-  // puzzles: PropTypes
 }
 
 function mapStateToProps({currentExerciseIndex, levels, currentLevelIndex, userRegex, curLvlCorrectRegex, globalFlag }) {

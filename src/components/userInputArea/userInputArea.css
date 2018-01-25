@@ -76,3 +76,12 @@
   outline: none;
   border-bottom: 2px solid #27C;
 }
+
+
+span.blank {
+  color: #ffffff;
+}
+
+.userInputWrapper form {
+  margin-top: .5em;
+}
