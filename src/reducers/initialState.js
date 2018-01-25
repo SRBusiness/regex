@@ -621,7 +621,7 @@ const initialState = {
   toggleRefSheet: false,
   userRegex: '',
   curLvlCorrectRegex: false,
-  splash: true,
+  splash: false,
 }
 
 export default initialState;

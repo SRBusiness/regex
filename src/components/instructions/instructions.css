@@ -3,7 +3,7 @@
   border-color: red;
   flex-direction: column;
   padding: 0 1em 1em 1em;
-  height: 60vh;
+  height: 80vh;
 
 }
 
@@ -12,7 +12,7 @@
 }
 
 .instructionsContainer h3 {
-  margin: 5px 0px 5px 5px;
+  /* margin: 5px 0px 5px 5px; */
 }
 
 .regex {
@@ -22,7 +22,8 @@
 }
 
 .meta {
-  background-color: #003A60;
+  /* background-color: #003A60; */
+  background-color: var(  --color-four);
   padding: 0 8px;
   border-radius: 4px;
   color: lightgrey;
@@ -30,7 +31,8 @@
 .scrollWrapper {
   overflow: scroll;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-two);
   border-radius: 10px;
   padding: 10px;
 }

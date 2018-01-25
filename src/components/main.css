@@ -51,10 +51,38 @@ html{
 }
 :root {
   --light-blue: #C4E6E7;
-  --dark-blue: #232462;
-  --white: #FEFFFF;
+  --purple: #232462;
   --dark-grey-purple: #646B94;
   --med-grey-purple: #8E92B1;
   --light-grey-purple: #CACAD9;
   --blue-grey: #9EB3C6;
+  --one: #FEFFFF;
+  --two: #D0EDEB;
+  --three: #C9C7E1;
+  --four: #626BA4;
+  --five: #86CDCB;
+  --six: #43BFB1;
+  --seven:#9DA0CA;
+  --color-one: #D4E7E4;
+  --color-two: #f5f9f9;
+  --color-three: #56aacb;
+  --color-four: #003A60;
+  --transparent-one: rgba(255, 255, 255, 0.2);
+  --transparent-two: rgba(255, 255, 255, 0.6);
 }
+/* background-color: #4674B7; */
+/* background-color: 9ED7FF; */
+/* background-color: #B6EAEC; */
+/* background-color: #ECF0FF; */
+/* background-color: #CAEFEC; */
+/* background-color: #B1C6FF; */
+/* background-color: #17A1CB; */
+/* background-color: #00BDFF; */
+/* background-color: #071637; */
+/* background-color: #4674B7; */
+/* background-color: #4674B7; */
+/* background-color: #17A1CB; */
+/* background-color: #B1C6FF; */
+/* background-color: #CBC4E3; */
+/* background-color: #D8EFFF; */
+/* var(--main-color);  */

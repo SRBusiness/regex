@@ -8,8 +8,12 @@ const OtterFact = ({fact}) => {
   return (
     <div className={styles.otterFactContainer}>
       <div>
-        <img src={otterVector} alt="Otter" /><p><span className={styles.fact}><b>Otter Fact:</b></span> {fact} </p>
+        <img src={otterVector} alt="Otter" />
       </div>
+      <div>
+        <p><span className={styles.fact}></span>Otter Fact: {fact} </p>
+      </div>
+
     </div>
   )
 }
