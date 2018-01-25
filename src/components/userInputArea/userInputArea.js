@@ -45,7 +45,7 @@ class UserInputArea extends Component {
 
   makeExecArray = (text, inputAnswer) => {
     let regex;
-    if (inputAnswer === '') {
+    if (inputAnswer === '' || inputAnswer === '^') {
       return false;
     }
     try {
