@@ -32,7 +32,7 @@ const Game = ({ level, refSheetContent, toggleRef, paragraph, contentObj }) => {
         </div>
       </div>
       <footer className="footer">
-        { toggleRef ? <RefTables refArray={refSheetContent} /> : null }
+        { toggleRef ? <RefTables refArray={refSheetContent} />: null }
         <Information/>
       </footer>
     </div>

@@ -28,7 +28,7 @@ const Splash = (props) => {
         </p>
         <div className={styles.wrapper}>
           <img className={styles.left} src={otterRight} alt="Otter icon right" />
-          <h2>How to regex</h2>
+          <h2>How to Regex</h2>
           <img className={styles.right} src={otterLeft} alt="Otter icon left" />
         </div>
         <p>
@@ -41,7 +41,7 @@ const Splash = (props) => {
         </div>
         <div className={styles.wrapper}>
           <img className={styles.left} src={otterRight} alt="Otter icon right" />
-          <h2>Tips for learning regex</h2>
+          <h2>Tips for Learning Regex</h2>
           <img className={styles.right} src={otterLeft} alt="Otter icon left" />
         </div>
         <ul>
@@ -52,12 +52,12 @@ const Splash = (props) => {
             Read aloud the steps in your regex and try to be as literal as possible. Ex “‘a’ followed by ‘b’ followed by ‘c’”
           </li>
           <li>
-            Don’t assume your regex is matching what you want or think, test each piece as you go. If you get stuck try using a visualizer tool to like REGEXPER or Regulex to help you understand exactly what your regex is matching.
+            Don’t assume your regex is matching what you want or think, test each piece as you go.
           </li>
         </ul>
         <div className={styles.buttonDiv}>
           <button
-            className={styles.btn}
+            className={styles.btnSplash}
             onClick={props.switchToGame}>
             Play the Game!
           </button>

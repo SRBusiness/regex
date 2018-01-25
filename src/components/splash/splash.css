@@ -1,7 +1,12 @@
-.btn {
+.btnSplash {
   composes: btn from '../main.css';
-  padding: 15px 32px;
-  background-color: navy;
+  padding: 15px 15px;
+  background-color: #0275d8;
+  min-width: 100px;
+}
+
+.btnSplash:hover {
+  background-color: #025aa5;
 }
 
 .splashContainer {
@@ -9,7 +14,7 @@
   flex-direction: column;
   padding: 1em 1em;
   margin: 4em 7em;
-  background-color: #36A5AB;
+  background-color: var(--color-one);
   /* height: 100%; */
 }
 
@@ -47,7 +52,6 @@
 
 .wrapper img {
   width: 40px;
-  /* padding: 0 10px; */
 }
 .left {
   padding-right: 10px;
@@ -60,26 +64,10 @@
 .regex {
   display: flex;
   justify-content: center;
-  /* background-color: yellow; */
 }
 
 .regex div {
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--color-two);
   border-radius: 5px;
   padding: 0 5px;
-}
-.regex p {
-  /* font-size: 1.3em; */
-}
-
-.slash {
-
-}
-
-.pattern {
-
-}
-
-.flag {
-
 }
