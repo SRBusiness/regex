@@ -1,5 +1,5 @@
 .refSheet {
-  background-color: #FAFAFA;
+  background-color: var(--color-five);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -8,6 +8,7 @@
   font-size: 13px;
   padding: 5px;
 }
+
 table {
   text-align: left;
   font-size: 1.2em;

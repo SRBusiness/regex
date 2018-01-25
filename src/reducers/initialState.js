@@ -187,11 +187,13 @@ const initialState = {
             }, {
               text: ' will match the text paw followed by any single character.',
             },
-          ], [
-            {
-              text: 'INSERT IMAGE HERE!',
-            },
-          ], [
+          ],
+          // [
+          //   {
+          //     text: 'INSERT IMAGE HERE!',
+          //   },
+          // ],
+           [
             {
               text: 'An important things to note about metacharacters is that if we want to use them as literal characters in our regex we need to escape them using the  ',
             }, {
@@ -210,15 +212,17 @@ const initialState = {
             }, {
               text: ' would still have its special meaning and would match the text “romp” plus any character.',
             },
-          ], [
-            {
-              text: 'INSERT REGEX IMAGE HERE!',
-            },
-          ], [
-            {
-              text: 'INSERT REGEX IMAGE HERE!',
-            },
           ],
+          // [
+          //   {
+          //     text: 'INSERT REGEX IMAGE HERE!',
+          //   },
+          // ],
+          //  [
+          //   {
+          //     text: 'INSERT REGEX IMAGE HERE!',
+          //   },
+          // ],
         ],
       }
     },
@@ -292,9 +296,9 @@ const initialState = {
               text: ' will match both “Otter” and  “otter”. Characters classes allow you to be more flexible are are great for searching for words that are occasionally capitalized or commonly misspelled. ',
             },
           ], [
-            {
-              text: 'INSERT REGEX IMAGE HERE!',
-            },
+            // {
+            //   text: 'INSERT REGEX IMAGE HERE!',
+            // },
           ], [
             {
               text: 'Metacharacters',
@@ -421,11 +425,13 @@ const initialState = {
             }, {
               text: ' would match “oter”, “otters”, and “otttttterssss”  but would NOT match “oers”.'
             }
-          ], [
-            {
-              text: 'INSERT REGEX IMAGE HERE!',
-            },
-          ], [
+          ],
+          // [
+          //   {
+          //     text: 'INSERT REGEX IMAGE HERE!',
+          //   },
+          // ],
+           [
             {
               text: 'Like with the ',
             }, {
@@ -448,14 +454,15 @@ const initialState = {
             }, {
               text: '.',
             },
-          ], [
-            {
-              text: 'Fun otter fact',
-              type: 'BOLD',
-            }, {
-              text: ' - Did you know that there are 13 distinct species of otter and 3 that have the word claw in their name including the African Clawless Otter, the Asian Small-Clawed Otter, and the Congo Clawless Otter.',
-            },
-          ]
+          ],
+          // [
+          //   {
+          //     text: 'Fun otter fact',
+          //     type: 'BOLD',
+          //   }, {
+          //     text: ' - Did you know that there are 13 distinct species of otter and 3 that have the word claw in their name including the African Clawless Otter, the Asian Small-Clawed Otter, and the Congo Clawless Otter.',
+          //   },
+          // ]
         ],
       }
     },{
@@ -533,11 +540,13 @@ const initialState = {
             }, {
               text: ' will match the text “pup” and “pet”. The previous regex very literally means a “p” followed by a character that is not an “a” followed by any character.',
             },
-          ], [
-            {
-              text: 'INSERT REGEX IMAGE HERE!',
-            },
-          ], [
+          ],
+          // [
+          //   {
+          //     text: 'INSERT REGEX IMAGE HERE!',
+          //   },
+          // ],
+           [
             {
               text: 'Outside of a character class the ',
             }, {
