@@ -31,6 +31,7 @@ div.puzzleDisplay {
 .displayContainer {
   overflow: -webkit-paged-x;
   padding-left: 1em;
+  font-size: 1.1em;
 }
 
 .btn {
