@@ -331,7 +331,7 @@ const initialState = {
         {
           text: [
             'Claaaaaaaawwwwww',
-            'Clawwwwwww',
+            'Clwwwwwww',
             'Claaaaaaw',
             'Claw',
             'Cla',
